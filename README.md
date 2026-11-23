@@ -14,3 +14,4 @@ Beyond Future | A Company for Mankind | Vibe with Frequency
 | 9 | motior-pharma | Health-tech telemetry |
 
 Each division follows: LEARN -> BUILD -> VALIDATE -> PUBLISH -> BRAND -> EARN (see PILLARS.md in each folder).
+# emon-industry
