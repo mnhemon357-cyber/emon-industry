@@ -23,22 +23,21 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
+      - name: Setup Android SDK & Packages
         uses: android-actions/setup-android@v3
-
-      - name: Accept Licenses & Install Android 34 SDK
-        run: |
-          yes | sdkmanager --licenses >/dev/null 2>&1 || true
-          sdkmanager "platforms;android-34" "build-tools;34.0.0"
+        with:
+          packages: 'platforms;android-34 build-tools;34.0.0'
 
       - name: Setup Gradle 8.7
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.7'
 
-      - name: Compile Android Debug APK
+      - name: Bind Android SDK & Compile APK
         working-directory: divisions/eapk-mobile
-        run: gradle assembleDebug --no-daemon --stacktrace
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          gradle assembleDebug --no-daemon
 
       - name: Package Release APK
         run: cp divisions/eapk-mobile/app/build/outputs/apk/debug/app-debug.apk EMON-INDUSTRY-v1.0.apk
@@ -58,4 +57,4 @@ jobs:
           gh release create v1.0-latest EMON-INDUSTRY-v1.0.apk \
             --target main \
             --title "EMON INDUSTRY PVT LTD — Android App (v1.0)" \
-            --notes "Tap EMON-INDUSTRY-v1.0.apk below to download and install on Android."
+            --notes "Download EMON-INDUSTRY-v1.0.apk below and install on Android."
