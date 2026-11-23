@@ -21,8 +21,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
+      - name: Setup Android SDK & Accept Licenses
         uses: android-actions/setup-android@v3
+
+      - name: Install Android 34 Platform & Build Tools
+        run: |
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       - name: Setup Gradle 8.7
         uses: gradle/actions/setup-gradle@v4
@@ -47,5 +52,6 @@ jobs:
         with:
           tag_name: v1.0-latest
           name: "EMON INDUSTRY PVT LTD — Official Android App (v1.0)"
-          body: "Automated Android APK build from EMON INDUSTRY Sovereign Mainframe (EAPK Division)."
+          body: "Download and install EMON-INDUSTRY-v1.0.apk on Android."
           files: EMON-INDUSTRY-v1.0.apk
+          make_latest: true
