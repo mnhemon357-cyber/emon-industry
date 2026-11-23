@@ -31,11 +31,10 @@ jobs:
 
       - name: Compile Android Debug APK
         working-directory: divisions/eapk-mobile
-        run: gradle assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Prepare Release APK Artifact
-        run: |
-          cp divisions/eapk-mobile/app/build/outputs/apk/debug/app-debug.apk EMON-INDUSTRY-v1.0.apk
+        run: cp divisions/eapk-mobile/app/build/outputs/apk/debug/app-debug.apk EMON-INDUSTRY-v1.0.apk
 
       - name: Upload APK Workflow Artifact
         uses: actions/upload-artifact@v4
@@ -48,5 +47,5 @@ jobs:
         with:
           tag_name: v1.0-latest
           name: "EMON INDUSTRY PVT LTD — Official Android App (v1.0)"
-          body: "Automated Android APK build from EMON INDUSTRY Sovereign Mainframe (`EAPK` Division)."
+          body: "Automated Android APK build from EMON INDUSTRY Sovereign Mainframe (EAPK Division)."
           files: EMON-INDUSTRY-v1.0.apk
