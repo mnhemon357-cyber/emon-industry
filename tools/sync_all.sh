@@ -25,7 +25,7 @@ tar --exclude='venv' --exclude='.git' --exclude='__pycache__' --exclude='*.db' -
 echo "[OK] Mirrored all project files to Internal Storage: $PHONE_DIR"
 
 if git push -u origin main; then
-    echo "[OK] Pushed live to GitHub: https://github.com/mnhemon359-cyber/emon-industry"
+    echo "[OK] Pushed live to GitHub: https://github.com/mnhemon357-cyber/emon-industry"
 else
     echo "[WARN] GitHub push skipped (offline). Local storage is up to date."
 fi
