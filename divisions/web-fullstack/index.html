@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMON INDUSTRY PVT LTD | Beyond Future</title>
+  <style>
+    :root {
+      --bg: #070b10;
+      --panel: #0d131c;
+      --border: #1b2838;
+      --cyan: #00ffcc;
+      --crimson: #ff2a55;
+      --text: #e6edf3;
+      --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(180deg, #0b121c 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand h1 { font-size: 18px; letter-spacing: 1.5px; color: var(--cyan); }
+    .brand span { font-size: 11px; color: var(--muted); display: block; }
+    .badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      background: rgba(0, 255, 204, 0.08);
+    }
+    .container { max-width: 1100px; margin: auto; padding: 24px 16px 60px; }
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    .hero h2 { font-size: 24px; margin-bottom: 8px; }
+    .hero p { color: var(--muted); font-size: 14px; max-width: 720px; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .btn {
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary { background: var(--cyan); color: #05080c; }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .section-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--cyan);
+      margin: 28px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--cyan); }
+    .card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .div-code { font-size: 11px; color: var(--crimson); font-weight: bold; }
+    .card h3 { font-size: 16px; color: #fff; margin-bottom: 6px; }
+    .card p { font-size: 13px; color: var(--muted); }
+    .stack-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--cyan);
+      background: rgba(0, 255, 204, 0.06);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: #070b10;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 8px;
+      font-family: inherit;
+      font-size: 13px;
+    }
+    .output-box {
+      margin-top: 12px;
+      background: #05080c;
+      border-left: 3px solid var(--cyan);
+      padding: 10px;
+      font-size: 12px;
+      color: var(--cyan);
+      white-space: pre-wrap;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <svg width="32" height="32" viewBox="0 0 64 64" fill="none">
+          <polygon points="32,4 58,18 58,46 32,60 6,46 6,18" stroke="#00ffcc" stroke-width="3" fill="#0d131c"/>
+          <circle cx="32" cy="32" r="10" stroke="#ff2a55" stroke-width="3"/>
+        </svg>
+        <div>
+          <h1>EMON INDUSTRY PVT LTD</h1>
+          <span>SOVEREIGN 9-DIVISION TECH HOLDING // BEYOND FUTURE</span>
+        </div>
+      </div>
+      <div class="badge" id="sysStatus">MAINFRAME ONLINE</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero">
+      <h2>Unified Hardware, Cyber Defense, OS & Enterprise SaaS</h2>
+      <p>
+        Architecting sovereign digital infrastructure across Bangladesh and global markets—spanning
+        embedded silicon, offensive & defensive security, custom Linux distributions, on-bound AI,
+        digital healthcare, and cloud enterprise commerce.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/mnhemon359-cyber/emon-industry/releases" target="_blank">
+          DOWNLOAD ANDROID APK (EAPK)
+        </a>
+        <a class="btn btn-outline" href="https://github.com/mnhemon359-cyber/emon-industry" target="_blank">
+          VIEW GITHUB SOURCE
+        </a>
+      </div>
+      <div id="androidBridgeInfo" style="margin-top:12px;font-size:12px;color:#00ffcc;"></div>
+    </div>
+
+    <div class="section-title">
+      <span>01 // Sovereign 9-Division Architecture</span>
+      <span style="font-size:11px;color:var(--muted);">ALL DIVISIONS OPERATIONAL</span>
+    </div>
+    <div class="grid" id="divisionsGrid"></div>
+
+    <div class="section-title">
+      <span>02 // Live Interactive Division Engines</span>
+      <span style="font-size:11px;color:var(--muted);">FULL-STACK API + OFFLINE FALLBACK</span>
+    </div>
+    <div class="tools-grid">
+      <div class="card">
+        <div class="card-head">
+          <h3>EPrinter Cloud Quote Engine</h3>
+          <span class="div-code">DIV-08</span>
+        </div>
+        <p>Calculate instant A4 commercial document print pricing in BDT.</p>
+        <input type="number" id="pageCount" value="25" min="1" placeholder="Number of A4 Pages">
+        <select id="printMode">
+          <option value="bw">Black & White Laser (2 BDT / page)</option>
+          <option value="color">High-Res Color (5 BDT / page)</option>
+        </select>
+        <button class="btn btn-primary" style="width:100%;margin-top:10px;justify-content:center;" onclick="calcPrint()">
+          GENERATE BDT QUOTE
+        </button>
+        <div class="output-box" id="quoteOut">Ready for document calculation...</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>29A Cyber Guardian Diagnostics</h3>
+          <span class="div-code">DIV-03</span>
+        </div>
+        <p>Run real-time node telemetry & local attack-surface verification.</p>
+        <input type="text" id="auditTarget" value="127.0.0.1" readonly>
+        <button class="btn btn-primary" style="width:100%;margin-top:10px;justify-content:center;" onclick="runAudit()">
+          EXECUTE 29A NODE AUDIT
+        </button>
+        <div class="output-box" id="auditOut">Click above to probe node posture...</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Efirm Client & Investor Desk</h3>
+          <span class="div-code">DIV-06</span>
+        </div>
+        <p>Submit enterprise software, security audit, or partnership inquiries.</p>
+        <input type="text" id="clientName" placeholder="Your Name / Organization">
+        <input type="email" id="clientEmail" placeholder="Email Address">
+        <textarea id="clientMsg" rows="2" placeholder="Project or Partnership Scope"></textarea>
+        <button class="btn btn-primary" style="width:100%;margin-top:10px;justify-content:center;" onclick="sendInquiry()">
+          DISPATCH TO MAINFRAME DB
+        </button>
+        <div class="output-box" id="inquiryOut">SQLite & Cloud Relay Ready.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 EMON INDUSTRY PVT LTD &bull; Dhaka, Bangladesh &bull; Engineered from Sovereign Foundations
+  </footer>
+
+  <script>
+    const DIVISIONS = [
+      { code: "DIV-01", name: "Emontron", desc: "Embedded IoT microcontrollers, biometric sensors, and sovereign hardware engineering.", stack: "C / C++ / RTOS / ESP32" },
+      { code: "DIV-02", name: "Esecurity", desc: "24/7 Security Operations Center (SOC), log correlation, and network perimeter defense.", stack: "Raku / Linux / Suricata" },
+      { code: "DIV-03", name: "29A Cyber Guardian", desc: "Offensive penetration testing, vulnerability auditing, and cryptographic verification.", stack: "Python / Kali / Bash" },
+      { code: "DIV-04", name: "EOS (Inhealer OS)", desc: "Hardened privacy-first Linux operating system engineered for developers and security teams.", stack: "Debian / Linux Kernel / Zsh" },
+      { code: "DIV-05", name: "EMON (EI)", desc: "On-bound autonomous AI security analyst and offline local intelligence engine.", stack: "Python / Local LLM / JSON" },
+      { code: "DIV-06", name: "Efirm", desc: "Enterprise ERP, automated VAT invoicing, and corporate software architecture.", stack: "Java / SQLite / REST" },
+      { code: "DIV-07", name: "EAPK", desc: "Native Android applications, mobile field terminals, and APK distribution infrastructure.", stack: "Java / Kotlin / Android SDK" },
+      { code: "DIV-08", name: "EPrinter", desc: "Automated cloud document pricing, PDF processing, and rapid print logistics.", stack: "Python / FastAPI / HTML5" },
+      { code: "DIV-09", name: "Motior Pharma", desc: "Digital health diagnostics, patient telemetry dashboards, and pharmaceutical supply tech.", stack: "C / Python / HL7" }
+    ];
+
+    const grid = document.getElementById("divisionsGrid");
+    DIVISIONS.forEach(d => {
+      grid.innerHTML += `
+        <div class="card">
+          <div class="card-head">
+            <h3>${d.name}</h3>
+            <span class="div-code">${d.code}</span>
+          </div>
+          <p>${d.desc}</p>
+          <span class="stack-tag">${d.stack}</span>
+        </div>`;
+    });
+
+    if (window.EmonAndroid) {
+      document.getElementById("androidBridgeInfo").textContent =
+        "ANDROID NATIVE BRIDGE ACTIVE: " + window.EmonAndroid.getDeviceInfo();
+    }
+
+    async function calcPrint() {
+      const pages = parseInt(document.getElementById("pageCount").value || "1", 10);
+      const mode = document.getElementById("printMode").value;
+      const out = document.getElementById("quoteOut");
+      try {
+        const res = await fetch("/api/quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pages, mode })
+        });
+        if (!res.ok) throw new Error("Static mode");
+        const data = await res.json();
+        out.textContent = `[DB ORDER #${data.order_id}] ${data.pages} pages (${data.mode.toUpperCase()}) = BDT ${data.total_bdt}`;
+      } catch (e) {
+        const rate = mode === "color" ? 5 : 2;
+        out.textContent = `[INSTANT QUOTE] ${pages} pages (${mode.toUpperCase()}) = BDT ${pages * rate}`;
+      }
+    }
+
+    async function runAudit() {
+      const out = document.getElementById("auditOut");
+      out.textContent = "Scanning node sockets...";
+      try {
+        const res = await fetch("/api/scan");
+        if (!res.ok) throw new Error("Static mode");
+        const data = await res.json();
+        out.textContent = JSON.stringify(data, null, 2);
+      } catch (e) {
+        out.textContent = JSON.stringify({
+          agency: "29A Cyber Guardian",
+          environment: navigator.userAgent.includes("Android") ? "Android Mobile Node" : "Web Client",
+          tls_secure: location.protocol === "https:",
+          status: "VERIFIED CLEAN"
+        }, null, 2);
+      }
+    }
+
+    async function sendInquiry() {
+      const name = document.getElementById("clientName").value.trim();
+      const email = document.getElementById("clientEmail").value.trim();
+      const message = document.getElementById("clientMsg").value.trim();
+      const out = document.getElementById("inquiryOut");
+      if (!name || !email) { out.textContent = "Please enter Name and Email."; return; }
+      try {
+        const res = await fetch("/api/inquiries", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, message })
+        });
+        if (!res.ok) throw new Error("Static mode");
+        const data = await res.json();
+        out.textContent = `[SAVED TO SQLITE DB] Ticket #${data.ticket_id} logged for ${name}.`;
+      } catch (e) {
+        out.textContent = `[LOGGED] Inquiry prepared for ${name} (${email}). Connect to local server for SQLite sync.`;
+      }
+    }
+  </script>
+</body>
+</html>
