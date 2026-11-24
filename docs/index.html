@@ -83,91 +83,11 @@ html { scroll-behavior: smooth; }
     window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
   }
 
-// --- FLAWLESS UX ENHANCEMENTS ---
-
-// 1. Global Spinner Controls
-function showSpinner() { document.getElementById('global-spinner').style.display = 'flex'; }
-function hideSpinner() { document.getElementById('global-spinner').style.display = 'none'; }
-
-// Wrap fetch calls to show spinner
-const originalFetch = window.fetch;
-window.fetch = function() {
-    showSpinner();
-    return originalFetch.apply(this, arguments).finally(() => hideSpinner());
-};
-
-// 2. Auto-Close Mobile Menu on Link Click
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('main-nav').classList.remove('open');
-    });
-});
-
-// 3. Close Search Results on Click Outside
-document.addEventListener('click', (e) => {
-    const searchWrap = document.querySelector('.search-wrap');
-    const searchResults = document.getElementById('search-results');
-    if (searchWrap && !searchWrap.contains(e.target)) {
-        searchResults.classList.remove('show');
-    }
-});
-
-// 4. Update Search Results UI to look more clickable
-const searchStyle = document.createElement('style');
-searchStyle.innerHTML = `
-    .search-result { transition: background 0.2s, padding-left 0.2s; }
-    .search-result:hover { padding-left: 24px; background: var(--surface-hover); }
-    .div-card:active { transform: scale(0.98); }
-    .tab:active { transform: scale(0.95); }
-`;
-document.head.appendChild(searchStyle);
-
-
-// --- WEB FINISHING TOUCHES ---
-
-// 1. Web Splash Screen Fade Out
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const splash = document.getElementById('web-splash');
-        if (splash) {
-            splash.style.opacity = '0';
-            setTimeout(() => splash.remove(), 600);
-        }
-    }, 800); // Show splash for 0.8 seconds
-});
-
-// 2. Smart Fetch Timeout (Prevents infinite spinners if Python backend is off)
-const originalFetch = window.fetch;
-window.fetch = function(url, options) {
-    if(typeof showSpinner === 'function') showSpinner();
-    
-    // Create a 3-second timeout promise
-    const timeout = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Request timed out')), 3000)
-    );
-    
-    return Promise.race([originalFetch(url, options), timeout])
-        .finally(() => {
-            if(typeof hideSpinner === 'function') hideSpinner();
-        });
-};
-
-// 3. Haptic Feedback for Mobile UX
-document.addEventListener('click', (e) => {
-    if (e.target.closest('button') || e.target.closest('.div-card') || e.target.closest('.cert-badge')) {
-        if (navigator.vibrate) navigator.vibrate(10);
-    }
-});
-
 </script>
 
 </head><body>
 
-    <div id="web-splash">
-      <svg viewBox="0 0 64 64"><rect x="0" y="0" width="64" height="21" fill="#09090b"/><rect x="0" y="21" width="64" height="22" fill="#fafafa"/><rect x="0" y="43" width="64" height="21" fill="#22c55e"/><polygon points="0,0 20,32 0,64" fill="#ef4444"/><rect x="0.6" y="0.6" width="62.8" height="62.8" fill="none" stroke="#fafafa" stroke-width="1.4"/><polygon points="40,10 56,32 40,54 24,32" fill="#fafafa" stroke="#09090b" stroke-width="1.4"/></svg>
-      <h1>EMON INDUSTRY</h1>
-      <p>Securing the Future...</p>
-    </div>
+    
     
 <div id="global-spinner"><div class="spinner"></div></div>
 <header><b>EMON INDUSTRY</b><input id="q" placeholder="Search divisions, days, certs"></header>
@@ -400,82 +320,6 @@ function toggleLang(e) {
 }
 
 
-// --- FLAWLESS UX ENHANCEMENTS ---
-
-// 1. Global Spinner Controls
-function showSpinner() { document.getElementById('global-spinner').style.display = 'flex'; }
-function hideSpinner() { document.getElementById('global-spinner').style.display = 'none'; }
-
-// Wrap fetch calls to show spinner
-const originalFetch = window.fetch;
-window.fetch = function() {
-    showSpinner();
-    return originalFetch.apply(this, arguments).finally(() => hideSpinner());
-};
-
-// 2. Auto-Close Mobile Menu on Link Click
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('main-nav').classList.remove('open');
-    });
-});
-
-// 3. Close Search Results on Click Outside
-document.addEventListener('click', (e) => {
-    const searchWrap = document.querySelector('.search-wrap');
-    const searchResults = document.getElementById('search-results');
-    if (searchWrap && !searchWrap.contains(e.target)) {
-        searchResults.classList.remove('show');
-    }
-});
-
-// 4. Update Search Results UI to look more clickable
-const searchStyle = document.createElement('style');
-searchStyle.innerHTML = `
-    .search-result { transition: background 0.2s, padding-left 0.2s; }
-    .search-result:hover { padding-left: 24px; background: var(--surface-hover); }
-    .div-card:active { transform: scale(0.98); }
-    .tab:active { transform: scale(0.95); }
-`;
-document.head.appendChild(searchStyle);
-
-
-// --- WEB FINISHING TOUCHES ---
-
-// 1. Web Splash Screen Fade Out
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const splash = document.getElementById('web-splash');
-        if (splash) {
-            splash.style.opacity = '0';
-            setTimeout(() => splash.remove(), 600);
-        }
-    }, 800); // Show splash for 0.8 seconds
-});
-
-// 2. Smart Fetch Timeout (Prevents infinite spinners if Python backend is off)
-const originalFetch = window.fetch;
-window.fetch = function(url, options) {
-    if(typeof showSpinner === 'function') showSpinner();
-    
-    // Create a 3-second timeout promise
-    const timeout = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Request timed out')), 3000)
-    );
-    
-    return Promise.race([originalFetch(url, options), timeout])
-        .finally(() => {
-            if(typeof hideSpinner === 'function') hideSpinner();
-        });
-};
-
-// 3. Haptic Feedback for Mobile UX
-document.addEventListener('click', (e) => {
-    if (e.target.closest('button') || e.target.closest('.div-card') || e.target.closest('.cert-badge')) {
-        if (navigator.vibrate) navigator.vibrate(10);
-    }
-});
-
 </script>
 <div id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:20px;right:20px;background:var(--red);color:#fff;width:40px;height:40px;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:9999;font-weight:bold;font-family:var(--mono);box-shadow:0 4px 12px rgba(0,0,0,0.5);">↑</div>
 <script>
@@ -487,82 +331,27 @@ document.addEventListener('click', (e) => {
     if(footer) footer.innerHTML += " | © " + new Date().getFullYear();
   });
 
-// --- FLAWLESS UX ENHANCEMENTS ---
+</script>
 
-// 1. Global Spinner Controls
-function showSpinner() { document.getElementById('global-spinner').style.display = 'flex'; }
-function hideSpinner() { document.getElementById('global-spinner').style.display = 'none'; }
 
-// Wrap fetch calls to show spinner
-const originalFetch = window.fetch;
-window.fetch = function() {
-    showSpinner();
-    return originalFetch.apply(this, arguments).finally(() => hideSpinner());
-};
+<!-- FOOLPROOF SPLASH SCREEN -->
+<div id="web-splash" style="position:fixed;inset:0;background:#09090b;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;transition:opacity 0.5s ease;">
+  <svg viewBox="0 0 64 64" style="width:80px;height:80px;margin-bottom:20px;">
+    <rect x="0" y="0" width="64" height="21" fill="#09090b"/><rect x="0" y="21" width="64" height="22" fill="#fafafa"/><rect x="0" y="43" width="64" height="21" fill="#22c55e"/><polygon points="0,0 20,32 0,64" fill="#ef4444"/><rect x="0.6" y="0.6" width="62.8" height="62.8" fill="none" stroke="#fafafa" stroke-width="1.4"/><polygon points="40,10 56,32 40,54 24,32" fill="#fafafa" stroke="#09090b" stroke-width="1.4"/>
+  </svg>
+  <div style="font-family:'Courier New',monospace;font-size:18px;letter-spacing:3px;color:#fafafa;font-weight:900;">EMON INDUSTRY</div>
+  <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:2px;color:#ef4444;margin-top:8px;">SECURING THE FUTURE...</div>
+</div>
 
-// 2. Auto-Close Mobile Menu on Link Click
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById('main-nav').classList.remove('open');
-    });
-});
-
-// 3. Close Search Results on Click Outside
-document.addEventListener('click', (e) => {
-    const searchWrap = document.querySelector('.search-wrap');
-    const searchResults = document.getElementById('search-results');
-    if (searchWrap && !searchWrap.contains(e.target)) {
-        searchResults.classList.remove('show');
+<script>
+// Force the splash screen to disappear after 1 second, no matter what.
+setTimeout(function() {
+    var splash = document.getElementById('web-splash');
+    if (splash) {
+        splash.style.opacity = '0';
+        setTimeout(function() { splash.remove(); }, 500);
     }
-});
-
-// 4. Update Search Results UI to look more clickable
-const searchStyle = document.createElement('style');
-searchStyle.innerHTML = `
-    .search-result { transition: background 0.2s, padding-left 0.2s; }
-    .search-result:hover { padding-left: 24px; background: var(--surface-hover); }
-    .div-card:active { transform: scale(0.98); }
-    .tab:active { transform: scale(0.95); }
-`;
-document.head.appendChild(searchStyle);
-
-
-// --- WEB FINISHING TOUCHES ---
-
-// 1. Web Splash Screen Fade Out
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const splash = document.getElementById('web-splash');
-        if (splash) {
-            splash.style.opacity = '0';
-            setTimeout(() => splash.remove(), 600);
-        }
-    }, 800); // Show splash for 0.8 seconds
-});
-
-// 2. Smart Fetch Timeout (Prevents infinite spinners if Python backend is off)
-const originalFetch = window.fetch;
-window.fetch = function(url, options) {
-    if(typeof showSpinner === 'function') showSpinner();
-    
-    // Create a 3-second timeout promise
-    const timeout = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error('Request timed out')), 3000)
-    );
-    
-    return Promise.race([originalFetch(url, options), timeout])
-        .finally(() => {
-            if(typeof hideSpinner === 'function') hideSpinner();
-        });
-};
-
-// 3. Haptic Feedback for Mobile UX
-document.addEventListener('click', (e) => {
-    if (e.target.closest('button') || e.target.closest('.div-card') || e.target.closest('.cert-badge')) {
-        if (navigator.vibrate) navigator.vibrate(10);
-    }
-});
-
+}, 1000);
 </script>
 
 </body></html>
