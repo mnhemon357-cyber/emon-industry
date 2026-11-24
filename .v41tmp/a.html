@@ -1,0 +1,14 @@
+<!--v41-->
+<h2>Division Toolbox</h2>
+<div class="tool" id="t0"></div>
+<div class="tool"><b>EPrinter Price Calculator</b> <small>(2 BDT B&amp;W / 5 BDT Color)</small><br>
+<input id="pg" type="number" placeholder="Total pages" oninput="v_pr()"><input id="cl" type="number" placeholder="Color pages" oninput="v_pr()"><input id="cp" type="number" placeholder="Copies" value="1" oninput="v_pr()"><p id="pro" class="m"></p></div>
+<div class="tool"><b>Efirm VAT Invoice Calculator</b><br>
+<input id="va" type="number" placeholder="Amount (BDT)" oninput="v_vat()"><input id="vr" type="number" placeholder="VAT %" value="15" oninput="v_vat()"><input id="vx" type="number" placeholder="BDT per USD" value="120" oninput="v_vat()"><p id="vo" class="m"></p></div>
+<div class="tool"><b>29A SHA-256 Hasher</b><textarea id="hi" placeholder="Text to hash" oninput="v_h()"></textarea><code id="ho"></code></div>
+<div class="tool"><b>Esecurity Log Correlator</b><textarea id="li" placeholder="Paste auth/firewall logs"></textarea>
+<button onclick="v_ls()">Load sample</button><button onclick="v_lg()">Analyse</button><div id="lo"></div></div>
+<div class="tool"><b>Motior Vitals Triage</b> <small>(demo only, not medical advice)</small><br>
+<input id="tb" type="number" placeholder="BPM" oninput="v_tr()"><input id="ts" type="number" placeholder="SpO2 %" oninput="v_tr()"><input id="tt" type="number" step="0.1" placeholder="Temp C" oninput="v_tr()"><p id="to" class="m"></p></div>
+<div class="tool"><b>Revenue Projector</b> <small>(clients | BDT per month each)</small><div id="rv"></div><p id="ro" class="m"></p></div>
+<h2>Portfolio Progress Matrix</h2><div id="mx"></div>

@@ -1,18 +1,14 @@
-# EMON INDUSTRY PVT LTD — Sovereign Mainframe
+# EMON INDUSTRY v4.2 - Termux Enterprise Suite
 
-**Beyond Future | A Company for Mankind | Vibe with Frequency**
+Includes responsive portal, 9 divisions, 29-day sprint, 14 learning links, browser-local progress, JSON backup/restore, report export, offline service worker, localhost Python API, FHIR-shaped development metadata, smoke tests, Android WebView assets and launch/stop helpers.
 
-* **Live Full-Stack Web Portal:** https://mnhemon357-cyber.github.io/emon-industry/
-* **Download Android APK (`EMON-INDUSTRY-v1.0.apk`):** https://github.com/mnhemon357-cyber/emon-industry/releases/latest
+## Run in Termux
+Install Python (`pkg install python`), run `termux-setup-storage`, execute this installer, then:
+`cd ~/emon-industry && ./launch.sh`
+Open `http://127.0.0.1:9000`. Stop with `./stop.sh`.
 
-| # | Division | Focus |
-|---|---|---|
-| 1 | `emontron` | Firmware & embedded (C) |
-| 2 | `esecurity` | Defensive security / SOC |
-| 3 | `29a-cyber-guardian` | Cryptography & authorized pentesting |
-| 4 | `eos-inhealer` | Hardened Linux (Inhealer OS) |
-| 5 | `ei-onbound-ai` | Offline AI & agents |
-| 6 | `efirm` | Custom enterprise software |
-| 7 | `eapk-mobile` | Android / mobile APK |
-| 8 | `eprinter` | Online A4 print platform |
-| 9 | `motior-pharma` | Health-tech telemetry |
+## Important limitations
+Telemetry and SOC radar are simulated. FHIR routes are a non-certified development scaffold and store no patient data. The API binds to localhost by default. Do not expose it publicly without authentication, HTTPS, authorization, rate limiting, validation, backups and security review. This project does not claim legal registration, clinical validation or certification. APK compilation requires a complete Android Gradle project and signing configuration.
+
+## Test
+`python3 divisions/web-fullstack/test_server.py`
