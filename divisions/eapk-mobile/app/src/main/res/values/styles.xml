@@ -3,5 +3,7 @@
         <item name="android:windowBackground">#061529</item>
         <item name="android:statusBarColor">#061529</item>
         <item name="android:navigationBarColor">#061529</item>
+            <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#f6f0e4</item>
     </style>
 </resources>

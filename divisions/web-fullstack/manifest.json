@@ -1,11 +1,11 @@
 {
   "name": "EMON INDUSTRY PVT LTD",
   "short_name": "EMON INDUSTRY",
-  "description": "Mother Holding Corporation of 9 Sovereign Subsidiaries \u2014 Beyond Future",
+  "description": "Building a Better Tomorrow \u2014 Desert Light Sovereign Systems",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#070a0f",
-  "theme_color": "#070a0f",
+  "background_color": "#f6f0e4",
+  "theme_color": "#f6f0e4",
   "icons": [
     {
       "src": "assets/founder.jpg",
