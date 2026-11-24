@@ -1,6 +1,7 @@
 <resources>
-    <style name="Theme.EmonSplash" parent="android:Theme.Material.NoActionBar">
-        <item name="android:windowBackground">@drawable/splash_background</item>
-        <item name="android:statusBarColor">#09090b</item>
+    <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">#061529</item>
+        <item name="android:statusBarColor">#061529</item>
+        <item name="android:navigationBarColor">#061529</item>
     </style>
 </resources>

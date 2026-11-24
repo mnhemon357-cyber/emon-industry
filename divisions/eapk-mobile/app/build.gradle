@@ -1,7 +1,11 @@
-plugins { id 'com.android.application' }
+plugins {
+    id 'com.android.application'
+}
+
 android {
     namespace 'bd.emonindustry.academy'
     compileSdk 34
+
     defaultConfig {
         applicationId "bd.emonindustry.academy"
         minSdk 24
@@ -9,7 +13,13 @@ android {
         versionCode 6
         versionName "6.0.0"
     }
-    buildTypes { release { minifyEnabled false } }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
