@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Mainframe Repository
         uses: actions/checkout@v4
 
-      - name: Package iOS WebBundle & Swift Source Artifact
+      - name: Package iOS App Bundle & Swift Source
         run: |
           mkdir -p dist-ios/Payload/EmonIndustry.app
           cp -r divisions/eios-mobile/EmonIndustryApp/* dist-ios/Payload/EmonIndustry.app/
