@@ -24,8 +24,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#061529"));
-            getWindow().setNavigationBarColor(Color.parseColor("#061529"));
+            getWindow().setStatusBarColor(Color.parseColor("#070a0f"));
+            getWindow().setNavigationBarColor(Color.parseColor("#070a0f"));
         }
         webView = new WebView(this);
         WebSettings ws = webView.getSettings();

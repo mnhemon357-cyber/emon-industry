@@ -19,7 +19,7 @@ struct EmonWebView: UIViewRepresentable {
         let cfg = WKWebViewConfiguration()
         cfg.userContentController = cc
         let wv = WKWebView(frame: .zero, configuration: cfg)
-        wv.backgroundColor = UIColor(red: 0.02, green: 0.08, blue: 0.16, alpha: 1.0)
+        wv.backgroundColor = UIColor(red: 0.03, green: 0.04, blue: 0.06, alpha: 1.0)
         if let u = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "Resources") {
             wv.loadFileURL(u, allowingReadAccessTo: u.deletingLastPathComponent())
         }

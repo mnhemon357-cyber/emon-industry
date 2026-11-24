@@ -1,11 +1,11 @@
 {
   "name": "EMON INDUSTRY PVT LTD",
   "short_name": "EMON INDUSTRY",
-  "description": "Building a Better Tomorrow \u2014 Open Sovereign Infrastructure",
+  "description": "Building a Better Tomorrow \u2014 OffSec-Grade Sovereign Systems",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#061529",
-  "theme_color": "#061529",
+  "background_color": "#070a0f",
+  "theme_color": "#070a0f",
   "icons": [
     {
       "src": "assets/founder.jpg",
