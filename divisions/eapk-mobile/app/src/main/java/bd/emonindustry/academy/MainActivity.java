@@ -14,14 +14,12 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
     private WebView webView;
-
     public static class EmonBridge {
         @JavascriptInterface
         public String getDeviceInfo() {
             return Build.MANUFACTURER + " " + Build.MODEL + " (Android " + Build.VERSION.RELEASE + ")";
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +36,10 @@ public class MainActivity extends Activity {
         webView.addJavascriptInterface(new EmonBridge(), "EmonAndroid");
         webView.setWebViewClient(new WebViewClient() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                String url = request.getUrl().toString();
-                if (url.startsWith("http://") || url.startsWith("https://")) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest req) {
+                String u = req.getUrl().toString();
+                if (u.startsWith("http://") || u.startsWith("https://")) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(u)));
                     return true;
                 }
                 return false;
@@ -50,13 +48,9 @@ public class MainActivity extends Activity {
         setContentView(webView);
         webView.loadUrl("file:///android_asset/index.html");
     }
-
     @Override
     public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) {
-            webView.goBack();
-        } else {
-            super.onBackPressed();
-        }
+        if (webView != null && webView.canGoBack()) webView.goBack();
+        else super.onBackPressed();
     }
 }

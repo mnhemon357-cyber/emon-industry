@@ -2,13 +2,16 @@ plugins { id 'com.android.application' }
 android {
     namespace 'bd.emonindustry.academy'
     compileSdk 34
-    defaultConfig { applicationId "bd.emonindustry.academy"; minSdk 24; targetSdk 34; versionCode 9; versionName "9.0" }
+    defaultConfig {
+        applicationId "bd.emonindustry.academy"
+        minSdk 24
+        targetSdk 34
+        versionCode 6
+        versionName "6.0.0"
+    }
     buildTypes { release { minifyEnabled false } }
-    aaptOptions { noCompress "gguf"; noCompress "db" }
-}
-dependencies {
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    implementation 'androidx.room:room-runtime:2.6.1'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
