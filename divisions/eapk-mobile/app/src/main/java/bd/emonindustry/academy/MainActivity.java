@@ -14,41 +14,37 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(android.R.style.Theme_Material_NoActionBar); // Switch from Splash to Main
+        
         webView = new WebView(this);
         WebSettings s = webView.getSettings();
-        
         s.setJavaScriptEnabled(true);
-        s.setDomStorageEnabled(true); // For localStorage (Sprint & Certs)
+        s.setDomStorageEnabled(true);
         s.setAllowFileAccess(true);
         s.setAllowContentAccess(true);
         s.setAllowFileAccessFromFileURLs(true);
         s.setAllowUniversalAccessFromFileURLs(true);
-        
-        // Force load latest HTML (No caching)
         s.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        webView.clearCache(true);
-
+        
         webView.setWebViewClient(new WebViewClient());
         webView.addJavascriptInterface(new EmonBridge(), "EmonAndroid");
-        
         webView.loadUrl("file:///android_asset/index.html");
         setContentView(webView);
     }
 
     @Override
     public void onBackPressed() {
-        if (webView != null && webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
+        if (webView.canGoBack()) {
+            webView.goBack(); // Allows navigating back inside the app
+        } else {
+            super.onBackPressed(); // Closes app if at root
+        }
     }
 
     public class EmonBridge {
         @JavascriptInterface
         public String getDeviceInfo() {
-            return "{\"platform\":\"Android\",\"model\":\"" + Build.MODEL
-                 + "\",\"manufacturer\":\"" + Build.MANUFACTURER
-                 + "\",\"sdk\":" + Build.VERSION.SDK_INT + "}";
+            return "{\"platform\":\"Android\",\"model\":\"" + Build.MODEL + "\",\"manufacturer\":\"" + Build.MANUFACTURER + "\",\"sdk\":" + Build.VERSION.SDK_INT + "}";
         }
-        @JavascriptInterface
-        public String getVersion() { return "6.0"; }
     }
 }

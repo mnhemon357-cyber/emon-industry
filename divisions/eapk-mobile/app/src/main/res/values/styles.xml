@@ -1,5 +1,10 @@
-<resources><style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
-  <item name="android:fontFamily">sans</item><item name="android:colorAccent">#B8F36B</item>
-  <item name="android:statusBarColor">#09111E</item><item name="android:navigationBarColor">#09111E</item>
-  <item name="android:windowLightStatusBar">false</item>
-</style></resources>
+<resources>
+    <style name="Theme.EmonSplash" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">#09090b</item>
+    </style>
+    <style name="Theme.EmonMain" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#09090b</item>
+        <item name="android:navigationBarColor">#09090b</item>
+    </style>
+</resources>
