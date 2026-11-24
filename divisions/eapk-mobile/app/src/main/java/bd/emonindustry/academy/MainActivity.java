@@ -1,6 +1,5 @@
 package bd.emonindustry.academy;
 import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
@@ -12,7 +11,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(android.R.style.Theme_Material_NoActionBar);
         webView = new WebView(this);
         WebSettings s = webView.getSettings();
         s.setJavaScriptEnabled(true);
@@ -22,19 +20,9 @@ public class MainActivity extends Activity {
         s.setAllowUniversalAccessFromFileURLs(true);
         s.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.setWebViewClient(new WebViewClient());
-        webView.addJavascriptInterface(new EmonBridge(), "EmonAndroid");
         webView.loadUrl("file:///android_asset/index.html");
         setContentView(webView);
     }
     @Override
-    public void onBackPressed() {
-        if (webView.canGoBack()) webView.goBack();
-        else super.onBackPressed();
-    }
-    public class EmonBridge {
-        @JavascriptInterface
-        public String getDeviceInfo() {
-            return "{\"platform\":\"Android\",\"model\":\"" + Build.MODEL + "\",\"manufacturer\":\"" + Build.MANUFACTURER + "\",\"sdk\":" + Build.VERSION.SDK_INT + "}";
-        }
-    }
+    public void onBackPressed() { if (webView.canGoBack()) webView.goBack(); else super.onBackPressed(); }
 }

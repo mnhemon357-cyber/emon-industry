@@ -5,13 +5,9 @@
   "display": "standalone",
   "background_color": "#09090b",
   "theme_color": "#09090b",
-  "description": "Building a Better Tomorrow. Beyond Future. A Company for Mankind.",
-  "icons": [
-    {
-      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIxIiBmaWxsPSIjMDkwOTBiIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyMiIgZmlsbD0iI2ZhZmFmYSIvPjxyZWN0IHg9IjAiIHk9IjQzIiB3aWR0aD0iNjQiIGhlaWdodD0iMjEiIGZpbGw9IiMyMmM1NWUiLz48cG9seWdvbiBwb2ludHM9IjAsMCAyMCwzMiAwLDY0IiBmaWxsPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMC42IiB5PSIwLjYiIHdpZHRoPSI2Mi44IiBoZWlnaHQ9IjYyLjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZhZmFmYSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjQwLDEwIDU2LDMyIDQwLDU0IDI0LDMyIiBmaWxsPSIjZmFmYWZhIiBzdHJva2U9IiMwOTA5MGIiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+",
-      "sizes": "64x64",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
+  "description": "Building a Better Tomorrow.",
+  "icons": [{
+    "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIxIiBmaWxsPSIjMDkwOTBiIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyMiIgZmlsbD0iI2ZhZmFmYSIvPjxyZWN0IHg9IjAiIHk9IjQzIiB3aWR0aD0iNjQiIGhlaWdodD0iMjEiIGZpbGw9IiMyMmM1NWUiLz48cG9seWdvbiBwb2ludHM9IjAsMCAyMCwzMiAwLDY0IiBmaWxsPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMC42IiB5PSIwLjYiIHdpZHRoPSI2Mi44IiBoZWlnaHQ9IjYyLjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZhZmFmYSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjQwLDEwIDU2LDMyIDQwLDU0IDI0LDMyIiBmaWxsPSIjZmFmYWZhIiBzdHJva2U9IiMwOTA5MGIiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+",
+    "sizes": "64x64", "type": "image/svg+xml", "purpose": "any maskable"
+  }]
 }
