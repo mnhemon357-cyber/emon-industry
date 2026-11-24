@@ -1,34 +1,57 @@
 package bd.emonindustry.academy;
+
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.view.ViewGroup;
 
 public class MainActivity extends Activity {
-  private WebView web;
-  @Override public void onCreate(Bundle state) {
-    super.onCreate(state);
-    getWindow().setStatusBarColor(0xFF09111E);
-    getWindow().setNavigationBarColor(0xFF09111E);
-    web = new WebView(this);
-    web.setLayoutParams(new ViewGroup.LayoutParams(-1,-1));
-    WebSettings s = web.getSettings();
-    s.setJavaScriptEnabled(true);
-    s.setDomStorageEnabled(true);
-    s.setAllowFileAccess(true);
-    s.setAllowContentAccess(false);
-    s.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
-    web.setWebViewClient(new WebViewClient());
-    setContentView(web);
-    web.loadUrl("file:///android_asset/index.html");
-  }
-  @Override public void onBackPressed() {
-    if (web != null && web.canGoBack()) web.goBack(); else super.onBackPressed();
-  }
-  @Override protected void onDestroy() {
-    if (web != null) { web.destroy(); web = null; }
-    super.onDestroy();
-  }
+    private WebView webView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        webView = new WebView(this);
+        WebSettings s = webView.getSettings();
+        
+        // Core Settings
+        s.setJavaScriptEnabled(true);
+        s.setDomStorageEnabled(true); // Enables localStorage for Sprint & Certs
+        s.setAllowFileAccess(true);
+        s.setAllowContentAccess(true);
+        s.setAllowFileAccessFromFileURLs(true);
+        s.setAllowUniversalAccessFromFileURLs(true);
+        
+        // Cache Busting: Force the app to load the newest HTML, not old cached versions
+        s.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        webView.clearCache(true);
+        webView.clearHistory();
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.addJavascriptInterface(new EmonBridge(), "EmonAndroid");
+        
+        // Load the local v6.0 OffSec portal
+        webView.loadUrl("file:///android_asset/index.html");
+        setContentView(webView);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView != null && webView.canGoBack()) webView.goBack();
+        else super.onBackPressed();
+    }
+
+    public class EmonBridge {
+        @JavascriptInterface
+        public String getDeviceInfo() {
+            return "{\"platform\":\"Android\",\"model\":\"" + Build.MODEL
+                 + "\",\"manufacturer\":\"" + Build.MANUFACTURER
+                 + "\",\"sdk\":" + Build.VERSION.SDK_INT + "}";
+        }
+        @JavascriptInterface
+        public String getVersion() { return "6.0"; }
+    }
 }
