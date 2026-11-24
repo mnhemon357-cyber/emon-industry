@@ -3,8 +3,4 @@
         <item name="android:windowBackground">@drawable/splash_background</item>
         <item name="android:statusBarColor">#09090b</item>
     </style>
-    <style name="Theme.EmonMain" parent="android:Theme.Material.NoActionBar">
-        <item name="android:statusBarColor">#09090b</item>
-        <item name="android:navigationBarColor">#09090b</item>
-    </style>
 </resources>
