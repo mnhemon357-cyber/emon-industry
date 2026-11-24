@@ -1,8 +1,0 @@
-:root {
-  --obsidian: #0A0F14;
-  --mainframe-cyan: #00FFCC;
-  --guardian-crimson: #FF2A5F;
-  --text: #E6F1F5;
-  font-family: "JetBrains Mono", ui-monospace, monospace;
-}
-body { background: var(--obsidian); color: var(--text); }
