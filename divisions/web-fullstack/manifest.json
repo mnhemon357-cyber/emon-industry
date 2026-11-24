@@ -1,0 +1,16 @@
+{
+  "name": "EMON INDUSTRY PVT LTD",
+  "short_name": "EMON INDUSTRY",
+  "description": "Building a Better Tomorrow — 6-Pillar Sovereign Mainframe",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070B10",
+  "theme_color": "#070B10",
+  "icons": [
+    {
+      "src": "assets/founder.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

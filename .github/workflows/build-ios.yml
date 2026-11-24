@@ -1,0 +1,28 @@
+name: Build EMON INDUSTRY iOS App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Mainframe Repository
+        uses: actions/checkout@v4
+
+      - name: Package iOS WebBundle & Swift Source Artifact
+        run: |
+          mkdir -p dist-ios/Payload/EmonIndustry.app
+          cp -r divisions/eios-mobile/EmonIndustryApp/* dist-ios/Payload/EmonIndustry.app/
+          cd dist-ios && zip -r ../EMON-INDUSTRY-iOS-v5.0.ipa Payload
+
+      - name: Upload iOS IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: EMON-INDUSTRY-iOS-v5.0-IPA
+          path: EMON-INDUSTRY-iOS-v5.0.ipa
