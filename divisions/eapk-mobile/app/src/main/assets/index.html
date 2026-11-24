@@ -50,7 +50,19 @@ select{font:inherit;font-size:15px;padding:8px;border:1.5px solid var(--ink);bor
 .dev img{width:96px;height:96px;border-radius:50%;border:3px solid var(--ink);object-fit:cover;flex:none}
 .dh{font-size:17px;margin:18px 0 6px}
 .dq{font:italic 18px/1.4 Georgia,serif;border-left:4px solid var(--r);padding:4px 12px;margin:14px 0}
-</style></head><body>
+</style>
+<meta property="og:title" content="EMON INDUSTRY PVT LTD">
+<meta property="og:description" content="Building a Better Tomorrow. Beyond Future | A Company for Mankind.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/founder.jpg">
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+  }
+</script>
+
+</head><body>
 <header><b>EMON INDUSTRY</b><input id="q" placeholder="Search divisions, days, certs"></header>
 <div id="sr"></div>
 
@@ -280,4 +292,16 @@ function toggleLang(e) {
   if(playHead) playHead.innerText = t.playground;
 }
 
-</script></body></html>
+</script>
+<div id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:20px;right:20px;background:var(--red);color:#fff;width:40px;height:40px;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;z-index:9999;font-weight:bold;font-family:var(--mono);box-shadow:0 4px 12px rgba(0,0,0,0.5);">↑</div>
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('back-to-top').style.display = window.scrollY > 300 ? 'flex' : 'none';
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.querySelector('.footer p');
+    if(footer) footer.innerHTML += " | © " + new Date().getFullYear();
+  });
+</script>
+
+</body></html>
