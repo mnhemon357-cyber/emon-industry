@@ -1,0 +1,6 @@
+Jan 1 10:00:01 server sshd[123]: Failed password for root from 192.168.1.50 port 22
+Jan 1 10:00:02 server sshd[124]: Failed password for root from 192.168.1.50 port 22
+Jan 1 10:00:03 server sshd[125]: Failed password for root from 192.168.1.50 port 22
+Jan 1 10:00:04 server sshd[126]: Failed password for admin from 192.168.1.50 port 22
+Jan 1 10:00:05 server sshd[127]: Failed password for root from 10.0.0.5 port 22
+Jan 1 10:00:06 server sshd[128]: Accepted password for root from 10.0.0.5 port 22
