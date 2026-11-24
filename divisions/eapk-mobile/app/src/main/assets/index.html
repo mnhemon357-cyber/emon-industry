@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>EMON INDUSTRY PVT LTD | Building a Better Tomorrow</title>
+<title>EMON INDUSTRY PVT LTD | Sovereign Mainframe v3.0</title>
 <style>
-:root{--bg:#070b10;--panel:#0d131c;--border:#1e2d3d;--cyan:#00ffcc;--green:#0e9f55;--red:#e62e3d;--text:#eef2f6;--muted:#8b9bb0}
+:root{--bg:#070b10;--panel:#0d131c;--border:#1e2d3d;--cyan:#00ffcc;--green:#0e9f55;--red:#e62e3d;--gold:#f5b041;--text:#eef2f6;--muted:#8b9bb0}
 *{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5}
 header{background:#0a0f17;border-bottom:1px solid var(--border);padding:12px 16px;position:sticky;top:0;z-index:200}
-.nav{max-width:1140px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.nav{max-width:1160px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .logo{display:flex;align-items:center;gap:10px;background:#fff;padding:6px 12px;border-radius:6px;border:1.5px solid #0b0e11;color:#0b0e11}
 .logo .t1{font-weight:900;font-size:18px;line-height:1}.logo .t2{font-weight:700;font-size:11px;letter-spacing:2px}.logo .t3{font-size:7.5px;font-weight:700;letter-spacing:.7px;margin-top:2px}
 .pill{font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--cyan);color:var(--cyan);background:rgba(0,255,204,.08);text-decoration:none}
 .pill-apk{background:var(--green);border-color:var(--green);color:#fff}
 .tabs{background:#0b111a;border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;position:sticky;top:64px;z-index:190}
-.tabs-in{max-width:1140px;margin:auto;display:flex;gap:4px;padding:8px 12px}
+.tabs-in{max-width:1160px;margin:auto;display:flex;gap:4px;padding:8px 12px}
 .tbtn{background:transparent;color:var(--muted);border:1px solid transparent;padding:8px 13px;border-radius:6px;font-size:12.5px;font-weight:700;cursor:pointer}
 .tbtn.active{background:rgba(0,255,204,.12);color:var(--cyan);border-color:var(--cyan)}
-.wrap{max-width:1140px;margin:auto;padding:18px 16px 65px}.panel{display:none}.panel.active{display:block}
+.wrap{max-width:1160px;margin:auto;padding:18px 16px 70px}.panel{display:none}.panel.active{display:block}
 .banner{background:linear-gradient(135deg,#0d1520,#091018);border:1px solid var(--border);border-left:4px solid var(--cyan);border-radius:10px;padding:18px;margin-bottom:18px}
 .banner h2{font-size:19px;margin-bottom:5px}.banner p{font-size:13px;color:var(--muted)}
-.sh{display:flex;justify-content:space-between;align-items:center;margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.sh{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 .sh h3{font-size:13.5px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:12px}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:18px}
 .pbox,.card,.stage{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px}
 .pbox{border-top:3px solid var(--cyan)}.stage{border-left:4px solid var(--green);margin-bottom:10px}
-.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
 .tr{font-size:11px;font-weight:800;color:var(--red)}.tc{font-size:11px;font-weight:700;color:var(--cyan);background:rgba(0,255,204,.08);padding:2px 8px;border-radius:4px}
+.tg{font-size:11px;font-weight:700;color:var(--gold);background:rgba(245,176,65,.1);padding:2px 8px;border-radius:4px}
 h4{font-size:15.5px;color:#fff;margin-bottom:5px}p,li{font-size:12.8px;color:var(--muted)}ul{padding-left:18px}
 .mini{display:flex;flex-wrap:wrap;gap:4px;margin-top:9px}.mini span{font-size:10px;padding:2px 6px;border-radius:4px;background:#090f17;border:1px solid var(--border);color:#b7c5d6}
 .pbar-bg{height:11px;background:#070b10;border-radius:999px;overflow:hidden;border:1px solid var(--border);margin-top:8px}
@@ -34,8 +35,12 @@ h4{font-size:15.5px;color:#fff;margin-bottom:5px}p,li{font-size:12.8px;color:var
 .frow{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.fbtn{background:var(--panel);color:var(--muted);border:1px solid var(--border);padding:6px 11px;border-radius:6px;font-size:12px;cursor:pointer}.fbtn.active{border-color:var(--cyan);color:var(--cyan)}
 .day{display:flex;align-items:flex-start;gap:10px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:11px 13px;margin-bottom:8px;cursor:pointer}
 .day.done{border-color:rgba(14,159,85,.7);background:rgba(14,159,85,.07)}.day input{width:17px;height:17px;margin-top:2px;accent-color:var(--cyan)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
-.b-cyan{background:var(--cyan);color:#05080c}.b-green{background:var(--green);color:#fff}.b-dark{background:#090f17;color:var(--text);border:1px solid var(--border)}
+.todo-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:10px}
+.todo-card.done{border-color:rgba(14,159,85,.7);opacity:.82}
+.guide-box{margin-top:9px;background:#070b10;border-left:3px solid var(--green);padding:9px 11px;border-radius:4px;font-size:12.2px;color:#cde0d5;white-space:pre-line;font-family:monospace}
+.cmd-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#05080c;border:1px solid var(--border);padding:8px 10px;border-radius:6px;margin-top:8px;font-family:monospace;font-size:11.5px;color:var(--cyan);overflow-x:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+.b-cyan{background:var(--cyan);color:#05080c}.b-green{background:var(--green);color:#fff}.b-dark{background:#090f17;color:var(--text);border:1px solid var(--border)}.b-red{background:rgba(230,46,61,.15);color:#ff6b78;border:1px solid rgba(230,46,61,.4)}
 input,select,textarea{width:100%;background:#070b10;border:1px solid var(--border);color:var(--text);padding:9px;border-radius:6px;margin-top:8px;font-size:13px}
 .out{margin-top:9px;background:#05080c;border-left:3px solid var(--cyan);padding:9px;font-size:12px;color:var(--cyan);white-space:pre-wrap;font-family:monospace}
 footer{text-align:center;padding:22px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
@@ -56,31 +61,83 @@ footer{text-align:center;padding:22px;border-top:1px solid var(--border);color:v
     <div><div class="t1">EMON</div><div class="t2">INDUSTRY</div><div class="t3">&mdash; BUILDING A BETTER TOMORROW &mdash;</div></div>
   </div>
   <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-    <span class="pill" id="badge">MAINFRAME ONLINE</span>
+    <span class="pill" id="badge">MAINFRAME v3.0</span>
     <a class="pill pill-apk" href="https://github.com/mnhemon357-cyber/emon-industry/releases/latest" target="_blank">DOWNLOAD APK</a>
   </div>
 </div></header>
 
 <nav class="tabs"><div class="tabs-in">
-  <button class="tbtn active" onclick="go('p1',this)">1. 6-Pillar &amp; 9 Divisions</button>
-  <button class="tbtn" onclick="go('p2',this)">2. 29-Day Sprint</button>
-  <button class="tbtn" onclick="go('p3',this)">3. 14 Free Certs</button>
-  <button class="tbtn" onclick="go('p4',this)">4. Full Pathway Guide</button>
-  <button class="tbtn" onclick="go('p5',this)">5. Live Engines</button>
-  <button class="tbtn" onclick="go('p6',this)">6. Legal &amp; APK Hub</button>
+  <button class="tbtn active" onclick="go('t1',this)">1. Master To-Do &amp; Guides</button>
+  <button class="tbtn" onclick="go('t2',this)">2. 6-Pillar &amp; 9 Divisions</button>
+  <button class="tbtn" onclick="go('t3',this)">3. 29-Day Sprint</button>
+  <button class="tbtn" onclick="go('t4',this)">4. 14 Free Certs</button>
+  <button class="tbtn" onclick="go('t5',this)">5. Pathway &amp; CLI Vault</button>
+  <button class="tbtn" onclick="go('t6',this)">6. Live Engines</button>
+  <button class="tbtn" onclick="go('t7',this)">7. Legal &amp; APK Hub</button>
 </div></nav>
 
 <main class="wrap">
-<section id="p1" class="panel active">
-  <div class="banner"><h2>Sovereign 6-Pillar System Across 9 Specialized Divisions</h2><p>Every division inside EMON INDUSTRY PVT LTD follows the exact 6-Pillar industrial cycle from low-level engineering to international revenue.</p></div>
+<!-- TAB 1: MASTER TO-DO & STEP-BY-STEP GUIDE LISTINGS -->
+<section id="t1" class="panel active">
+  <div class="banner">
+    <h2>Master To-Do &amp; Step-by-Step Execution Guide Listings</h2>
+    <p>Complete operational task manager pre-loaded with every action guide from our conversation—synced to SQLite locally and offline storage in your Android APK. Add your own tasks anytime.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="top"><h4>+ Add New Action To-Do &amp; Guide</h4><span class="tc" id="todoModeTag">SQLITE + OFFLINE SYNC</span></div>
+    <div class="grid">
+      <div><input type="text" id="tdTitle" placeholder="Task Title (e.g., Pitch EPrinter to 5 Dhaka universities)"></div>
+      <div style="display:flex;gap:8px">
+        <select id="tdCat">
+          <option value="Infrastructure">Infrastructure &amp; CI</option>
+          <option value="Division Build">Division Engineering</option>
+          <option value="Certifications">Certifications</option>
+          <option value="Legal & Revenue">Legal &amp; Revenue</option>
+          <option value="Mobile & Store">Mobile &amp; APK</option>
+        </select>
+        <select id="tdPrio">
+          <option value="HIGH">HIGH PRIORITY</option>
+          <option value="MEDIUM">MEDIUM</option>
+          <option value="LOW">LOW</option>
+        </select>
+      </div>
+    </div>
+    <textarea id="tdGuide" rows="2" placeholder="Step-by-step execution guide or terminal commands for this task..."></textarea>
+    <button class="btn b-cyan" style="margin-top:10px" onclick="addTodo()">ADD TO MASTER TO-DO LIST</button>
+  </div>
+
+  <div class="card" style="margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+      <strong id="tcount">Completed: 0 / 0 Tasks (0%)</strong>
+      <button class="btn b-dark" onclick="resetTodos()">Restore Default Guides</button>
+    </div>
+    <div class="pbar-bg"><div class="pbar" id="tbar"></div></div>
+  </div>
+
+  <div class="frow">
+    <button class="fbtn active" onclick="fTodo('ALL',this)">All Guides</button>
+    <button class="fbtn" onclick="fTodo('Infrastructure',this)">Infrastructure</button>
+    <button class="fbtn" onclick="fTodo('Division Build',this)">Division Builds</button>
+    <button class="fbtn" onclick="fTodo('Certifications',this)">Certifications</button>
+    <button class="fbtn" onclick="fTodo('Legal & Revenue',this)">Legal &amp; Revenue</button>
+    <button class="fbtn" onclick="fTodo('Mobile & Store',this)">Mobile &amp; APK</button>
+  </div>
+  <div id="todoList"></div>
+</section>
+
+<!-- TAB 2: 6 PILLARS & 9 DIVISIONS -->
+<section id="t2" class="panel">
+  <div class="banner"><h2>Sovereign 6-Pillar System Across 9 Specialized Divisions</h2><p>Every division inside EMON INDUSTRY PVT LTD executes the exact same 6-Pillar industrial lifecycle from engineering to commercial revenue.</p></div>
   <div class="sh"><h3>The 6-Pillar Sovereign Framework</h3><span class="tc">ALL 9 DIVISIONS</span></div>
   <div class="pgrid" id="pillars"></div>
   <div class="sh"><h3>9 Sovereign Divisions Matrix</h3><span class="tc">OPERATIONAL</span></div>
   <div class="grid" id="divs"></div>
 </section>
 
-<section id="p2" class="panel">
-  <div class="banner"><h2>29-Day Sovereign Execution Sprint</h2><p>Tap any day to mark it complete. Progress saves automatically on your browser and Android APK.</p></div>
+<!-- TAB 3: 29-DAY SPRINT -->
+<section id="t3" class="panel">
+  <div class="banner"><h2>29-Day Sovereign Execution Sprint</h2><p>Tap any day to mark it complete. Progress saves automatically across sessions.</p></div>
   <div class="card"><div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><strong id="scount">Progress: 0 / 29 Days (0%)</strong><button class="btn b-dark" onclick="resetS()">Reset</button></div><div class="pbar-bg"><div class="pbar" id="sbar"></div></div></div>
   <div class="frow">
     <button class="fbtn active" onclick="filt('all',this)">All 29 Days</button>
@@ -92,31 +149,39 @@ footer{text-align:center;padding:22px;border-top:1px solid var(--border);color:v
   <div id="slist"></div>
 </section>
 
-<section id="p3" class="panel">
-  <div class="banner"><h2>14-Step Free Global Certification Roadmap ("What After What")</h2><p>100% free international courses ordered from zero experience to enterprise architecture. Tap any button to enroll free.</p></div>
+<!-- TAB 4: 14 FREE CERTIFICATIONS -->
+<section id="t4" class="panel">
+  <div class="banner"><h2>14-Step Free Global Certification Roadmap ("What After What")</h2><p>100% free international credentials ordered from zero experience to enterprise architecture. Tap any button to enroll free.</p></div>
   <div class="sh"><h3 id="ccount">Earned Credentials: 0 / 14</h3><span class="tc">100% FREE LINKS</span></div>
   <div class="grid" id="certs"></div>
 </section>
 
-<section id="p4" class="panel">
-  <div class="banner"><h2>Child-to-Enterprise Zero-to-Global Pathway Guide</h2><p>Complete technical, security, AI, and corporate blueprint from binary basics on mobile to global holding scale.</p></div>
+<!-- TAB 5: FULL PATHWAY & CLI COMMAND VAULT -->
+<section id="t5" class="panel">
+  <div class="banner"><h2>Child-to-Enterprise Pathway Guide &amp; Terminal Command Vault</h2><p>Complete zero-to-global blueprint plus one-tap copyable commands for Termux, Kali NetHunter, and local servers.</p></div>
+  <div class="sh"><h3>One-Tap Sovereign Terminal Command Vault</h3><span class="tc">TERMUX / KALI</span></div>
+  <div class="grid" style="margin-bottom:18px" id="cmdVault"></div>
+  <div class="sh"><h3>6-Stage Zero-to-Global Execution Blueprint</h3><span class="tc">MASTER GUIDE</span></div>
   <div id="path"></div>
 </section>
 
-<section id="p5" class="panel">
-  <div class="banner"><h2>Live Division Engines (SQLite Backend + Offline APK Mode)</h2><p>Run instant EPrinter BDT quotes, 29A node diagnostics, and Efirm client inquiries.</p></div>
+<!-- TAB 6: LIVE DIVISION ENGINES -->
+<section id="t6" class="panel">
+  <div class="banner"><h2>Live Division Engines (SQLite Backend + Offline APK Mode)</h2><p>Operate Emontron + Motior Pharma live clinical vitals, EPrinter BDT quotes, 29A security audits, and Efirm client desk.</p></div>
   <div class="grid">
+    <div class="card"><div class="top"><h4>Emontron + Motior Pharma Vitals</h4><span class="tr">DIV-01 &amp; 09</span></div><p>Stream C-simulated patient/device telemetry (Temp °C, SpO2 %, Heart BPM).</p><button class="btn b-green" style="width:100%;margin-top:9px" onclick="sampleVitals()">SAMPLE LIVE VITALS</button><div class="out" id="vout">Click above to sample biometric sensors...</div></div>
     <div class="card"><div class="top"><h4>EPrinter Cloud Quote</h4><span class="tr">DIV-08</span></div><p>Instant A4 print pricing in BDT.</p><input type="number" id="pg" value="50" min="1"><select id="pm"><option value="bw">Black &amp; White (2 BDT/page)</option><option value="color">Color Laser (5 BDT/page)</option></select><button class="btn b-cyan" style="width:100%;margin-top:9px" onclick="qCalc()">CALCULATE QUOTE</button><div class="out" id="qout">Ready...</div></div>
-    <div class="card"><div class="top"><h4>29A Node Security Audit</h4><span class="tr">DIV-03</span></div><p>Verify host sockets &amp; runtime posture.</p><input type="text" value="127.0.0.1 // LOCAL NODE" readonly><button class="btn b-cyan" style="width:100%;margin-top:9px" onclick="audit()">RUN 29A SCAN</button><div class="out" id="aout">Ready...</div></div>
+    <div class="card"><div class="top"><h4>29A Node Security Audit</h4><span class="tr">DIV-03</span></div><p>Verify host sockets, SHA-256 hash &amp; runtime posture.</p><input type="text" value="127.0.0.1 // LOCAL NODE" readonly><button class="btn b-cyan" style="width:100%;margin-top:9px" onclick="audit()">RUN 29A SCAN</button><div class="out" id="aout">Ready...</div></div>
     <div class="card"><div class="top"><h4>Efirm Client Desk</h4><span class="tr">DIV-06</span></div><p>Dispatch project or investor inquiries.</p><input type="text" id="cn" placeholder="Name / Company"><input type="email" id="ce" placeholder="Email"><textarea id="cm" rows="2" placeholder="Project scope"></textarea><button class="btn b-cyan" style="width:100%;margin-top:9px" onclick="inq()">SUBMIT INQUIRY</button><div class="out" id="iout">SQLite &amp; Offline Relay Ready.</div></div>
   </div>
 </section>
 
-<section id="p6" class="panel">
-  <div class="banner"><h2>Android APK Hub &amp; Bangladesh / Global Legal Incorporation</h2><p>Direct APK downloads, live repository links, and RJSC + international compliance roadmap.</p></div>
+<!-- TAB 7: LEGAL & APK HUB -->
+<section id="t7" class="panel">
+  <div class="banner"><h2>Official Android APK Hub &amp; Bangladesh / Global Legal Roadmap</h2><p>Direct APK downloads, live repository links, RJSC incorporation checklist, and Play Store release guide.</p></div>
   <div class="grid" style="margin-bottom:18px">
-    <div class="card"><div class="top"><h4>Official Android App (EAPK)</h4><span class="tc">APK v2.0</span></div><p>Native Android app with official EMON INDUSTRY emblem, offline 29-day tracker, and free certification hub.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn b-green" href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank">DIRECT DOWNLOAD .APK</a><a class="btn b-dark" href="https://github.com/mnhemon357-cyber/emon-industry/releases" target="_blank">RELEASES</a></div></div>
-    <div class="card"><div class="top"><h4>Live Website &amp; Source Code</h4><span class="tc">CI/CD GREEN</span></div><p>Synchronized across Termux/Kali, Internal Storage, GitHub Pages, and Android.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn b-cyan" href="https://mnhemon357-cyber.github.io/emon-industry/" target="_blank">LIVE WEBSITE</a><a class="btn b-dark" href="https://github.com/mnhemon357-cyber/emon-industry" target="_blank">GITHUB REPO</a></div></div>
+    <div class="card"><div class="top"><h4>Official Android App (EAPK)</h4><span class="tc">APK v3.0</span></div><p>Native Android app with official EMON INDUSTRY emblem, Master To-Do Guide, 29-day sprint, and free certification hub.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn b-green" href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank">DIRECT DOWNLOAD .APK</a><a class="btn b-dark" href="https://github.com/mnhemon357-cyber/emon-industry/releases" target="_blank">RELEASES</a></div></div>
+    <div class="card"><div class="top"><h4>Live Website &amp; GitHub Mainframe</h4><span class="tc">CI/CD GREEN</span></div><p>Synchronized across Termux/Kali, Phone Internal Storage, GitHub Pages, and Android.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><a class="btn b-cyan" href="https://mnhemon357-cyber.github.io/emon-industry/" target="_blank">LIVE WEBSITE</a><a class="btn b-dark" href="https://github.com/mnhemon357-cyber/emon-industry" target="_blank">GITHUB REPO</a></div></div>
   </div>
   <div class="sh"><h3>Bangladesh RJSC &amp; Global Expansion Checklist</h3><span class="tc">LEGAL &amp; BANKING</span></div>
   <div class="grid">
@@ -125,12 +190,96 @@ footer{text-align:center;padding:22px;border-top:1px solid var(--border);color:v
   </div>
 </section>
 </main>
-<footer>&copy; 2026 EMON INDUSTRY PVT LTD &bull; Building a Better Tomorrow &bull; 6-Pillar Sovereign Mainframe</footer>
+<footer>&copy; 2026 EMON INDUSTRY PVT LTD &bull; Building a Better Tomorrow &bull; Sovereign Mainframe v3.0</footer>
 
 <script>
 function go(id,b){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.tbtn').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');b.classList.add('active')}
 if(window.EmonAndroid)document.getElementById('badge').textContent='ANDROID APP: '+window.EmonAndroid.getDeviceInfo();
 
+// --- TAB 1: MASTER TO-DO & STEP-BY-STEP GUIDE MANAGER ---
+const SEED_TODOS=[
+  {id:1,category:"Infrastructure",priority:"HIGH",done:false,title:"Install Official EMON INDUSTRY v3.0 APK on Android",guide:"1. Tap 'DOWNLOAD APK' in header or Tab 7.\n2. Open EMON-INDUSTRY-v1.0.apk and approve installation.\n3. Verify the official emblem icon on your Android home screen."},
+  {id:2,category:"Infrastructure",priority:"HIGH",done:false,title:"Sync Local Termux/Kali Workspace to Phone Storage & GitHub",guide:"1. Run: emon-sync \"Updated mainframe\"\n2. Verify mirror at Internal storage > EMON INDUSTRY PVT LTD.\n3. Verify live site at https://mnhemon357-cyber.github.io/emon-industry/"},
+  {id:3,category:"Division Build",priority:"HIGH",done:false,title:"Milestone 3A: Run Emontron C + Motior Pharma Telemetry",guide:"1. Run: ./divisions/emontron/biometric_sim\n2. Start server: python3 divisions/web-fullstack/server.py\n3. Open Tab 6 and tap 'SAMPLE LIVE VITALS'."},
+  {id:4,category:"Division Build",priority:"MEDIUM",done:false,title:"Milestone 3B: Execute EOS (Inhealer OS) Hardening Profile",guide:"1. Run: bash divisions/eos-inhealer/harden_eos.sh\n2. Verify UFW firewall default-deny rules and SSH security posture."},
+  {id:5,category:"Certifications",priority:"HIGH",done:false,title:"Milestone 3C: Complete Cert #01 (Cisco Linux Unhatched)",guide:"1. Open Tab 4 and tap 'OPEN FREE COURSE' on Step 01.\n2. Complete all labs on netacad.com.\n3. Save PDF certificate in ~/emon-industry/docs/certificates/ and run emon-sync."},
+  {id:6,category:"Legal & Revenue",priority:"HIGH",done:false,title:"Apply for RJSC Name Clearance (EMON INDUSTRY PVT. LTD.)",guide:"1. Register at roc.gov.bd and submit Name Clearance.\n2. Draft MOA/AOA covering Software, Security, Hardware IoT, Print & Pharma Tech."},
+  {id:7,category:"Legal & Revenue",priority:"MEDIUM",done:false,title:"Obtain NBR e-TIN, Dhaka Trade License & 13-Digit BIN",guide:"1. Register company e-TIN at incometax.gov.bd.\n2. Obtain City Corporation Trade License & VAT BIN (vat.gov.bd).\n3. Join BASIS for software tax exemption."},
+  {id:8,category:"Legal & Revenue",priority:"HIGH",done:false,title:"Pitch EPrinter B2B Printing & 29A Web Security Audits",guide:"1. Use EPrinter BDT calculator (2 BDT B&W / 5 BDT Color) for 10 Dhaka offices.\n2. Deliver 1-page 29A security audit proposals to SME websites."},
+  {id:9,category:"Mobile & Store",priority:"LOW",done:false,title:"Generate Release Keystore (.jks) for Google Play Store",guide:"1. Run: keytool -genkey -v -keystore emon-release.jks -keyalg RSA -keysize 2048 -validity 10000 -alias emon\n2. Configure signingConfigs in divisions/eapk-mobile/app/build.gradle."}
+];
+let todos=JSON.parse(localStorage.getItem('emon_todos_v3')||'null')||JSON.parse(JSON.stringify(SEED_TODOS));
+let todoFilter='ALL',useApiTodos=false;
+
+async function syncTodosFromServer(){
+  try{
+    const r=await fetch('/api/todos');if(!r.ok)throw 0;
+    const d=await r.json();
+    if(d.todos&&d.todos.length){todos=d.todos;useApiTodos=true;document.getElementById('todoModeTag').textContent='SQLITE DB CONNECTED';renderTodos();}
+  }catch(e){}
+}
+
+function saveLocalTodos(){localStorage.setItem('emon_todos_v3',JSON.stringify(todos))}
+
+function renderTodos(){
+  const box=document.getElementById('todoList');
+  let done=0,html='';
+  todos.forEach(t=>{
+    if(t.done)done++;
+    if(todoFilter!=='ALL'&&t.category!==todoFilter)return;
+    const pBadge=t.priority==='HIGH'?'tr':(t.priority==='MEDIUM'?'tg':'tc');
+    html+=`<div class="todo-card ${t.done?'done':''}">
+      <div class="top">
+        <div style="display:flex;align-items:center;gap:8px">
+          <input type="checkbox" style="width:17px;height:17px;margin:0;accent-color:var(--cyan)" ${t.done?'checked':''} onchange="toggleTodo(${t.id})">
+          <strong style="font-size:14px;color:#fff;${t.done?'text-decoration:line-through':''}">${t.title}</strong>
+        </div>
+        <div style="display:flex;gap:6px;align-items:center">
+          <span class="tc">${t.category}</span>
+          <span class="${pBadge}">${t.priority}</span>
+          <button class="btn b-red" style="padding:3px 8px;font-size:11px" onclick="delTodo(${t.id})">X</button>
+        </div>
+      </div>
+      <div class="guide-box">${t.guide}</div>
+    </div>`;
+  });
+  box.innerHTML=html||'<p>No tasks in this category.</p>';
+  const pct=todos.length?Math.round(done/todos.length*100):0;
+  document.getElementById('tcount').textContent=`Completed: ${done} / ${todos.length} Tasks (${pct}%)`;
+  document.getElementById('tbar').style.width=pct+'%';
+}
+
+async function addTodo(){
+  const title=document.getElementById('tdTitle').value.trim();
+  const category=document.getElementById('tdCat').value;
+  const priority=document.getElementById('tdPrio').value;
+  const guide=document.getElementById('tdGuide').value.trim()||"1. Learn -> 2. Build -> 3. Validate -> 4. Publish -> 5. Brand -> 6. Earn.";
+  if(!title)return;
+  if(useApiTodos){
+    await fetch('/api/todos',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({category,priority,title,guide})});
+    await syncTodosFromServer();
+  }else{
+    todos.unshift({id:Date.now(),category,priority,title,guide,done:false});
+    saveLocalTodos();renderTodos();
+  }
+  document.getElementById('tdTitle').value='';document.getElementById('tdGuide').value='';
+}
+
+async function toggleTodo(id){
+  if(useApiTodos){await fetch('/api/todos/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})});await syncTodosFromServer();}
+  else{todos=todos.map(t=>t.id===id?{...t,done:!t.done}:t);saveLocalTodos();renderTodos();}
+}
+
+async function delTodo(id){
+  if(useApiTodos){await fetch('/api/todos/delete',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})});await syncTodosFromServer();}
+  else{todos=todos.filter(t=>t.id!==id);saveLocalTodos();renderTodos();}
+}
+
+function fTodo(c,b){todoFilter=c;document.querySelectorAll('#t1 .fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderTodos()}
+function resetTodos(){todos=JSON.parse(JSON.stringify(SEED_TODOS));saveLocalTodos();renderTodos()}
+renderTodos();syncTodosFromServer();
+
+// --- TAB 2: 6 PILLARS & 9 DIVISIONS ---
 const PILLARS=[
   ["PILLAR 01","1. LEARN","Master low-level CS, RFC manuals, and 14 free international certifications."],
   ["PILLAR 02","2. BUILD","Write clean production code in C, Python, Raku, Java, and Shell."],
@@ -154,6 +303,7 @@ const DIVS=[
 ];
 document.getElementById('divs').innerHTML=DIVS.map(d=>`<div class="card"><div class="top"><h4>${d[1]}</h4><span class="tr">${d[0]}</span></div><p>${d[3]}</p><div style="margin-top:8px"><span class="tc">${d[2]}</span></div><div class="mini"><span>1.Learn</span><span>2.Build</span><span>3.Validate</span><span>4.Publish</span><span>5.Brand</span><span>6.Earn</span></div></div>`).join('');
 
+// --- TAB 3: 29-DAY SPRINT ---
 const DAYS=[
   [1,"w1","Day 01: Sovereign Mainframe & Git Setup","Initialize emon-industry repo, 9 divisions, and PAT authentication."],
   [2,"w1","Day 02: Emontron C Sensor Core","Compile native C biometric & voltage telemetry simulator."],
@@ -199,10 +349,11 @@ function rSprint(){
   document.getElementById('sbar').style.width=pct+'%';
 }
 function tDay(d){sd[d]=!sd[d];localStorage.setItem('emon_s29',JSON.stringify(sd));rSprint()}
-function filt(w,b){wf=w;document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');rSprint()}
+function filt(w,b){wf=w;document.querySelectorAll('#t3 .fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');rSprint()}
 function resetS(){sd={};localStorage.setItem('emon_s29','{}');rSprint()}
 rSprint();
 
+// --- TAB 4: 14 FREE CERTIFICATIONS ---
 const CERTS=[
   ["STEP 01","Cisco NDG Linux Unhatched","Cisco NetAcad","EOS / Inhealer","https://www.netacad.com/courses/linux-unhatched","Linux CLI navigation, permissions, and file systems."],
   ["STEP 02","Introduction to Cybersecurity","Cisco NetAcad","Esecurity","https://www.netacad.com/courses/introduction-to-cybersecurity","Threat landscape, malware defense, and SOC foundations."],
@@ -232,6 +383,16 @@ function rCerts(){
 function tCert(i){ec[i]=!ec[i];localStorage.setItem('emon_c14',JSON.stringify(ec));rCerts()}
 rCerts();
 
+// --- TAB 5: PATHWAY & CLI VAULT ---
+const CMDS=[
+  ["Sync Phone Storage + GitHub","emon-sync \"Update mainframe\""],
+  ["Start Full-Stack SQLite Server","python3 ~/emon-industry/divisions/web-fullstack/server.py"],
+  ["Run Emontron C Biometric Sensor","~/emon-industry/divisions/emontron/biometric_sim"],
+  ["Run EOS Sovereign Hardening","bash ~/emon-industry/divisions/eos-inhealer/harden_eos.sh"]
+];
+document.getElementById('cmdVault').innerHTML=CMDS.map((c,i)=>`<div class="card"><div class="top"><h4>${c[0]}</h4><span class="tc">CLI</span></div><div class="cmd-row"><span id="cmd_${i}">${c[1]}</span><button class="btn b-cyan" style="padding:4px 9px;font-size:11px" onclick="copyCmd(${i},this)">COPY</button></div></div>`).join('');
+function copyCmd(i,b){navigator.clipboard?.writeText(document.getElementById('cmd_'+i).textContent);b.textContent='COPIED';setTimeout(()=>b.textContent='COPY',1500)}
+
 const PATH=[
   ["Stage 1: Machine Core, Binary & C Hardware Logic (Emontron)",["Master CPU registers, RAM addresses, bits/bytes, and binary logic.","Compile native C programs with GCC (gcc main.c -o app).","Simulate embedded temperature, SpO2, and voltage sensors."]],
   ["Stage 2: Sovereign Linux OS & Shell Automation (EOS / Inhealer)",["Master /etc, /var, /opt, chmod/chown permissions, and systemd.","Write Bash automation and Raku regex log filters for Esecurity.","Harden servers with UFW firewalls and SSH key authentication."]],
@@ -242,6 +403,15 @@ const PATH=[
 ];
 document.getElementById('path').innerHTML=PATH.map(s=>`<div class="stage"><h4>${s[0]}</h4><ul>${s[1].map(li=>`<li>${li}</li>`).join('')}</ul></div>`).join('');
 
+// --- TAB 6: LIVE ENGINES ---
+async function sampleVitals(){
+  const o=document.getElementById('vout');
+  try{const r=await fetch('/api/telemetry');if(!r.ok)throw 0;o.textContent=JSON.stringify(await r.json(),null,2)}
+  catch(e){
+    const t=(36.4+Math.random()*1.2).toFixed(1),sp=96+Math.floor(Math.random()*4),bpm=68+Math.floor(Math.random()*22);
+    o.textContent=JSON.stringify({source:"Emontron DIV-01 -> Motior Pharma DIV-09",temp_c:Number(t),spo2_pct:sp,heart_bpm:bpm,clinical_status:t>37.5?"ALERT":"NORMAL"},null,2);
+  }
+}
 async function qCalc(){const p=Math.max(1,parseInt(document.getElementById('pg').value||'1',10)),m=document.getElementById('pm').value,o=document.getElementById('qout');try{const r=await fetch('/api/quote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pages:p,mode:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[DB ORDER #${d.order_id}] ${d.pages} pages (${d.mode.toUpperCase()}) = BDT ${d.total_bdt}`}catch(e){o.textContent=`[INSTANT QUOTE] ${p} pages (${m.toUpperCase()}) = BDT ${p*(m==='color'?5:2)}`}}
 async function audit(){const o=document.getElementById('aout');o.textContent='Scanning...';try{const r=await fetch('/api/scan');if(!r.ok)throw 0;o.textContent=JSON.stringify(await r.json(),null,2)}catch(e){o.textContent=JSON.stringify({agency:"29A Cyber Guardian",runtime:window.EmonAndroid?"Native Android APK":"Web Portal",device:window.EmonAndroid?window.EmonAndroid.getDeviceInfo():navigator.platform,status:"VERIFIED CLEAN"},null,2)}}
 async function inq(){const n=document.getElementById('cn').value.trim(),e=document.getElementById('ce').value.trim(),m=document.getElementById('cm').value.trim(),o=document.getElementById('iout');if(!n||!e){o.textContent='Enter Name and Email.';return}try{const r=await fetch('/api/inquiries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,email:e,message:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[SAVED TO DB] Ticket #${d.ticket_id} logged for ${n}.`}catch(err){o.textContent=`[LOGGED] Inquiry saved for ${n} (${e}).`}}
