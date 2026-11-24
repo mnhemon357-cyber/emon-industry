@@ -132,6 +132,22 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
 .terminal-box{background:#000;border:1px solid var(--border);padding:16px;font-family:var(--mono);font-size:12px;color:var(--green);height:200px;overflow-y:auto;line-height:1.5}
 .terminal-box span{color:var(--red)}
 @media(max-width:768px){.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);flex-direction:column;padding:16px;gap:16px}.nav.open{display:flex}.menu-btn{display:block}.hero{padding:60px 20px}.section{padding:60px 20px}.modal-content{padding:24px}.tools-grid{grid-template-columns:1fr}}
+
+/* ==== FOUNDER SECTION ==== */
+.founder-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; border-top: 1px solid var(--border); }
+.founder-grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start; }
+.founder-photo { width: 100%; border: 2px solid var(--border); filter: grayscale(100%) contrast(1.2); transition: filter 0.3s; }
+.founder-photo:hover { filter: grayscale(0%) contrast(1); border-color: var(--red); }
+.founder-name { font-size: 32px; font-weight: 900; margin-bottom: 4px; letter-spacing: -0.5px; }
+.founder-role { color: var(--red); font-family: var(--mono); font-size: 13px; font-weight: 700; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 1px; }
+.founder-bio { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.8; }
+.founder-quote { border-left: 3px solid var(--green); padding-left: 16px; font-style: italic; color: var(--text); margin-bottom: 24px; font-family: var(--mono); font-size: 14px; }
+.founder-skills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.skill-tag { background: var(--surface-hover); border: 1px solid var(--border); padding: 6px 12px; font-size: 11px; font-family: var(--mono); color: var(--text); font-weight: 700; }
+.founder-links a { display: inline-block; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; text-decoration: none; font-family: var(--mono); font-size: 12px; margin-right: 12px; margin-bottom: 8px; transition: all 0.2s; }
+.founder-links a:hover { border-color: var(--green); color: var(--green); }
+@media(max-width: 768px) { .founder-grid { grid-template-columns: 1fr; } .founder-photo { max-width: 250px; margin: 0 auto; display: block; } }
+
 </style>
 </head>
 <body>
@@ -158,6 +174,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <a href="#sprint">Sprint</a>
     <a href="#certs">Certs</a>
     <a href="#telemetry">Live Data</a>
+    <a href="#founder">Founder</a>
     <a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" class="btn-download">⬇ DOWNLOAD APK</a>
   </nav>
   <button class="menu-btn" onclick="document.getElementById('main-nav').classList.toggle('open')">☰</button>
@@ -268,6 +285,39 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:
     <div class="tab-body" id="modal-body"></div>
   </div>
 </div>
+
+
+<section id="founder" class="founder-section">
+  <div class="section-head"><h2>Founder & Lead Architect</h2><p>The mind behind EMON INDUSTRY.</p></div>
+  <div class="founder-grid">
+    <div>
+      <img src="assets/founder.jpg" alt="MD Nazmul Hossain" class="founder-photo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style='padding:80px 0; text-align:center; border:2px dashed var(--border); color:var(--text-muted); font-family:var(--mono);'>📷 NO PHOTO<br><br>Save image as<br>docs/assets/founder.jpg</div>'">
+    </div>
+    <div>
+      <div class="founder-name">MD Nazmul Hossain</div>
+      <div class="founder-role">Founder & Principal Architect</div>
+      <div class="founder-bio">
+        Motivated and detail-oriented Computer Science & Engineering undergraduate at Daffodil International University, Dhaka. Passionate about sovereign infrastructure, cybersecurity, and developing zero-bloat enterprise applications. Experienced in Linux environments, low-level programming, and creative digital branding.
+      </div>
+      <div class="founder-quote">"Everybody has a complete view of completeness."</div>
+      <div class="founder-skills">
+        <span class="skill-tag">Raku</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">Linux (Kali)</span>
+        <span class="skill-tag">Pentesting</span>
+        <span class="skill-tag">AI/ML</span>
+        <span class="skill-tag">HTML/CSS</span>
+      </div>
+      <div class="founder-links">
+        <a href="mailto:mnhemon357@gmail.com">📧 Email</a>
+        <a href="https://357.wordpress.com" target="_blank">🌐 Portfolio</a>
+        <a href="https://facebook.com/profile.php?id=100077713088455" target="_blank">📘 Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <p>© EMON INDUSTRY PVT LTD · SECURE SYSTEM</p>
