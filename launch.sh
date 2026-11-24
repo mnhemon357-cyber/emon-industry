@@ -1,35 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/bash
-set -eu
-
-ROOT="$HOME/emon-industry"
-PORT=9000
-URL="http://127.0.0.1:$PORT/"
-
-cd "$ROOT"
-mkdir -p logs
-
-echo "=== EMON INDUSTRY v5.0 ==="
-
-if curl -fsS "$URL" >/dev/null 2>&1; then
-    echo "[ONLINE] Existing dashboard detected"
-    echo "$URL"
-    exit 0
-fi
-
-echo "[START] Starting dashboard..."
-
-nohup python3 -m http.server "$PORT" \
-  --bind 127.0.0.1 \
-  --directory "$ROOT/docs" \
-  > "$ROOT/logs/web.log" 2>&1 &
-
-echo $! > "$ROOT/logs/web.pid"
-sleep 2
-
-if curl -fsS "$URL" >/dev/null; then
-    echo "[SUCCESS] Dashboard online"
-else
-    echo "[FAILED] Check logs/web.log"
-    cat "$ROOT/logs/web.log"
-    exit 1
-fi
+#!/usr/bin/env bash
+set -e; cd "$HOME/emon-industry"; mkdir -p logs
+if [ -f .emon-server.pid ] && kill -0 "$(cat .emon-server.pid)" 2>/dev/null; then echo "Already running"; exit 0; fi
+nohup env PORT="${PORT:-9000}" python3 divisions/web-fullstack/server.py >logs/server.log 2>&1 & echo $! >.emon-server.pid
+sleep 1; kill -0 "$(cat .emon-server.pid)" 2>/dev/null || { echo 'Server failed; see logs/server.log'; exit 1; }
+echo "Open http://127.0.0.1:${PORT:-9000}"

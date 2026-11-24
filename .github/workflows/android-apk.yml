@@ -20,7 +20,7 @@ jobs:
       - name: Build debug APK
         working-directory: divisions/eapk-mobile
         run: gradle assembleDebug
-      - name: Upload APK artifact
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: emon-academy-debug-apk

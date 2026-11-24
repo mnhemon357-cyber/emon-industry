@@ -1,22 +1,25 @@
-# EMON Academy v5.0 — Termux all-in-one
-- Original responsive cybersecurity learning website in `docs/`.
-- Offline service worker and browser-local progress tracker.
-- Android WebView project in `divisions/eapk-mobile/`.
-- GitHub Actions workflow builds a debug APK and uploads it as an artifact.
-- Local preview server binds to 127.0.0.1 only.
-- Installer backs up pre-existing generated website/app files.
-- No root access or third-party API token required.
+# EMON Academy v5.0
 
-## Local preview
-`./launch.sh` then open `http://127.0.0.1:9000`
-Stop with `./stop.sh`.
+Original EMON INDUSTRY cybersecurity learning portal and Android WebView app.
+The design is independently authored; it does not use OffSec branding, artwork,
+source code, credentials, API tokens or private assets.
 
-## APK
-Push the repository to GitHub, then open Actions → Build EMON Academy APK.
-The generated artifact is a debug APK. A production release requires secure
-release signing and review.
+## Website
+Open `docs/index.html` locally, or publish the `docs/` folder with GitHub Pages.
+The site includes pathways, authorized practice labs, a 12-step progress tracker,
+search, resource links, JSON progress export and an offline service worker.
+
+## Android APK
+The Android project is in `divisions/eapk-mobile/`. Push to GitHub and run the
+"Build EMON Academy APK" workflow, or build locally with JDK 17, Android SDK 35
+and Gradle 8.9+:
+`cd divisions/eapk-mobile && gradle assembleDebug`
+APK output:
+`app/build/outputs/apk/debug/app-debug.apk`
+
+The debug APK is for testing. A production release requires a protected signing
+key and a separate release build/signing workflow.
 
 ## Safety
-Training checklists are educational only. Only assess systems you own or have
-explicit written permission to test. No live SOC telemetry, real device sensor
-feed, medical service, or external target scanning is implemented.
+The included labs are learning checklists only; they do not attack or scan targets.
+Only test systems you own or have explicit written permission to assess.
