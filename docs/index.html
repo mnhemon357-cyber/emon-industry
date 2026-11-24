@@ -171,6 +171,13 @@ footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--bor
     .hero-stats { gap: 24px; }
 }
 </style>
+
+<!-- Apple iOS PWA Support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="EMON INDUSTRY">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIxIiBmaWxsPSIjMDkwOTBiIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyMiIgZmlsbD0iI2ZhZmFmYSIvPjxyZWN0IHg9IjAiIHk9IjQzIiB3aWR0aD0iNjQiIGhlaWdodD0iMjEiIGZpbGw9IiMyMmM1NWUiLz48cG9seWdvbiBwb2ludHM9IjAsMCAyMCwzMiAwLDY0IiBmaWxsPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMC42IiB5PSIwLjYiIHdpZHRoPSI2Mi44IiBoZWlnaHQ9IjYyLjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZhZmFmYSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjQwLDEwIDU2LDMyIDQwLDU0IDI0LDMyIiBmaWxsPSIjZmFmYWZhIiBzdHJva2U9IiMwOTA5MGIiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+">
+
 </head>
 <body>
 
@@ -191,7 +198,15 @@ footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--bor
         <a href="#certs">Certs</a>
         <a href="#founder">Founder</a>
         <a href="#" onclick="toggleLang(event)" id="lang-btn" style="color:var(--green);">🌐 BN</a>
-        <a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" class="btn-download">⬇ APK</a>
+        
+<div style="position:relative; display:inline-block;">
+    <button class="btn-download" onclick="toggleDownloadMenu(event)">⬇ DOWNLOAD APP</button>
+    <div id="download-menu" style="display:none; position:absolute; top:100%; right:0; background:var(--surface-solid); border:1px solid var(--border); border-radius:4px; padding:8px; min-width:200px; z-index:1000; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+        <a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank" style="display:block; padding:10px; color:var(--text); text-decoration:none; font-family:var(--mono); font-size:13px; border-bottom:1px solid var(--border);">🤖 Android APK (66MB)</a>
+        <a href="#" onclick="installiOS(event)" style="display:block; padding:10px; color:var(--text); text-decoration:none; font-family:var(--mono); font-size:13px;">🍏 iOS App (PWA)</a>
+    </div>
+</div>
+
     </nav>
     <button class="menu-btn" onclick="document.getElementById('nav-menu').classList.toggle('open')">☰</button>
 </header>
