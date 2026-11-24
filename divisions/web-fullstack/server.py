@@ -51,6 +51,13 @@ class H(http.server.BaseHTTPRequestHandler):
                 else: alerts.append(f"[INFO] Suspicious activity from {ip}.")
             return self._j(200, {"alerts": alerts})
             
+        
+        if p == "/api/inquiries":
+            name = str(d.get("name", ""))[:50]; email = str(d.get("email", ""))[:100]; msg = str(d.get("message", ""))[:500]
+            conn = sqlite3.connect(DB); cur = conn.execute("INSERT INTO inquiries(name,email,msg,created_at) VALUES(?,?,?,?)", (name, email, msg, datetime.now(timezone.utc).isoformat()))
+            conn.commit(); iid = cur.lastrowid; conn.close()
+            return self._j(201, {"id": iid, "status": "received"})
+
         return self._j(404, {"error": "Not Found"})
 
 if __name__ == "__main__":

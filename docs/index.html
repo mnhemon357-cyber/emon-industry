@@ -8,9 +8,11 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIxIiBmaWxsPSIjMDkwOTBiIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyMiIgZmlsbD0iI2ZhZmFmYSIvPjxyZWN0IHg9IjAiIHk9IjQzIiB3aWR0aD0iNjQiIGhlaWdodD0iMjEiIGZpbGw9IiMyMmM1NWUiLz48cG9seWdvbiBwb2ludHM9IjAsMCAyMCwzMiAwLDY0IiBmaWxsPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMC42IiB5PSIwLjYiIHdpZHRoPSI2Mi44IiBoZWlnaHQ9IjYyLjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZhZmFmYSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjQwLDEwIDU2LDMyIDQwLDU0IDI0LDMyIiBmaWxsPSIjZmFmYWZhIiBzdHJva2U9IiMwOTA5MGIiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+">
 <style>
 :root{--bg:#09090b;--surface:#18181b;--surface-hover:#27272a;--border:#27272a;--red:#ef4444;--green:#22c55e;--text:#fafafa;--text-muted:#a1a1aa;--mono:'Courier New',monospace;--sans:system-ui,-apple-system,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--bg);background-image:linear-gradient(rgba(39,39,42,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(39,39,42,.2) 1px,transparent 1px);background-size:40px 40px;color:var(--text);line-height:1.6;padding-top:env(safe-area-inset-top);overflow-x:hidden}
 .app-header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text)}
@@ -19,6 +21,9 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
 .nav{display:flex;align-items:center;gap:24px}
 .nav a{color:var(--text-muted);text-decoration:none;font-size:13px;font-weight:600;transition:color .2s}
 .nav a:hover{color:var(--text)}
+.dl-group{display:flex;gap:8px}
+.btn-android{background:var(--green);color:#000;text-decoration:none;padding:8px 12px;border-radius:4px;font-family:var(--mono);font-weight:900;font-size:12px;display:flex;align-items:center}
+.btn-ios{background:var(--text);color:#000;border:none;padding:8px 12px;border-radius:4px;font-family:var(--mono);font-weight:900;font-size:12px;cursor:pointer;display:flex;align-items:center}
 .menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--text);padding:4px 12px;border-radius:4px}
 .hero{padding:100px 24px;text-align:center;border-bottom:1px solid var(--border)}
 .hero-badge{display:inline-block;padding:6px 12px;border:1px solid var(--green);color:var(--green);border-radius:99px;font-family:var(--mono);font-size:11px;font-weight:700;margin-bottom:24px}
@@ -46,9 +51,24 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
 .tool-card h3{font-family:var(--mono);font-size:16px;margin-bottom:20px;color:var(--red)}
 .input-group{margin-bottom:16px}
 .input-group label{display:block;font-family:var(--mono);font-size:11px;color:var(--text-muted);margin-bottom:6px}
-.input-group input,.input-group select,.input-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px;border-radius:4px;font-family:var(--mono);outline:none}
+.input-group input,.input-group textarea{width:100%;background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px;border-radius:4px;font-family:var(--mono);outline:none}
 .btn-action{width:100%;padding:12px;background:var(--green);color:#000;border:none;border-radius:4px;font-weight:900;font-family:var(--mono);cursor:pointer}
 .terminal-out{background:#000;border:1px solid var(--border);border-radius:4px;padding:16px;font-family:var(--mono);font-size:12px;color:var(--green);height:120px;overflow-y:auto;margin-top:16px;display:none}
+.sprint-container{max-width:800px;margin:0 auto}
+.week-block{background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden}
+.week-header{padding:16px 24px;background:rgba(0,0,0,.2);cursor:pointer;display:flex;justify-content:space-between;font-weight:700;font-family:var(--mono);font-size:14px}
+.week-body{display:none}
+.week-block.open .week-body{display:block}
+.day-row{display:flex;align-items:flex-start;gap:16px;padding:16px 24px;border-top:1px solid var(--border);cursor:pointer}
+.day-row input{margin-top:4px;accent-color:var(--red)}
+.day-row.done .day-text{text-decoration:line-through;color:var(--text-muted)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.cert-card{background:var(--surface);border:1px solid var(--border);padding:24px;border-radius:8px;display:flex;flex-direction:column}
+.cert-title{font-weight:800;font-size:16px;margin-bottom:4px}
+.cert-org{font-family:var(--mono);font-size:12px;color:var(--text-muted);margin-bottom:16px}
+.cert-link{font-size:13px;color:var(--green);text-decoration:none;margin-bottom:16px;display:inline-block}
+.cert-btn{margin-top:auto;padding:8px;background:transparent;border:1px solid var(--border);color:var(--text-muted);border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:700;cursor:pointer;transition:all .2s}
+.cert-btn.completed{background:var(--green);color:#000;border-color:var(--green)}
 .founder-section{display:grid;grid-template-columns:300px 1fr;gap:48px;background:var(--surface);border:1px solid var(--border);padding:48px;border-radius:12px}
 .founder-img{width:100%;border-radius:8px;border:2px solid var(--border);filter:grayscale(100%);transition:filter .3s}
 .founder-img:hover{filter:grayscale(0%);border-color:var(--green)}
@@ -60,9 +80,20 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
 #loader{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99999;transition:opacity .5s}
 .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px}
 @keyframes spin{to{transform:rotate(360deg)}}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(5px)}
+.modal.open{display:flex}
+.modal-box{background:var(--bg);border:1px solid var(--border);width:100%;max-width:800px;border-radius:12px;padding:40px;position:relative;max-height:90vh;overflow-y:auto}
+.modal-close{position:absolute;top:20px;right:20px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer}
+.modal-tabs{display:flex;gap:8px;border-bottom:1px solid var(--border);margin-bottom:24px;overflow-x:auto}
+.m-tab{padding:12px 20px;background:none;border:none;color:var(--text-muted);font-family:var(--mono);font-size:13px;font-weight:700;cursor:pointer;border-bottom:2px solid transparent}
+.m-tab.active{color:var(--green);border-bottom-color:var(--green)}
+.modal-content h4{font-family:var(--mono);font-size:14px;color:var(--red);margin:24px 0 12px;text-transform:uppercase}
+.modal-content h4:first-child{margin-top:0}
+.modal-content p{color:var(--text-muted);margin-bottom:16px;font-size:14px;line-height:1.7}
+.modal-content a{color:var(--green);text-decoration:none}
+.modal-content ul{padding-left:20px;color:var(--text-muted);font-size:14px;margin-bottom:16px}
 @media(max-width:768px){.nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);flex-direction:column;padding:24px}.nav.open{display:flex}.menu-btn{display:block}.founder-section{grid-template-columns:1fr;padding:24px}}
 </style>
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIxIiBmaWxsPSIjMDkwOTBiIi8+PHJlY3QgeD0iMCIgeT0iMjEiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyMiIgZmlsbD0iI2ZhZmFmYSIvPjxyZWN0IHg9IjAiIHk9IjQzIiB3aWR0aD0iNjQiIGhlaWdodD0iMjEiIGZpbGw9IiMyMmM1NWUiLz48cG9seWdvbiBwb2ludHM9IjAsMCAyMCwzMiAwLDY0IiBmaWxsPSIjZWY0NDQ0Ii8+PHJlY3QgeD0iMC42IiB5PSIwLjYiIHdpZHRoPSI2Mi44IiBoZWlnaHQ9IjYyLjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZhZmFmYSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48cG9seWdvbiBwb2ludHM9IjQwLDEwIDU2LDMyIDQwLDU0IDI0LDMyIiBmaWxsPSIjZmFmYWZhIiBzdHJva2U9IiMwOTA5MGIiIHN0cm9rZS13aWR0aD0iMS40Ii8+PC9zdmc+">
 </head>
 <body>
 
@@ -79,11 +110,13 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
     <nav class="nav" id="nav-menu">
         <a href="#divisions">Divisions</a>
         <a href="#playground">Playground</a>
+        <a href="#sprint">Sprint</a>
+        <a href="#certs">Certs</a>
         <a href="#founder">Founder</a>
         <a href="#" onclick="toggleLang(event)" id="lang-btn" style="color:var(--green);">🌐 BN</a>
-        <div style="display:flex; gap:8px;">
-            <a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank" class="btn-android" style="background:var(--green);color:#000;text-decoration:none;padding:8px 12px;border-radius:4px;font-family:var(--mono);font-weight:900;font-size:12px;display:flex;align-items:center;">🤖 ANDROID</a>
-            <button onclick="installiOS(event)" class="btn-ios" style="background:var(--text);color:#000;border:none;padding:8px 12px;border-radius:4px;font-family:var(--mono);font-weight:900;font-size:12px;cursor:pointer;display:flex;align-items:center;">🍏 iOS</button>
+        <div class="dl-group">
+            <a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank" class="btn-android">🤖 ANDROID</a>
+            <button onclick="installiOS(event)" class="btn-ios">🍏 iOS</button>
         </div>
     </nav>
     <button class="menu-btn" onclick="document.getElementById('nav-menu').classList.toggle('open')">☰</button>
@@ -101,6 +134,11 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
     </div>
 </section>
 
+<section class="section">
+    <div class="section-header"><h2 class="section-title">The 6 Pillars</h2></div>
+    <div class="grid-pillars" id="pillars-grid"></div>
+</section>
+
 <section id="divisions" class="section">
     <div class="section-header"><h2 class="section-title">9 Sovereign Divisions</h2></div>
     <div class="grid-divisions" id="divisions-grid"></div>
@@ -116,12 +154,32 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
         </div>
         <div class="tool-card">
             <h3>Efirm // BDT VAT Calculator</h3>
-            <div class="input-group"><label>Price</label><input type="number" id="vat-price" value="1500"></div>
-            <div class="input-group"><label>Qty</label><input type="number" id="vat-qty" value="2"></div>
-            <button class="btn-action" onclick="runVat()">Calculate</button>
+            <div class="input-group"><label>Price (BDT)</label><input type="number" id="vat-price" value="1500"></div>
+            <div class="input-group"><label>Quantity</label><input type="number" id="vat-qty" value="2"></div>
+            <button class="btn-action" onclick="runVat()">Calculate 15% VAT</button>
             <div class="terminal-out" id="vat-out" style="height:auto;text-align:center;font-size:16px;padding:24px;"></div>
         </div>
+        <div class="tool-card" style="grid-column:1/-1;">
+            <h3>Efirm // B2B Inquiry Form</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="input-group"><label>Name</label><input type="text" id="inq-name" placeholder="Your Name / Company"></div>
+                <div class="input-group"><label>Email</label><input type="email" id="inq-email" placeholder="Email Address"></div>
+            </div>
+            <div class="input-group"><label>Message</label><textarea id="inq-msg" rows="3" placeholder="How can we help you?"></textarea></div>
+            <button class="btn-action" onclick="submitInquiry()">Transmit Data</button>
+            <div class="terminal-out" id="inq-out"></div>
+        </div>
     </div>
+</section>
+
+<section id="sprint" class="section">
+    <div class="section-header"><h2 class="section-title">29-Day Sprint</h2></div>
+    <div class="sprint-container" id="sprint-grid"></div>
+</section>
+
+<section id="certs" class="section">
+    <div class="section-header"><h2 class="section-title">Elite Certifications</h2></div>
+    <div class="cert-grid" id="certs-grid"></div>
 </section>
 
 <section id="founder" class="section">
@@ -138,101 +196,155 @@ body{font-family:var(--sans);background:var(--bg);background-image:linear-gradie
     </div>
 </section>
 
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div style="font-family:var(--mono);color:var(--red);font-size:12px;margin-bottom:8px;" id="m-num"></div>
+        <h2 style="font-size:28px;font-weight:900;margin-bottom:8px;" id="m-title"></h2>
+        <div style="font-family:var(--mono);color:var(--green);font-size:13px;margin-bottom:24px;" id="m-stack"></div>
+        <div class="modal-tabs" id="m-tabs"></div>
+        <div class="modal-content" id="m-body"></div>
+    </div>
+</div>
+
 <script>
-// 1. GUARANTEED LOADER REMOVAL (Fallback 1.5s)
+// 1. GUARANTEED LOADER REMOVAL
 window.addEventListener('load', () => {
     setTimeout(() => {
         const l = document.getElementById('loader');
         if(l) { l.style.opacity = '0'; setTimeout(()=>l.remove(), 500); }
-    }, 800);
+    }, 500);
 });
-// Hard fallback in case window.onload fails
 setTimeout(() => {
     const l = document.getElementById('loader');
     if(l) { l.style.opacity = '0'; setTimeout(()=>l.remove(), 500); }
 }, 2000);
 
-// 2. RENDER DIVISIONS
-const DIVS = [
-    {name:'Emontron', stack:'C / RTOS / ESP32', desc:'Embedded IoT microcontrollers.'},
-    {name:'Esecurity', stack:'Raku / Linux / SOC', desc:'24/7 Security Operations Center.'},
-    {name:'29A Cyber Guardian', stack:'Python / Kali / Crypto', desc:'Offensive security & audits.'},
-    {name:'EOS (Inhealer OS)', stack:'Debian / Kernel / Bash', desc:'Hardened zero-telemetry Linux.'},
-    {name:'EMON (EI) AI', stack:'Python / Local LLM', desc:'Offline autonomous AI analyst.'},
-    {name:'Efirm', stack:'Java / SQLite / REST', desc:'Enterprise ERP & VAT invoicing.'},
-    {name:'EAPK', stack:'Java / Android SDK', desc:'Native Android applications.'},
-    {name:'EPrinter', stack:'Python / HTML5 / PDF', desc:'Automated A4 pricing & logistics.'},
-    {name:'Motior Pharma', stack:'C / Python / HL7', desc:'Health-tech clinical telemetry.'}
+// 2. DATA ARRAYS
+const PILLARS = [
+    {num:'01',name:'LEARN',desc:'Master low-level CS, RFCs, and elite certifications.'},
+    {num:'02',name:'BUILD',desc:'Zero-bloat production code in C, Python, Raku, Java.'},
+    {num:'03',name:'VALIDATE',desc:'Automated CI/CD, pentesting, zero-defect verification.'},
+    {num:'04',name:'PUBLISH',desc:'Live portals, signed APKs, public technical docs.'},
+    {num:'05',name:'BRAND',desc:'Unified identity, executive datasheets, global trust.'},
+    {num:'06',name:'EARN',desc:'Monetize via B2B SaaS, security audits, hardware.'}
 ];
-document.getElementById('divisions-grid').innerHTML = DIVS.map(d => `
-    <div class="div-card">
-        <div class="div-name">${d.name}</div>
-        <div class="div-stack">${d.stack}</div>
-        <div class="div-desc">${d.desc}</div>
-    </div>
-`).join('');
 
-// 3. I18N TOGGLE
+const DIVISIONS = [
+    {id:'emontron',num:'01',name:'Emontron',stack:'C / RTOS / ESP32',short:'Embedded IoT microcontrollers, biometric sensors.',what:'ESP32-based embedded systems powering sovereign biometric and industrial IoT lines. Bare-metal C and FreeRTOS.',why:'Eliminates foreign vendor dependency, zero telemetry. Revenue: B2B hardware sales.',pillars:{learn:'ESP32, sensors, RTOS.',build:'Firmware, SD logging.',validate:'Unity tests, power draw.',publish:'Firmware releases.',brand:'Sovereign Hardware.',earn:'OEM contracts.'},certs:[{name:'Cisco NDG Linux',url:'https://www.netacad.com/courses/linux-unhatched'}],pathway:[{title:'Foundation',desc:'C, electronics.'},{title:'Prototype',desc:'Biometric node.'},{title:'Productize',desc:'PCB, firmware.'},{title:'Enterprise',desc:'Hospital sales.'}]},
+    {id:'esecurity',num:'02',name:'Esecurity',stack:'Raku / Linux / SOC',short:'24/7 SOC, log correlation, perimeter defense.',what:'Sovereign SOC ingesting logs from endpoints, correlating with Raku regex, triggering automated responses.',why:'Enterprises need a SOC avoiding foreign clouds. Revenue: SOC-as-a-service.',pillars:{learn:'Raku, syslog, MITRE.',build:'Raku pipeline.',validate:'Fuzz parsers.',publish:'Threat-intel feed.',brand:'Zero-trust.',earn:'$500-$5k/mo.'},certs:[{name:'Cisco Intro Cyber',url:'https://www.netacad.com/courses/introduction-to-cybersecurity'}],pathway:[{title:'Foundation',desc:'Linux hardening.'},{title:'Detection',desc:'10 rules.'},{title:'SOC v1',desc:'Pipeline.'},{title:'Enterprise',desc:'24/7 SOC.'}]},
+    {id:'cyber-guardian',num:'03',name:'29A Cyber Guardian',stack:'Python / Kali / Crypto',short:'Offensive security, OWASP audits, OSCP-level ops.',what:'Offensive-security services delivered under signed RoE with cryptographic evidence chains.',why:'Banks need sovereign pentesters. Revenue: per-project audits.',pillars:{learn:'OSCP, OWASP.',build:'Python tooling.',validate:'Merkle chains.',publish:'CVE writeups.',brand:'Sovereign Pentesters.',earn:'Retainers.'},certs:[{name:'OffSec OSCP',url:'https://www.offsec.com/courses/pen-200/'},{name:'OffSec OSEP',url:'https://www.offsec.com/courses/pen-300/'}],pathway:[{title:'Foundation',desc:'Python, Linux.'},{title:'OSCP Prep',desc:'50+ boxes.'},{title:'Service launch',desc:'Sample RoE.'},{title:'Enterprise',desc:'Bank contracts.'}]},
+    {id:'eos-inhealer',num:'04',name:'EOS (Inhealer OS)',stack:'Debian / Kernel / Bash',short:'Hardened zero-telemetry Linux OS.',what:'Hardened Debian-based distro with stripped telemetry and AppArmor profiles.',why:'Standard Ubuntu phones home. Revenue: enterprise support.',pillars:{learn:'Debian build.',build:'Custom ISO.',validate:'QEMU tests.',publish:'ISO + checksums.',brand:'Zero-Telemetry.',earn:'Support contracts.'},certs:[{name:'Linux Foundation',url:'https://training.linuxfoundation.org/resources/?_sft_content_type=free-course'}],pathway:[{title:'Foundation',desc:'Packaging.'},{title:'ISO',desc:'Bootable.'},{title:'v1.0',desc:'AppArmor.'},{title:'Enterprise',desc:'OEM.'}]},
+    {id:'ei-onbound-ai',num:'05',name:'EMON (EI) AI',stack:'Python / Local LLM',short:'Offline autonomous AI security analyst.',what:'Offline AI running quantized models on-device to produce security narratives.',why:'No cloud AI for SOC data. Revenue: AI appliance.',pillars:{learn:'LLM quant.',build:'Python API.',validate:'Benchmarks.',publish:'Model cards.',brand:'AI that never leaves.',earn:'Licenses.'},certs:[{name:'Elements of AI',url:'https://course.elementsofai.com/'}],pathway:[{title:'Foundation',desc:'ML basics.'},{title:'Model',desc:'4-bit 7B.'},{title:'Fine-tune',desc:'SOC logs.'},{title:'Enterprise',desc:'Appliance.'}]},
+    {id:'efirm',num:'06',name:'Efirm',stack:'Java / SQLite / REST',short:'Enterprise ERP, BDT/USD VAT invoicing.',what:'Full ERP suite architected for Bangladesh with multi-currency support.',why:'Local SMEs forced onto foreign SaaS. Revenue: per-seat SaaS.',pillars:{learn:'Java, VAT law.',build:'REST service.',validate:'Load testing.',publish:'Installer.',brand:'Sovereign ERP.',earn:'$10/seat.'},certs:[{name:'Harvard CS50',url:'https://www.harvardonline.harvard.edu/course/cs50-introduction-computer-science'}],pathway:[{title:'Foundation',desc:'Java, SQL.'},{title:'Module 1',desc:'VAT engine.'},{title:'Full ERP',desc:'Inventory.'},{title:'Enterprise',desc:'SMEs.'}]},
+    {id:'eapk-mobile',num:'07',name:'EAPK',stack:'Java / Android SDK',short:'Native Android apps, WebView bridges.',what:'Native apps with WebView host, hardware bridges, automated APK generation.',why:'Sovereign app distribution matters. Revenue: white-label builds.',pillars:{learn:'Android SDK.',build:'WebView + JS.',validate:'APK lint.',publish:'Signed APKs.',brand:'App Factory.',earn:'$1k-$8k.'},certs:[{name:'Cisco Python 1',url:'https://www.netacad.com/courses/python-essentials-1'}],pathway:[{title:'Foundation',desc:'Java.'},{title:'APK',desc:'WebView.'},{title:'CI/CD',desc:'Signed.'},{title:'Enterprise',desc:'White-label.'}]},
+    {id:'eprinter',num:'08',name:'EPrinter',stack:'Python / HTML5 / PDF',short:'A4 pricing, PDF pre-flight, print logistics.',what:'Print-ordering portal. Pre-flights PDFs, quotes 2/5 BDT, dispatches.',why:'No digital ordering for print. Revenue: per-page markup.',pillars:{learn:'PDF parsing.',build:'Flask backend.',validate:'Golden-file.',publish:'Public portal.',brand:'60 sec print.',earn:'Markup.'},certs:[{name:'freeCodeCamp',url:'https://www.freecodecamp.org/learn/2022/responsive-web-design/'}],pathway:[{title:'Foundation',desc:'Python.'},{title:'Quote',desc:'Upload.'},{title:'Partner',desc:'Dhaka.'},{title:'Enterprise',desc:'Network.'}]},
+    {id:'motior-pharma',num:'09',name:'Motior Pharma',stack:'C / Python / HL7',short:'Health-tech telemetry, clinical sensors.',what:'Bridges Emontron biometrics to clinical dashboards via HL7/FHIR.',why:'Hospitals need sovereign telemetry. Revenue: hospital SaaS.',pillars:{learn:'HL7, FHIR.',build:'FHIR server.',validate:'Synthetic data.',publish:'API docs.',brand:'Sovereign Health.',earn:'$2k-$20k.'},certs:[{name:'IBM SkillsBuild',url:'https://skillsbuild.org/'}],pathway:[{title:'Foundation',desc:'HL7.'},{title:'Dashboard',desc:'SpO2.'},{title:'Pilot',desc:'Clinic.'},{title:'Enterprise',desc:'SaaS.'}]}
+];
+
+const SPRINT = [
+    {week:1,title:'Week 1 — Core Mainframe & Languages',days:[{day:1,text:'Termux setup, Git init'},{day:2,text:'Linux shell mastery'},{day:3,text:'C fundamentals'},{day:4,text:'Python fundamentals'},{day:5,text:'Raku basics'},{day:6,text:'Java fundamentals'},{day:7,text:'First automation script'}]},
+    {week:2,title:'Week 2 — Full-Stack Web, APK & Certs',days:[{day:8,text:'Responsive dashboard'},{day:9,text:'JS + localStorage'},{day:10,text:'GitHub Actions CI/CD'},{day:11,text:'First Android APK'},{day:12,text:'Cert 1: Cisco Linux'},{day:13,text:'Cert 2: Cisco Cyber'},{day:14,text:'Certs 3-4: Networking + RWD'}]},
+    {week:3,title:'Week 3 — EOS, AI, Pharma, RJSC',days:[{day:15,text:'Compile EOS kernel'},{day:16,text:'Esecurity Raku pipeline'},{day:17,text:'29A pentest toolkit'},{day:18,text:'Offline EI LLM'},{day:19,text:'Motior Pharma dashboard'},{day:20,text:'Certs 5-8'},{day:21,text:'RJSC name clearance'}]},
+    {week:4,title:'Week 4 — B2B Launch & Global Scale',days:[{day:22,text:'RJSC Incorporation'},{day:23,text:'NBR e-TIN'},{day:24,text:'Trade License'},{day:25,text:'BASIS + bKash'},{day:26,text:'Certs 9-11'},{day:27,text:'Certs 12-14'},{day:28,text:'B2B SaaS launch'},{day:29,text:'Global scale'}]}
+];
+
+const CERTS = [
+    {n:1,name:'NDG Linux Unhatched',org:'Cisco',url:'https://www.netacad.com/courses/linux-unhatched'},
+    {n:2,name:'Intro to Cybersecurity',org:'Cisco',url:'https://www.netacad.com/courses/introduction-to-cybersecurity'},
+    {n:3,name:'Networking Basics',org:'Cisco',url:'https://www.netacad.com/courses/networking-basics'},
+    {n:4,name:'Responsive Web Design',org:'freeCodeCamp',url:'https://www.freecodecamp.org/learn/2022/responsive-web-design/'},
+    {n:5,name:'Python Essentials 1',org:'Cisco',url:'https://www.netacad.com/courses/python-essentials-1'},
+    {n:6,name:'Python & Pandas',org:'Kaggle',url:'https://www.kaggle.com/learn/python'},
+    {n:7,name:'Certified in Cybersecurity',org:'ISC2',url:'https://www.isc2.org/certifications/cc'},
+    {n:8,name:'Web Security Academy',org:'PortSwigger',url:'https://portswigger.net/web-security'},
+    {n:9,name:'OSCP (PEN-200)',org:'OffSec',url:'https://www.offsec.com/courses/pen-200/'},
+    {n:10,name:'OSEP (PEN-300)',org:'OffSec',url:'https://www.offsec.com/courses/pen-300/'},
+    {n:11,name:'OSWE (WEB-300)',org:'OffSec',url:'https://www.offsec.com/courses/web-300/'},
+    {n:12,name:'Elements of AI',org:'Helsinki',url:'https://course.elementsofai.com/'},
+    {n:13,name:'Cybersecurity Fundamentals',org:'IBM',url:'https://skillsbuild.org/'},
+    {n:14,name:'CS50: Intro to CS',org:'Harvard',url:'https://www.harvardonline.harvard.edu/course/cs50-introduction-computer-science'}
+];
+
+// 3. RENDER FUNCTIONS
+document.getElementById('pillars-grid').innerHTML = PILLARS.map(p=>`<div class="pillar-card"><div style="font-family:var(--mono);font-size:12px;color:var(--red);font-weight:700;margin-bottom:12px;">PILLAR ${p.num}</div><div style="font-size:18px;font-weight:800;margin-bottom:8px;">${p.name}</div><div style="font-size:13px;color:var(--text-muted);">${p.desc}</div></div>`).join('');
+
+document.getElementById('divisions-grid').innerHTML = DIVISIONS.map(d=>`<div class="div-card" onclick="openModal('${d.id}')"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);margin-bottom:8px;">DIV-${d.num}</div><div class="div-name">${d.name}</div><div class="div-stack">${d.stack}</div><div class="div-desc">${d.short}</div></div>`).join('');
+
+let sprintState = JSON.parse(localStorage.getItem('emon_sprint')||'{}');
+document.getElementById('sprint-grid').innerHTML = SPRINT.map(w=>`<div class="week-block ${w.week===1?'open':''}"><div class="week-header" onclick="this.parentElement.classList.toggle('open')"><span>${w.title}</span><span>▼</span></div><div class="week-body">${w.days.map(d=>`<label class="day-row ${sprintState[d.day]?'done':''}"><input type="checkbox" ${sprintState[d.day]?'checked':''} onchange="toggleDay(${d.day},this)"><span class="day-text"><b>Day ${d.day}:</b> ${d.text}</span></label>`).join('')}</div></div>`).join('');
+
+let certState = JSON.parse(localStorage.getItem('emon_certs')||'{}');
+document.getElementById('certs-grid').innerHTML = CERTS.map(c=>{
+    const done = certState[c.n];
+    return `<div class="cert-card"><div class="cert-title">${c.name}</div><div class="cert-org">${c.org}</div><a href="${c.url}" target="_blank" class="cert-link">View Syllabus ↗</a><button class="cert-btn ${done?'completed':''}" onclick="toggleCert(${c.n},this)">${done?'✓ COMPLETED '+done:'MARK COMPLETE'}</button></div>`;
+}).join('');
+
+// 4. LOGIC FUNCTIONS
+function toggleDay(day, cb) { sprintState[day] = cb.checked; localStorage.setItem('emon_sprint', JSON.stringify(sprintState)); cb.closest('.day-row').classList.toggle('done', cb.checked); }
+function toggleCert(n, btn) { if(certState[n]) delete certState[n]; else certState[n]=new Date().toISOString().slice(0,10); localStorage.setItem('emon_certs',JSON.stringify(certState)); const done = certState[n]; btn.className = `cert-btn ${done?'completed':''}`; btn.textContent = done ? '✓ COMPLETED '+done : 'MARK COMPLETE'; }
+
+let activeDiv = null;
+function openModal(id) {
+    activeDiv = DIVISIONS.find(d=>d.id===id);
+    if(!activeDiv) return;
+    document.getElementById('m-num').textContent = 'DIV-'+activeDiv.num;
+    document.getElementById('m-title').textContent = activeDiv.name;
+    document.getElementById('m-stack').textContent = activeDiv.stack;
+    document.getElementById('m-tabs').innerHTML = ['Overview','Pillars','Certs','Pathway'].map((t,i)=>`<button class="m-tab ${i===0?'active':''}" onclick="switchTab(${i},this)">${t}</button>`).join('');
+    renderTab(0);
+    document.getElementById('modal').classList.add('open');
+}
+function switchTab(i, btn) { document.querySelectorAll('.m-tab').forEach(t=>t.classList.remove('active')); btn.classList.add('active'); renderTab(i); }
+function renderTab(i) {
+    let html = '';
+    if(i===0) html = `<h4>What It Is</h4><p>${activeDiv.what}</p><h4>Why It Exists</h4><p>${activeDiv.why}</p>`;
+    if(i===1) Object.keys(activeDiv.pillars).forEach(k=>{ html += `<h4>${k.toUpperCase()}</h4><p>${activeDiv.pillars[k]}</p>`; });
+    if(i===2) { html = '<ul>'; activeDiv.certs.forEach(c=>{ html+=`<li><a href="${c.url}" target="_blank">${c.name}</a></li>`; }); html+='</ul>'; }
+    if(i===3) activeDiv.pathway.forEach((p,idx)=>{ html += `<h4>Step ${idx+1}: ${p.title}</h4><p>${p.desc}</p>`; });
+    document.getElementById('m-body').innerHTML = html;
+}
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
 let lang = 'en';
 function toggleLang(e) {
-    e.preventDefault();
-    lang = lang === 'en' ? 'bn' : 'en';
+    e.preventDefault(); lang = lang === 'en' ? 'bn' : 'en';
     document.getElementById('lang-btn').innerText = lang === 'en' ? '🌐 BN' : '🌐 EN';
     document.getElementById('hero-title').innerHTML = lang === 'en' ? 'BUILDING A BETTER<br><span>TOMORROW.</span>' : 'একটি উন্নত আগামী<br><span>নির্মাণে।</span>';
     document.getElementById('hero-sub').innerText = lang === 'en' ? 'Beyond Future | A Company for Mankind' : 'ভবিষ্যতের বাইরে | মানবজাতির জন্য একটি প্রতিষ্ঠান';
 }
 
-// 4. IOS PWA INSTALL
-function installiOS(e) {
-    e.preventDefault();
-    document.getElementById('dl-menu').style.display = 'none';
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        alert("🍏 iOS Installation Instructions:\\n\\n1. Tap the 'Share' button at the bottom of Safari.\\n2. Scroll down and tap 'Add to Home Screen'.\\n3. Tap 'Add'.\\n\\nEMON INDUSTRY will now appear as an app!");
-    } else {
-        alert("Please open this website on an iPhone in Safari to install the iOS app.");
-    }
-}
-
-// 5. PLAYGROUND API (With 3s Timeout to prevent infinite spinners)
 const API_BASE = location.protocol === 'file:' ? 'http://127.0.0.1:8000' : '';
-
 async function fetchWithTimeout(resource, options = {}) {
     const { timeout = 3000 } = options;
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), timeout);
-    const response = await fetch(resource, { ...options, signal: controller.signal });
-    clearTimeout(id);
-    return response;
+    const controller = new AbortController(); const id = setTimeout(() => controller.abort(), timeout);
+    const response = await fetch(resource, { ...options, signal: controller.signal }); clearTimeout(id); return response;
 }
 
 async function runSoc() {
-    const out = document.getElementById('soc-out');
-    out.style.display='block'; out.innerHTML='Scanning logs...';
-    try {
-        const r = await fetchWithTimeout(API_BASE+'/api/soc-scan', {method:'POST'});
-        const d = await r.json();
-        out.innerHTML = d.alerts.map(a=>`<div style="color:${a.includes('[ALERT]')?'var(--red)':'var(--green)'}">${a}</div>`).join('');
-    } catch(e) { out.innerHTML = '<span style="color:var(--red)">Backend offline or timeout.</span>'; }
+    const out = document.getElementById('soc-out'); out.style.display='block'; out.innerHTML='Scanning logs...';
+    try { const r = await fetchWithTimeout(API_BASE+'/api/soc-scan', {method:'POST'}); const d = await r.json(); out.innerHTML = d.alerts.map(a=>`<div style="color:${a.includes('[ALERT]')?'var(--red)':'var(--green)'}">${a}</div>`).join(''); } catch(e) { out.innerHTML = '<span style="color:var(--red)">Backend offline or timeout.</span>'; }
 }
-
 async function runVat() {
-    const out = document.getElementById('vat-out');
-    out.style.display='block'; out.innerHTML='Calculating...';
-    try {
-        const r = await fetchWithTimeout(API_BASE+'/api/vat-invoice', {
-            method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify({price: document.getElementById('vat-price').value, qty: document.getElementById('vat-qty').value})
-        });
-        const d = await r.json();
-        out.innerHTML = `<div>Subtotal: ${d.subtotal} BDT</div><div>VAT (15%): ${d.vat} BDT</div><div style="color:var(--green);font-size:20px;font-weight:900;margin-top:8px;">TOTAL: ${d.total} BDT</div>`;
-    } catch(e) { out.innerHTML = '<span style="color:var(--red)">Backend offline or timeout.</span>'; }
+    const out = document.getElementById('vat-out'); out.style.display='block'; out.innerHTML='Calculating...';
+    try { const r = await fetchWithTimeout(API_BASE+'/api/vat-invoice', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({price: document.getElementById('vat-price').value, qty: document.getElementById('vat-qty').value}) }); const d = await r.json(); out.innerHTML = `<div>Subtotal: ${d.subtotal} BDT</div><div>VAT (15%): ${d.vat} BDT</div><div style="color:var(--green);font-size:20px;font-weight:900;margin-top:8px;">TOTAL: ${d.total} BDT</div>`; } catch(e) { out.innerHTML = '<span style="color:var(--red)">Backend offline or timeout.</span>'; }
+}
+async function submitInquiry() {
+    const out = document.getElementById('inq-out'); out.style.display='block'; out.innerHTML='Transmitting...';
+    const name = document.getElementById('inq-name').value; const email = document.getElementById('inq-email').value; const msg = document.getElementById('inq-msg').value;
+    if(!name || !email || !msg) { out.innerHTML = '<span style="color:var(--red)">All fields required.</span>'; return; }
+    try { const r = await fetchWithTimeout(API_BASE+'/api/inquiries', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({name,email,message:msg})}); const d = await r.json(); out.innerHTML = `<span style="color:var(--green)">✓ Inquiry received. ID: ${d.id}</span>`; document.getElementById('inq-name').value=''; document.getElementById('inq-email').value=''; document.getElementById('inq-msg').value=''; } catch(e) { out.innerHTML = '<span style="color:var(--red)">Backend offline. Saved locally.</span>'; }
 }
 
-// Close download menu on click outside
-document.addEventListener('click', (e) => {
-    const menu = document.getElementById('dl-menu');
-    if (menu && !e.target.closest('button') && !menu.contains(e.target)) menu.style.display = 'none';
-});
+function installiOS(e) {
+    if(e) e.preventDefault();
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const modal = document.createElement('div');
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(5px);';
+    let content = isIOS ? `<h2 style="color:var(--green);margin-bottom:16px;font-family:var(--mono);">Install on iOS</h2><p style="font-size:15px;margin-bottom:24px;">To install the EMON INDUSTRY app on your iPhone:</p><ol style="text-align:left;padding-left:20px;margin-bottom:24px;font-size:14px;line-height:1.8;color:var(--text-muted);"><li>Tap the <b>Share</b> button at the bottom of Safari.</li><li>Scroll down and tap <b>Add to Home Screen</b>.</li><li>Tap <b>Add</b>.</li></ol><p style="font-size:13px;color:var(--text-muted);">The app will now appear on your home screen.</p>` : `<h2 style="color:var(--green);margin-bottom:16px;font-family:var(--mono);">iOS App Install</h2><p style="font-size:15px;margin-bottom:24px;">Open this website in <b>Safari</b> on your iPhone, tap <b>Share</b>, and select <b>Add to Home Screen</b>.</p>`;
+    modal.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);padding:32px;border-radius:12px;max-width:400px;width:100%;text-align:center;position:relative;"><button onclick="this.parentElement.parentElement.remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;">×</button>${content}<button onclick="this.parentElement.parentElement.remove()" style="background:var(--red);color:#fff;border:none;padding:12px;border-radius:6px;width:100%;font-weight:bold;font-family:var(--mono);cursor:pointer;margin-top:16px;">GOT IT</button></div>`;
+    document.body.appendChild(modal);
+}
 </script>
 </body>
 </html>
