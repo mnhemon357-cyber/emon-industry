@@ -17,23 +17,20 @@ public class MainActivity extends Activity {
         webView = new WebView(this);
         WebSettings s = webView.getSettings();
         
-        // Core Settings
         s.setJavaScriptEnabled(true);
-        s.setDomStorageEnabled(true); // Enables localStorage for Sprint & Certs
+        s.setDomStorageEnabled(true); // For localStorage (Sprint & Certs)
         s.setAllowFileAccess(true);
         s.setAllowContentAccess(true);
         s.setAllowFileAccessFromFileURLs(true);
         s.setAllowUniversalAccessFromFileURLs(true);
         
-        // Cache Busting: Force the app to load the newest HTML, not old cached versions
+        // Force load latest HTML (No caching)
         s.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webView.clearCache(true);
-        webView.clearHistory();
 
         webView.setWebViewClient(new WebViewClient());
         webView.addJavascriptInterface(new EmonBridge(), "EmonAndroid");
         
-        // Load the local v6.0 OffSec portal
         webView.loadUrl("file:///android_asset/index.html");
         setContentView(webView);
     }
