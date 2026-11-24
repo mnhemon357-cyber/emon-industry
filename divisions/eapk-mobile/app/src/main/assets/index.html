@@ -259,4 +259,25 @@ function seed(){if(L("led").length+L("leads").length){alert("Clear company data 
  S.co.team=[{id:id(),name:"Founder",role:"CEO",div:"Efirm"}];save();co()}
 function wipe(){if(confirm("Erase all company data on this device?")){S.co={};save();co()}}
 
+
+// INTERNATIONALIZATION (i18n) ENGINE
+let currentLang = 'en';
+const translations = {
+  'en': { 'hero': 'BUILDING A BETTER TOMORROW.', 'sub': 'Beyond Future | A Company for Mankind', 'playground': 'Developer Playground' },
+  'bn': { 'hero': 'একটি উন্নত আগামী নির্মাণে।', 'sub': 'ভবিষ্যতের বাইরে | মানবজাতির জন্য একটি প্রতিষ্ঠান', 'playground': 'ডেভেলপার প্লেগ্রাউন্ড' }
+};
+
+function toggleLang(e) {
+  e.preventDefault();
+  currentLang = currentLang === 'en' ? 'bn' : 'en';
+  document.getElementById('lang-btn').innerText = currentLang === 'en' ? '🌐 BN' : '🌐 EN';
+  
+  // Apply translations
+  const t = translations[currentLang];
+  document.querySelector('.hero-title').innerText = t.hero;
+  document.querySelector('.hero-sub').innerText = t.sub;
+  const playHead = document.querySelector('#playground .section-head h2');
+  if(playHead) playHead.innerText = t.playground;
+}
+
 </script></body></html>
