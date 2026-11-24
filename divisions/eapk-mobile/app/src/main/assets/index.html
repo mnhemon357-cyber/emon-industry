@@ -41,6 +41,11 @@ svg.a{width:100%;color:var(--ink)}.ed{stroke-dasharray:6 6;animation:d 1s linear
 .tabs{display:flex;overflow-x:auto;border-bottom:2px solid var(--ink);margin:8px 0}.tabs button{background:none;color:var(--ink);border-radius:0;margin:0}.tabs button.on{background:var(--ink);color:#fff}
 .tp{display:none}.tp.on{display:block}
 @media(min-width:900px){#tb{top:0;right:auto;width:92px;flex-direction:column;bottom:0;padding-top:70px}body{padding:0 0 0 92px}header{margin-left:-92px;padding-left:134px}.modal{left:92px}}
+.kp{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);margin:10px 0}
+.kp div{padding:12px 4px;border-bottom:1px solid var(--ln)}.kp b{display:block;font:700 21px Georgia,serif;color:var(--g)}
+.cr{padding:10px 0;border-bottom:1px solid var(--ln)}.cr button{padding:6px 10px;font-size:13px}.low{color:var(--r)}
+.cf{padding:8px 0}.cf input,.cf select{width:calc(50% - 6px);margin:3px 3px 3px 0}
+select{font:inherit;font-size:15px;padding:8px;border:1.5px solid var(--ink);border-radius:4px;background:#fff;color:var(--ink)}
 </style></head><body>
 <header><b>EMON INDUSTRY</b><input id="q" placeholder="Search divisions, days, certs"></header>
 <div id="sr"></div>
@@ -77,8 +82,9 @@ svg.a{width:100%;color:var(--ink)}.ed{stroke-dasharray:6 6;animation:d 1s linear
 <div class="tool"><b>Revenue projector</b> <small>clients, then BDT per client each month</small><div id="rv"></div><p id="ro"></p></div>
 </section>
 
+<section class="view" id="v-company"><div id="co"></div></section>
 <div class="modal" id="md"></div>
-<nav id="tb"><a href="#home" data-v="home"><i>&#127968;</i>Home</a><a href="#divisions" data-v="divisions"><i>&#127981;</i>Divisions</a><a href="#sprint" data-v="sprint"><i>&#128197;</i>Sprint</a><a href="#learn" data-v="learn"><i>&#127891;</i>Learn</a><a href="#labs" data-v="labs"><i>&#129514;</i>Labs</a></nav>
+<nav id="tb"><a href="#home" data-v="home"><i>&#127968;</i>Home</a><a href="#divisions" data-v="divisions"><i>&#127981;</i>Divisions</a><a href="#sprint" data-v="sprint"><i>&#128197;</i>Sprint</a><a href="#learn" data-v="learn"><i>&#127891;</i>Learn</a><a href="#labs" data-v="labs"><i>&#129514;</i>Labs</a><a href="#company" data-v="company"><i>&#128188;</i>Company</a></nav>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],cnt=o=>Object.values(o).filter(Boolean).length;
@@ -105,8 +111,8 @@ const save=()=>{try{localStorage.setItem("emon_v5",JSON.stringify(S))}catch(e){}
 let cur="home";
 function route(){const h=location.hash.slice(1)||"home",m=/^d(\d)$/.exec(h);
  if(m){openD(+m[1]);return}
- $("#md").classList.remove("on");cur=["home","divisions","sprint","learn","labs"].includes(h)?h:"home";
- $$(".view").forEach(v=>v.classList.toggle("on",v.id=="v-"+cur));$$("#tb a").forEach(a=>a.classList.toggle("on",a.dataset.v==cur));scrollTo(0,0)}
+ $("#md").classList.remove("on");cur=["home","divisions","sprint","learn","labs","company"].includes(h)?h:"home";
+ $$(".view").forEach(v=>v.classList.toggle("on",v.id=="v-"+cur));$$("#tb a").forEach(a=>a.classList.toggle("on",a.dataset.v==cur));if(cur=="company")co();scrollTo(0,0)}
 function cl(){history.back();setTimeout(()=>{if(/^#d\d$/.test(location.hash))location.hash="#divisions"},150)}
 function tg(k,i,v){S[k][i]=v;save();prog()}
 function pp(k,v){S.p[k]=v;save();dv()}
@@ -171,4 +177,58 @@ function rs(){if(confirm("Erase all progress on this device?")){S={d:{},c:{},p:{
 addEventListener("hashchange",route);$("#q").addEventListener("input",srch);
 try{$("#env").textContent=window.EmonAndroid&&EmonAndroid.getDeviceInfo?"Running in the EMON Android app. "+EmonAndroid.getDeviceInfo():"Running in the browser. Works offline once loaded."}catch(e){}
 dv();sp();ln();pil();arch();rvi();pr();vat();tr();rv();prog();route();
+/* ===== Company system ===== */
+S.co=S.co||{};
+const SEL={div:D.map(x=>x[1]),stage:["New","Contacted","Proposal","Won","Lost"],st:["To do","Doing","Done"],cur:["BDT","USD"],kind:["Income","Expense"],paid:["Unpaid","Paid"]};
+const M={leads:["Leads",[["name","Client"],["div","Division","div"],["val","Value (BDT)","n"],["stage","Stage","stage"]]],
+ inv:["Invoices",[["name","Client"],["amt","Amount before VAT","n"],["cur","Currency","cur"],["paid","Status","paid"]]],
+ led:["Ledger",[["name","Description"],["amt","Amount (BDT)","n"],["kind","Type","kind"],["date","Date","d"]]],
+ tasks:["Tasks",[["name","Task"],["div","Division","div"],["st","Status","st"]]],
+ stock:["Inventory",[["name","Item"],["qty","In stock","n"],["min","Reorder at","n"]]],
+ team:["Team",[["name","Name"],["role","Role"],["div","Division","div"]]]};
+let ct="dash";
+const L=k=>(S.co[k]=S.co[k]||[]),fmt=n=>Math.round(n).toLocaleString();
+const mk=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const today=()=>mk(new Date());
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function cot(t){ct=t;co()}
+function co(){const tabs=[["dash","Dashboard"],...Object.keys(M).map(k=>[k,M[k][0]])];
+ $("#co").innerHTML=`<h2>Company system</h2><div class="tabs">${tabs.map(t=>`<button class="${t[0]==ct?"on":""}" onclick="cot('${t[0]}')">${t[1]}</button>`).join("")}</div>`+(ct=="dash"?dash():mod(ct))}
+function mod(k){const F=M[k][1],R=L(k).slice().reverse();
+ return `<div class="cf">${F.map(f=>f[2]&&SEL[f[2]]?`<select id="f_${k}_${f[0]}" aria-label="${f[1]}">${SEL[f[2]].map(o=>`<option>${o}</option>`).join("")}</select>`:`<input id="f_${k}_${f[0]}" type="${f[2]=="n"?"number":f[2]=="d"?"date":"text"}" placeholder="${f[1]}" ${f[2]=="d"?`value="${today()}"`:""}>`).join("")}<button onclick="add('${k}')">Add</button></div>`+
+ (R.map(r=>`<div class="cr"><b>${esc(r.name)}</b><br><small>${F.slice(1).map(f=>f[1]+": "+esc(r[f[0]])).join(", ")}</small>${xtra(k,r)}<br><button class="x" onclick="del('${k}',${r.id})">Delete</button></div>`).join("")||"<p class='m'>Nothing here yet. Add the first entry above.</p>")+
+ `<button onclick="csv('${k}')">Copy as CSV</button><textarea id="cv" placeholder="CSV appears here"></textarea>`}
+function xtra(k,r){
+ if(k=="leads")return ` <button onclick="nx('leads',${r.id},'stage')">Move stage</button>`;
+ if(k=="tasks")return ` <button onclick="nx('tasks',${r.id},'st')">Move on</button>`;
+ if(k=="inv")return `<br><small>With 15% VAT: ${fmt(r.amt*1.15)} ${esc(r.cur)}</small> <button onclick="pay(${r.id})">${r.paid=="Paid"?"Mark unpaid":"Mark paid"}</button>`;
+ if(k=="stock")return ` <button onclick="sk(${r.id},1)">+1</button><button onclick="sk(${r.id},-1)">-1</button>${+r.qty<=+r.min?" <b class='low'>Reorder now</b>":""}`;
+ return ""}
+function add(k){const o={id:Date.now()};let ok=1;M[k][1].forEach((f,i)=>{let v=$("#f_"+k+"_"+f[0]).value.trim();if(i==0&&!v)ok=0;o[f[0]]=f[2]=="n"?(+v||0):v});
+ if(!ok){alert("Fill in the first field before adding.");return}L(k).push(o);save();co()}
+function del(k,id){S.co[k]=L(k).filter(r=>r.id!=id);save();co()}
+function nx(k,id,f){const r=L(k).find(r=>r.id==id),l=SEL[f];r[f]=l[(l.indexOf(r[f])+1)%l.length];save();co()}
+function pay(id){const r=L("inv").find(r=>r.id==id);r.paid=r.paid=="Paid"?"Unpaid":"Paid";
+ if(r.paid=="Paid"&&!r.posted){r.posted=1;L("led").push({id:Date.now(),name:"Invoice paid: "+r.name,amt:r.amt*1.15*(r.cur=="USD"?120:1),kind:"Income",date:today()})}save();co()}
+function sk(id,d){const r=L("stock").find(r=>r.id==id);r.qty=Math.max(0,(+r.qty||0)+d);save();co()}
+function csv(k){const F=M[k][1],t=[F.map(f=>f[1]).join(",")].concat(L(k).map(r=>F.map(f=>'"'+String(r[f[0]]).replace(/"/g,'""')+'"').join(","))).join("\n");$("#cv").value=t;try{navigator.clipboard.writeText(t)}catch(e){}}
+function dash(){const led=L("led"),sm=(a,f,g)=>a.filter(f).reduce((s,r)=>s+g(r),0),a=r=>+r.amt||0;
+ const inc=sm(led,r=>r.kind=="Income",a),exp=sm(led,r=>r.kind=="Expense",a),ld=L("leads"),
+ pipe=sm(ld,r=>r.stage!="Won"&&r.stage!="Lost",r=>+r.val||0),won=sm(ld,r=>r.stage=="Won",r=>+r.val||0),
+ unp=sm(L("inv"),r=>r.paid!="Paid",r=>a(r)*1.15*(r.cur=="USD"?120:1)),
+ open=L("tasks").filter(r=>r.st!="Done").length,low=L("stock").filter(r=>+r.qty<=+r.min).length;
+ const K=[["Income",fmt(inc)+" BDT"],["Expenses",fmt(exp)+" BDT"],["Profit",fmt(inc-exp)+" BDT"],["Open pipeline",fmt(pipe)+" BDT"],["Won deals",fmt(won)+" BDT"],["Unpaid invoices",fmt(unp)+" BDT"],["Open tasks",open],["Items to reorder",low],["Team size",L("team").length]];
+ const ms=[],n=new Date();for(let i=5;i>=0;i--)ms.push(mk(new Date(n.getFullYear(),n.getMonth()-i,1)).slice(0,7));
+ const A=ms.map(m=>[sm(led,r=>r.kind=="Income"&&(r.date||"").startsWith(m),a),sm(led,r=>r.kind=="Expense"&&(r.date||"").startsWith(m),a)]),mx=Math.max(1,...A.flat());
+ const svg=`<svg class="a" viewBox="0 0 360 150" role="img" aria-label="Income and expenses by month">${A.map((v,i)=>{const x=12+i*58,h1=v[0]/mx*100,h2=v[1]/mx*100;return `<rect x="${x}" y="${110-h1}" width="20" height="${h1}" fill="#0E6B38"/><rect x="${x+22}" y="${110-h2}" width="20" height="${h2}" fill="#D61A1F"/><text x="${x+21}" y="126" text-anchor="middle" font-size="10" fill="currentColor">${ms[i].slice(5)}</text>`}).join("")}<text x="12" y="145" font-size="10" fill="#0E6B38">Income</text><text x="70" y="145" font-size="10" fill="#D61A1F">Expenses</text></svg>`;
+ return `<div class="kp">${K.map(k=>`<div><small>${k[0]}</small><b>${k[1]}</b></div>`).join("")}</div>${svg}<p class="m">Data stays on this device and is included in Backup and restore on the Home tab.</p><button onclick="seed()">Load sample data</button><button class="x" onclick="wipe()">Clear company data</button>`}
+function seed(){if(L("led").length+L("leads").length){alert("Clear company data first, then load the sample.");return}const n=new Date(),d=i=>mk(new Date(n.getFullYear(),n.getMonth()-i,15));let i=1;const id=()=>Date.now()+(i++);
+ S.co.leads=[{id:id(),name:"Dhaka Clinic Group",div:"Motior Pharma",val:250000,stage:"Proposal"},{id:id(),name:"City Print House",div:"EPrinter",val:60000,stage:"Won"},{id:id(),name:"SecureBank BD",div:"Esecurity",val:400000,stage:"Contacted"}];
+ S.co.inv=[{id:id(),name:"Dhaka Clinic Group",amt:250000,cur:"BDT",paid:"Unpaid"}];
+ S.co.led=[[2,"Print contract","Income",90000],[2,"Server and tools","Expense",30000],[1,"Sensor kit sale","Income",140000],[1,"Salaries","Expense",70000],[0,"Pentest report","Income",110000],[0,"Cloud and licenses","Expense",25000]].map(r=>({id:id(),name:r[1],amt:r[3],kind:r[2],date:d(r[0])}));
+ S.co.tasks=[{id:id(),name:"Ship ESP32 sensor batch",div:"Emontron",st:"Doing"},{id:id(),name:"Send proposal to SecureBank",div:"Esecurity",st:"To do"}];
+ S.co.stock=[{id:id(),name:"ESP32 boards",qty:12,min:5},{id:id(),name:"A4 paper reams",qty:3,min:5}];
+ S.co.team=[{id:id(),name:"Founder",role:"CEO",div:"Efirm"}];save();co()}
+function wipe(){if(confirm("Erase all company data on this device?")){S.co={};save();co()}}
+
 </script></body></html>

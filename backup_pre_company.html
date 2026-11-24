@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0B0E11">
+<title>EMON INDUSTRY PVT LTD</title>
+<style>
+:root{--ink:#0B0E11;--paper:#fff;--soft:#F2F5F3;--g:#0E6B38;--g2:#19b45a;--r:#D61A1F;--ln:#D5DDD8;--m:#5b6872;--nav:60px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif;padding-bottom:calc(var(--nav) + env(safe-area-inset-bottom,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:30}
+h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.25}h2{font-size:22px;margin:26px 0 8px}
+small,.m{color:var(--m);font-size:13px}a{color:var(--g)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;display:flex;gap:10px;align-items:center;padding:10px 12px 10px 42px;background:linear-gradient(135deg,var(--r) 0 28px,transparent 28px),var(--ink);color:#fff}
+header b{font:700 16px Georgia,serif;white-space:nowrap}
+#q{flex:1;min-width:0;padding:9px 12px;border:0;border-radius:4px;background:#1c232b;color:#fff;font-size:15px}
+#sr{display:none;position:fixed;left:8px;right:8px;top:calc(60px + env(safe-area-inset-top,0px));max-height:60vh;overflow:auto;background:#fff;border:2px solid var(--ink);z-index:12}
+#sr.on{display:block}#sr a{display:block;padding:10px 12px;border-bottom:1px solid var(--ln);color:var(--ink);text-decoration:none}
+.view{display:none;max-width:860px;margin:auto;padding:0 14px 20px}.view.on{display:block}
+#hero{display:block;width:calc(100% + 28px);margin:0 -14px;height:auto}
+.row{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--ln)}
+.dr{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--ln);color:inherit;text-decoration:none}
+.dr>i{font:normal 30px Georgia,serif;color:var(--g);min-width:34px}.dr p{font-size:14px;color:var(--m);margin:4px 0 8px}
+.bar{height:5px;background:var(--ln)}.bar u{display:block;height:100%;background:var(--g);transition:width .4s}
+label{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--ln)}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--g);flex:none;margin-top:2px}
+button{background:var(--g);color:#fff;border:0;border-radius:4px;padding:10px 14px;font-size:15px;margin:4px 6px 4px 0}button.x{background:var(--r)}
+input,textarea{font:inherit;font-size:15px;padding:8px;border:1.5px solid var(--ink);border-radius:4px;background:#fff;color:var(--ink)}
+textarea{width:100%;height:90px}
+details{border-left:4px solid var(--g);margin:10px 0;padding-left:10px}summary{font:700 17px Georgia,serif;padding:8px 0}
+.tl{border-left:3px solid var(--g);padding:6px 0 6px 12px;margin:0 0 0 6px}
+.tool{border-top:2px solid var(--ink);padding:12px 0}.tool input{width:calc(50% - 6px);margin:3px 3px 3px 0}.tool textarea{margin:4px 0}.tool code{display:block;word-break:break-all;color:var(--g)}
+.dk{background:var(--ink);border-radius:4px;padding:10px;color:#fff;margin:8px 0}.dk canvas{width:100%;display:block}
+svg.a{width:100%;color:var(--ink)}.ed{stroke-dasharray:6 6;animation:d 1s linear infinite}@keyframes d{to{stroke-dashoffset:-12}}
+@media(prefers-reduced-motion:reduce){.ed{animation:none}}
+#pi{border-left:4px solid var(--r);padding:8px 12px;background:var(--soft);margin-top:8px}
+#tb{position:fixed;bottom:0;left:0;right:0;z-index:10;display:flex;background:var(--g);padding-bottom:env(safe-area-inset-bottom,0px)}
+#tb a{flex:1;text-align:center;color:#fff;text-decoration:none;font-size:12px;padding:7px 0;height:var(--nav)}#tb a i{display:block;font:normal 20px/1.3 system-ui}
+#tb a.on{background:var(--ink)}
+.modal{display:none;position:fixed;inset:0;background:#fff;z-index:20;overflow:auto;padding:env(safe-area-inset-top,0px) 14px 60px}.modal.on{display:block}
+.mh{display:flex;gap:12px;align-items:center;background:var(--ink);color:#fff;margin:0 -14px;padding:10px 14px;position:sticky;top:0}
+.tabs{display:flex;overflow-x:auto;border-bottom:2px solid var(--ink);margin:8px 0}.tabs button{background:none;color:var(--ink);border-radius:0;margin:0}.tabs button.on{background:var(--ink);color:#fff}
+.tp{display:none}.tp.on{display:block}
+@media(min-width:900px){#tb{top:0;right:auto;width:92px;flex-direction:column;bottom:0;padding-top:70px}body{padding:0 0 0 92px}header{margin-left:-92px;padding-left:134px}.modal{left:92px}}
+</style></head><body>
+<header><b>EMON INDUSTRY</b><input id="q" placeholder="Search divisions, days, certs"></header>
+<div id="sr"></div>
+
+<section class="view" id="v-home">
+<svg id="hero" viewBox="0 0 360 150" role="img" aria-label="EMON INDUSTRY emblem"><rect width="360" height="50" fill="#0B0E11"/><rect y="50" width="360" height="50" fill="#fff"/><rect y="100" width="360" height="50" fill="#0E6B38"/><polygon points="0,0 82,75 0,150" fill="#D61A1F"/>
+<polygon points="110,53 128,75 110,97 92,75" fill="#fff" stroke="#0B0E11" stroke-width="2.5"/><line x1="110" y1="58" x2="110" y2="92" stroke="#0B0E11" stroke-width="2"/><path d="M103,62Q110,68 103,75Q110,82 103,89M117,62Q110,68 117,75Q110,82 117,89" fill="none" stroke="#0E6B38" stroke-width="1.8"/>
+<text x="230" y="82" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="22" fill="#0B0E11">EMON INDUSTRY</text>
+<text x="230" y="30" text-anchor="middle" font-size="12" fill="#fff">Building a Better Tomorrow</text>
+<text x="230" y="124" text-anchor="middle" font-size="9.5" fill="#fff">Beyond Future, A Company for Mankind</text><text x="230" y="139" text-anchor="middle" font-size="9.5" fill="#fff">Vibe with Frequency</text></svg>
+<div class="row"><svg viewBox="0 0 80 80" width="76" height="76"><circle cx="40" cy="40" r="34" fill="none" stroke="#D5DDD8" stroke-width="8"/><circle id="rg" cx="40" cy="40" r="34" fill="none" stroke="#0E6B38" stroke-width="8" stroke-dasharray="214" stroke-dashoffset="214" transform="rotate(-90 40 40)" style="transition:stroke-dashoffset .6s"/><text id="rp" x="40" y="45" text-anchor="middle" font-size="16" font-weight="700" fill="#0B0E11">0%</text></svg>
+<div><b>Your progress</b><br><small id="rs"></small></div></div>
+<div class="row" style="display:block" id="td"></div>
+<h2>The six pillars</h2><svg class="a" id="pil" viewBox="0 0 360 250"></svg><div id="pi">Tap a pillar to see what it means.</div>
+<h2>Backup and restore</h2><button onclick="ex()">Copy backup</button><button onclick="dl()">Save file</button><button onclick="im()">Restore from box</button><button class="x" onclick="rs()">Erase progress</button>
+<textarea id="bk" placeholder="Paste a backup here, then tap Restore"></textarea>
+<h2>Official links</h2><label><a href="https://github.com/mnhemon357-cyber/emon-industry" target="_blank" rel="noopener">GitHub repository</a></label><label><a href="https://mnhemon357-cyber.github.io/emon-industry/" target="_blank" rel="noopener">Live website</a></label><label><a href="https://github.com/mnhemon357-cyber/emon-industry/releases/download/v1.0-latest/EMON-INDUSTRY-v1.0.apk" target="_blank" rel="noopener">Download the Android app</a></label>
+<p class="m" id="env" style="margin-top:12px"></p>
+</section>
+
+<section class="view" id="v-divisions"><h2>Nine divisions</h2><div id="dv"></div></section>
+<section class="view" id="v-sprint"><h2>29-day sprint</h2><div id="trk"></div><div id="sp"></div></section>
+<section class="view" id="v-learn"><h2>14 free certifications</h2><div id="ce"></div><h2>Incorporation roadmap</h2><div id="rj"></div></section>
+
+<section class="view" id="v-labs"><h2>How the divisions connect</h2><svg class="a" id="arch" viewBox="0 0 360 300"></svg>
+<h2>Live biometrics</h2><div class="dk"><canvas id="wv" width="320" height="120"></canvas><span id="bv">--</span></div>
+<h2>Threat radar</h2><div class="dk"><canvas id="rd" width="260" height="260" style="max-width:300px;margin:auto"></canvas><div id="rt" style="text-align:center">0 tracked</div></div>
+<h2>Division tools</h2>
+<div class="tool"><b>EPrinter price</b> <small>2 BDT black and white, 5 BDT color</small><br><input id="pg" type="number" placeholder="Pages" oninput="pr()"><input id="cl" type="number" placeholder="Color pages" oninput="pr()"><input id="cp" type="number" placeholder="Copies" value="1" oninput="pr()"><p id="pro"></p></div>
+<div class="tool"><b>Efirm VAT invoice</b><br><input id="va" type="number" placeholder="Amount in BDT" oninput="vat()"><input id="vr" type="number" value="15" oninput="vat()"><input id="vx" type="number" value="120" oninput="vat()"><p id="vo"></p></div>
+<div class="tool"><b>29A SHA-256</b><textarea id="hi" placeholder="Text to hash" oninput="hs()"></textarea><code id="ho"></code></div>
+<div class="tool"><b>Esecurity log check</b><textarea id="li" placeholder="Paste logs"></textarea><button onclick="ls()">Load sample</button><button onclick="lg()">Analyse</button><div id="lo"></div></div>
+<div class="tool"><b>Motior vitals check</b> <small>Demo, not medical advice</small><br><input id="tb1" type="number" placeholder="BPM" oninput="tr()"><input id="ts" type="number" placeholder="SpO2 %" oninput="tr()"><input id="tt" type="number" step="0.1" placeholder="Temp C" oninput="tr()"><p id="to"></p></div>
+<div class="tool"><b>Revenue projector</b> <small>clients, then BDT per client each month</small><div id="rv"></div><p id="ro"></p></div>
+</section>
+
+<div class="modal" id="md"></div>
+<nav id="tb"><a href="#home" data-v="home"><i>&#127968;</i>Home</a><a href="#divisions" data-v="divisions"><i>&#127981;</i>Divisions</a><a href="#sprint" data-v="sprint"><i>&#128197;</i>Sprint</a><a href="#learn" data-v="learn"><i>&#127891;</i>Learn</a><a href="#labs" data-v="labs"><i>&#129514;</i>Labs</a></nav>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],cnt=o=>Object.values(o).filter(Boolean).length;
+const PL=["Learn","Build","Validate","Publish","Brand","Earn"];
+const PD=["Master low-level CS, RFCs, manuals and 14 free certifications.","Write clean, zero-bloat code in C, Python, Raku, Java and Shell.","Automated GitHub Actions CI/CD, security audits, zero-defect checks.","Live GitHub Pages portals, signed APKs, public documentation.","One EMON INDUSTRY identity, executive datasheets, international trust.","B2B SaaS, security audits, print logistics, turnkey hardware contracts."];
+const C=[["Cisco NDG Linux Unhatched","https://www.netacad.com/courses/linux-unhatched"],["Cisco Intro to Cybersecurity","https://www.netacad.com/courses/introduction-to-cybersecurity"],["Cisco Networking Basics","https://www.netacad.com/courses/networking-basics"],["freeCodeCamp Responsive Web Design","https://www.freecodecamp.org/learn/2022/responsive-web-design/"],["Cisco Python Essentials 1","https://www.netacad.com/courses/python-essentials-1"],["Kaggle Python and Pandas","https://www.kaggle.com/learn/python"],["ISC2 Certified in Cybersecurity","https://www.isc2.org/certifications/cc"],["PortSwigger Web Security Academy","https://portswigger.net/web-security"],["Cisco Ethical Hacker","https://www.netacad.com/courses/ethical-hacker"],["Linux Foundation Free Courses","https://training.linuxfoundation.org/resources/?_sft_content_type=free-course"],["AWS Cloud Practitioner Essentials","https://explore.skillbuilder.aws/learn/course/external/view/elearning/134/aws-cloud-practitioner-essentials"],["Elements of AI (Helsinki)","https://course.elementsofai.com/"],["IBM SkillsBuild Cybersecurity","https://skillsbuild.org/"],["Harvard CS50","https://www.harvardonline.harvard.edu/course/cs50-introduction-computer-science"]];
+const D=[
+[1,"Emontron","C / RTOS / ESP32","divisions/emontron","Embedded IoT microcontrollers, biometric sensors (Temp, SpO2, BPM) and sovereign hardware.","Turnkey hardware contracts, sensor kits, OEM licensing.","an ESP32 biometric sensor node",[0,2,13]],
+[2,"Esecurity","Raku / Linux / SOC","divisions/esecurity","24/7 Security Operations Center, Raku regex log correlation, firewall perimeter defense.","Managed SOC retainers and monitoring contracts.","a Raku log correlation engine",[0,1,6]],
+[3,"29A Cyber Guardian","Python / Kali / Crypto","divisions/29a-cyber-guardian","Authorized penetration testing, OWASP audits, SHA-256 cryptographic assurance.","Paid pentests and security audit reports.","an OWASP audit toolkit",[1,7,8]],
+[4,"EOS (Inhealer OS)","Debian / Kernel / Bash","divisions/eos-inhealer","Hardened zero-telemetry Linux OS for developers and cyber defense.","Enterprise support and hardened-image licensing.","a hardened Debian image",[0,9,6]],
+[5,"EMON (EI)","Python / Local LLM","divisions/ei-onbound-ai","On-bound offline autonomous AI security analyst with local quantized intelligence.","Private on-premise AI analyst subscriptions.","an offline quantized LLM analyst",[4,5,11]],
+[6,"Efirm","Java / SQLite / REST","divisions/efirm","Custom enterprise ERP, automated BDT/USD VAT invoicing and B2B software.","B2B SaaS licenses and ERP customization.","a VAT invoicing ERP module",[13,3,10]],
+[7,"EAPK","Java / Android SDK","divisions/eapk-mobile","Native Android apps, WebView and EmonAndroid JS bridges, automated Gradle APK CI.","Custom Android app development.","a signed WebView APK with JS bridge",[13,3,9]],
+[8,"EPrinter","Python / HTML5 / PDF","divisions/eprinter","Cloud A4 document pricing (2 BDT B&W / 5 BDT Color), PDF pre-flight, print logistics.","Per-page print revenue and B2B print contracts.","a PDF pre-flight pricing service",[4,3,5]],
+[9,"Motior Pharma","C / Python / HL7","divisions/motior-pharma","Health-tech clinical telemetry dashboards, diagnostic sensors, pharmacy ERP.","Clinic dashboards and pharmacy ERP subscriptions.","an HL7 telemetry dashboard",[2,11,12]]];
+const DAYS=["Termux, Git and CI setup","C basics and pointers","Python scripting","Raku regex logs","Java fundamentals","Shell automation","Week 1 review","HTML/CSS portal","JavaScript interactivity","SQLite and server.py API","Android Activity and WebView","Gradle APK CI","Certs 1 and 2","Certs 3 and 4","EOS Debian hardening","EI local LLM","Motior Pharma dashboard","Cert 5","Cert 6","Cert 7","Cert 8","RJSC name clearance, MOA/AOA","Trade License and e-TIN","BIN/VAT and BASIS","B2B pitch deck","First client outreach","Certs 9 to 12","Certs 13 and 14","Global scale: ERQ, Delaware/Singapore"];
+const WK=["Week 1: Core mainframe and languages","Week 2: Full-stack web, APK and certs 1 to 4","Week 3: EOS, EI AI, Motior Pharma, certs 5 to 8, RJSC","Week 4: B2B launch, certs 9 to 14, global scale"];
+const RJ=["Name clearance (roc.gov.bd)","MOA and AOA drafting","Certificate of Incorporation","NBR e-TIN","Trade License","13-digit BIN / VAT","BASIS membership","USD Export Retention Quota (ERQ) banking","Delaware / Singapore holding expansion"];
+const wi=i=>i<7?0:i<14?1:i<22?2:3;
+let S;try{S=JSON.parse(localStorage.getItem("emon_v5"))||{}}catch(e){S={}}
+S.d=S.d||{};S.c=S.c||{};S.p=S.p||{};
+const save=()=>{try{localStorage.setItem("emon_v5",JSON.stringify(S))}catch(e){}};
+let cur="home";
+function route(){const h=location.hash.slice(1)||"home",m=/^d(\d)$/.exec(h);
+ if(m){openD(+m[1]);return}
+ $("#md").classList.remove("on");cur=["home","divisions","sprint","learn","labs"].includes(h)?h:"home";
+ $$(".view").forEach(v=>v.classList.toggle("on",v.id=="v-"+cur));$$("#tb a").forEach(a=>a.classList.toggle("on",a.dataset.v==cur));scrollTo(0,0)}
+function cl(){history.back();setTimeout(()=>{if(/^#d\d$/.test(location.hash))location.hash="#divisions"},150)}
+function tg(k,i,v){S[k][i]=v;save();prog()}
+function pp(k,v){S.p[k]=v;save();dv()}
+function prog(){const n=cnt(S.d),c=cnt(S.c),p=Math.round((n+c)/43*100);$("#rg").style.strokeDashoffset=214*(1-p/100);$("#rp").textContent=p+"%";$("#rs").textContent=n+" of 29 days, "+c+" of 14 certs";trk()}
+function trk(){const s=S.start;let t="Set your sprint start date in the Sprint tab.",h=`<label style="display:block">Sprint start date <input type="date" value="${s||""}" onchange="S.start=this.value;save();trk()"></label>`;
+ if(s){const n=Math.floor((Date.now()-new Date(s))/864e5)+1,c=Math.min(Math.max(n,1),29),dn=cnt(S.d);
+ t=n<1?`Sprint starts in ${1-n} day(s).`:n>29?`Sprint window ended (day ${n}).`:`<b>Day ${n} of 29:</b> ${DAYS[c-1]}<br><small>${dn<Math.min(n,29)?"Behind by "+(Math.min(n,29)-dn)+" day(s)":"On track"}</small>`;h+=`<p>${t}</p>`}
+ $("#trk").innerHTML=h;$("#td").innerHTML=t}
+function dv(){$("#dv").innerHTML=D.map(x=>{let n=0;for(let i=0;i<6;i++)if(S.p[x[0]+"_"+i])n++;return `<a class="dr" href="#d${x[0]}"><i>${x[0]}</i><div style="flex:1"><b>${x[1]}</b> <small>${x[2]}</small><p>${x[4]}</p><div class="bar"><u style="width:${n/6*100}%"></u></div></div></a>`}).join("")}
+function sp(){$("#sp").innerHTML=WK.map((w,k)=>`<details ${k==0?"open":""}><summary>${w}</summary>${DAYS.map((t,i)=>wi(i)==k?`<label><input type="checkbox" ${S.d[i]?"checked":""} onchange="tg('d',${i},this.checked)">Day ${i+1}: ${t}</label>`:"").join("")}</details>`).join("")}
+function ln(){$("#ce").innerHTML=C.map((c,i)=>`<label><input type="checkbox" ${S.c[i]?"checked":""} onchange="tg('c',${i},this.checked)"><span>${i+1}. <a href="${c[1]}" target="_blank" rel="noopener">${c[0]}</a></span></label>`).join("");
+ $("#rj").innerHTML=RJ.map((r,i)=>`<div class="tl"><b>${i+1}.</b> ${r}</div>`).join("")}
+function openD(n){const x=D.find(d=>d[0]==n);if(!x)return;
+ const pc=[`Study ${x[2]} from official manuals and RFCs.`,`Ship ${x[6]}.`,"Add CI tests and a security audit in GitHub Actions.",`Publish ${x[1]} docs and a live portal page.`,`Release a ${x[1]} datasheet in EMON identity.`,x[5]];
+ const st=["Install the toolchain for "+x[2]+" and start "+C[x[7][0]][0]+".","Build a minimal version of "+x[6]+".","Add tests and docs, then release v1.0 with CI.","Sell it: "+x[5]];
+ const T=[["What it is",`<p>${x[4]}</p><p class="m">Folder: ${x[3]}</p>`],["Why and revenue",`<p>${x[5]}</p>`],
+ ["Pillars",PL.map((p,i)=>`<label><input type="checkbox" ${S.p[n+"_"+i]?"checked":""} onchange="pp('${n}_${i}',this.checked)"><span><b>${p}:</b> ${pc[i]}</span></label>`).join("")],
+ ["Certs",x[7].map(i=>`<label><a href="${C[i][1]}" target="_blank" rel="noopener">${C[i][0]}</a></label>`).join("")],
+ ["Pathway",["Zero","Foundation","Product","Enterprise"].map((s,i)=>`<div class="tl"><b>${i+1}. ${s}</b><br>${st[i]}</div>`).join("")]];
+ $("#md").innerHTML=`<div class="mh"><button onclick="cl()">Back</button><b>${x[1]}</b></div><p class="m" style="margin-top:8px">${x[2]}</p><div class="tabs">${T.map((t,i)=>`<button class="${i?"":"on"}" onclick="tab(${i})">${t[0]}</button>`).join("")}</div>${T.map((t,i)=>`<div class="tp ${i?"":"on"}">${t[1]}</div>`).join("")}`;
+ $("#md").classList.add("on");$("#md").scrollTop=0}
+function tab(i){$$(".tabs button").forEach((b,j)=>b.classList.toggle("on",i==j));$$(".tp").forEach((p,j)=>p.classList.toggle("on",i==j))}
+function srch(){const q=$("#q").value.toLowerCase().trim(),o=$("#sr");if(!q){o.className="";return}const R=[];
+ D.forEach(x=>(x[1]+x[2]+x[4]).toLowerCase().includes(q)&&R.push(["Division",x[1],"#d"+x[0]]));
+ DAYS.forEach((t,i)=>("day "+(i+1)+" "+t).toLowerCase().includes(q)&&R.push(["Sprint","Day "+(i+1)+": "+t,"#sprint"]));
+ C.forEach(c=>c[0].toLowerCase().includes(q)&&R.push(["Cert",c[0],"#learn"]));RJ.forEach(r=>r.toLowerCase().includes(q)&&R.push(["Roadmap",r,"#learn"]));
+ o.className="on";o.innerHTML=R.slice(0,30).map(r=>`<a href="${r[2]}" onclick="$('#q').value='';srch()"><small>${r[0]}</small><br>${r[1]}</a>`).join("")||"<a>Nothing found. Try another word.</a>"}
+function pil(){let s="";PL.forEach((n,i)=>{const a=i/6*Math.PI*2-Math.PI/2,x=180+90*Math.cos(a),y=125+90*Math.sin(a);
+ s+=`<line class="ed" x1="180" y1="125" x2="${x}" y2="${y}" stroke="#0E6B38" stroke-width="1.5"/><g onclick="pi(${i})" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="28" fill="#fff" stroke="#0B0E11" stroke-width="2"/><text x="${x}" y="${y+3}" text-anchor="middle" font-size="9" fill="currentColor">${i+1} ${n}</text></g>`});
+ $("#pil").innerHTML=s+`<circle cx="180" cy="125" r="30" fill="#0E6B38"/><text x="180" y="129" text-anchor="middle" font-size="11" fill="#fff">EMON</text>`}
+function pi(i){$("#pi").innerHTML=`<b>${i+1}. ${PL[i]}</b><br>${PD[i]}`}
+function arch(){const P={1:[60,40],9:[180,40],5:[300,40],2:[60,150],4:[180,150],3:[300,150],6:[60,260],7:[180,260],8:[300,260]},E=[[1,9],[9,7],[2,4],[3,4],[5,4],[2,5],[6,7],[8,7]];
+ $("#arch").innerHTML=E.map(([a,b])=>`<line class="ed" x1="${P[a][0]}" y1="${P[a][1]}" x2="${P[b][0]}" y2="${P[b][1]}" stroke="#19b45a" stroke-width="1.5"/>`).join("")+
+ D.map(x=>{const p=P[x[0]];return `<a href="#d${x[0]}"><rect x="${p[0]-46}" y="${p[1]-20}" width="92" height="40" fill="#F2F5F3" stroke="${x[0]==7?"#D61A1F":"#0E6B38"}" stroke-width="2.5"/><text x="${p[0]}" y="${p[1]+4}" text-anchor="middle" font-size="10" fill="currentColor">${x[1].slice(0,15)}</text></a>`}).join("")}
+function pr(){const p=+$("#pg").value||0,c=Math.min(+$("#cl").value||0,p),k=+$("#cp").value||1,b=p-c;$("#pro").textContent=`${b} B&W x 2 + ${c} color x 5 = ${(b*2+c*5)*k} BDT for ${k} copies`}
+function vat(){const a=+$("#va").value||0,r=+$("#vr").value||0,x=+$("#vx").value||1,v=a*r/100;$("#vo").textContent=`VAT ${v.toFixed(2)} BDT. Total ${(a+v).toFixed(2)} BDT, about ${((a+v)/x).toFixed(2)} USD (rate ${x}).`}
+async function hs(){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode($("#hi").value));$("#ho").textContent=[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}catch(e){$("#ho").textContent="SHA-256 needs https or the installed app."}}
+function ls(){$("#li").value="Nov 24 sshd: Failed password for root from 203.0.113.9\nNov 24 sshd: Failed password for admin from 203.0.113.9\nNov 24 sshd: Invalid user test from 203.0.113.9\nNov 24 sshd: Accepted password for emon from 192.168.0.5\nNov 24 ufw: DENIED 198.51.100.7";lg()}
+function lg(){const m={};$("#li").value.split("\n").forEach(l=>{if(/fail|denied|invalid|refused/i.test(l)){const ip=(l.match(/\b\d{1,3}(\.\d{1,3}){3}\b/)||["unknown"])[0];m[ip]=(m[ip]||0)+1}});
+ const r=Object.entries(m).sort((a,b)=>b[1]-a[1]);$("#lo").innerHTML=r.length?r.map(([ip,n])=>`<label>${ip}: ${n} hit(s) ${n>=3?"<b style='color:#D61A1F'>Block this IP</b>":"Keep watching"}</label>`).join(""):"<p class='m'>No suspicious lines found.</p>"}
+function tr(){const b=+$("#tb1").value,s=+$("#ts").value,t=+$("#tt").value,r=[];if(s&&s<92)r.push("Critical: low SpO2");if(b>120||(b&&b<50))r.push("Warning: abnormal BPM");if(t>=38)r.push("Warning: fever");if(t&&t<35)r.push("Critical: low temperature");$("#to").textContent=r.length?r.join(". "):"Within the demo normal range."}
+const PZ=[15000,25000,40000,8000,20000,12000,30000,2000,18000];
+function rvi(){$("#rv").innerHTML=D.map((x,i)=>`<div class="m">${x[1]}<br><input id="rc${x[0]}" type="number" value="1" oninput="rv()"><input id="rp${x[0]}" type="number" value="${PZ[i]}" oninput="rv()"></div>`).join("")}
+function rv(){let t=0;D.forEach(x=>{t+=(+$("#rc"+x[0]).value||0)*(+$("#rp"+x[0]).value||0)});$("#ro").textContent=`Monthly ${t.toLocaleString()} BDT. Yearly ${(t*12).toLocaleString()} BDT, about ${Math.round(t*12/120).toLocaleString()} USD.`}
+function ex(){const s=JSON.stringify(S);$("#bk").value=s;try{navigator.clipboard.writeText(s)}catch(e){}}
+function im(){try{const o=JSON.parse($("#bk").value);if(!o||typeof o!="object")throw 0;Object.assign(S,o);S.d=S.d||{};S.c=S.c||{};S.p=S.p||{};save();sp();ln();dv();prog();alert("Progress restored")}catch(e){alert("That is not a valid backup. Paste the full text and try again.")}}
+function dl(){try{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:"application/json"}));a.download="emon-progress.json";a.click()}catch(e){ex();alert("Saving files is blocked here. The backup is in the box instead.")}}
+function rs(){if(confirm("Erase all progress on this device?")){S={d:{},c:{},p:{}};save();sp();ln();dv();prog()}}
+(function(){const g=$("#wv").getContext("2d"),b=new Array(320).fill(0);let t=0,f=0;
+ const e=p=>{p%=1;if(p<.1)return Math.sin(p/.1*Math.PI)*.15;if(p>.18&&p<.2)return-.15;if(p>=.2&&p<.24)return 1;if(p>=.24&&p<.27)return-.3;if(p>.4&&p<.55)return Math.sin((p-.4)/.15*Math.PI)*.25;return 0};
+ (function L(){if(cur!="labs"){setTimeout(L,400);return}t+=.014;b.push(e(t)+(Math.random()-.5)*.03);b.shift();g.clearRect(0,0,320,120);g.strokeStyle="#19b45a";g.lineWidth=2;g.beginPath();b.forEach((v,i)=>{const y=85-v*65;i?g.lineTo(i,y):g.moveTo(i,y)});g.stroke();
+ if(f++%45==0)$("#bv").textContent="BPM "+(70+Math.round(Math.random()*6))+", SpO2 "+(97+Math.round(Math.random()*2))+"%, Temp "+(36.4+Math.random()*.5).toFixed(1)+" C";requestAnimationFrame(L)})()})();
+(function(){const g=$("#rd").getContext("2d"),R=120,cx=130,cy=130;let a=0,bl=[],tot=0;
+ (function L(){if(cur!="labs"){setTimeout(L,400);return}a+=.03;g.clearRect(0,0,260,260);g.strokeStyle="#0E6B38";for(let r=40;r<=R;r+=40){g.beginPath();g.arc(cx,cy,r,0,7);g.stroke()}
+ g.beginPath();g.moveTo(cx-R,cy);g.lineTo(cx+R,cy);g.moveTo(cx,cy-R);g.lineTo(cx,cy+R);g.stroke();
+ const gr=g.createConicGradient?g.createConicGradient(a,cx,cy):null;
+ if(gr){gr.addColorStop(0,"rgba(25,180,90,.55)");gr.addColorStop(.12,"rgba(25,180,90,0)");gr.addColorStop(1,"rgba(25,180,90,0)");g.fillStyle=gr;g.beginPath();g.arc(cx,cy,R,0,7);g.fill()}
+ else{g.strokeStyle="#19b45a";g.beginPath();g.moveTo(cx,cy);g.lineTo(cx+R*Math.cos(a),cy+R*Math.sin(a));g.stroke()}
+ if(Math.random()<.03){const n=Math.random()*7,r=20+Math.random()*95;bl.push({x:cx+r*Math.cos(n),y:cy+r*Math.sin(n),l:1});tot++}
+ bl=bl.filter(p=>p.l>0);bl.forEach(p=>{g.fillStyle=`rgba(214,26,31,${p.l})`;g.beginPath();g.arc(p.x,p.y,4,0,7);g.fill();p.l-=.004});
+ $("#rt").textContent=tot+" tracked, "+bl.length+" active";requestAnimationFrame(L)})()})();
+addEventListener("hashchange",route);$("#q").addEventListener("input",srch);
+try{$("#env").textContent=window.EmonAndroid&&EmonAndroid.getDeviceInfo?"Running in the EMON Android app. "+EmonAndroid.getDeviceInfo():"Running in the browser. Works offline once loaded."}catch(e){}
+dv();sp();ln();pil();arch();rvi();pr();vat();tr();rv();prog();route();
+</script></body></html>
