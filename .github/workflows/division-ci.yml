@@ -1,0 +1,19 @@
+name: Validate Division Engines (C & Python)
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  validate-divisions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile & Run Emontron C Sensor Node
+        run: |
+          gcc -O2 -Wall -Wextra divisions/emontron/sensor_node.c -o divisions/emontron/sensor_node
+          ./divisions/emontron/sensor_node
+      - name: Validate Motior Pharma, 29A & Esecurity Engines
+        run: |
+          python3 divisions/motior-pharma/telemetry_engine.py
+          python3 divisions/29a-cyber-guardian/guardian_audit.py
+          python3 divisions/esecurity/soc_analyzer.py

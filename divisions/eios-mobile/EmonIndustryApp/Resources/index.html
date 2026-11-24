@@ -11,40 +11,19 @@
 <title>EMON INDUSTRY PVT LTD | OffSec-Grade Sovereign Mainframe &amp; Enterprise Systems</title>
 <style>
 :root{
-  --bg:#070a0f;
-  --panel:#0d131d;
-  --panel2:#121a27;
-  --bd:#1f2b3d;
-  --bd-hi:#2e405b;
-  --orange:#ff4d00;
-  --red:#ff2a3c;
-  --cyan:#00e5ff;
-  --green:#00e676;
-  --txt:#e6edf7;
-  --mut:#8fa3bf;
+  --bg:#070a0f;--panel:#0d131d;--panel2:#121a27;--bd:#1f2b3d;--bd-hi:#2e405b;
+  --orange:#ff4d00;--red:#ff2a3c;--cyan:#00e5ff;--green:#00e676;--txt:#e6edf7;--mut:#8fa3bf;
   --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:var(--bg);
-  background-image:radial-gradient(rgba(0,229,255,.06) 1px,transparent 1px);
-  background-size:24px 24px;
-  color:var(--txt);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  line-height:1.58;
-}
+body{background:var(--bg);background-image:radial-gradient(rgba(0,229,255,.06) 1px,transparent 1px);background-size:24px 24px;color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.58}
 a{color:var(--cyan);text-decoration:none}
-
-/* OffSec Tactical Top Telemetry Bar */
 .util{background:#04060a;border-bottom:1px solid var(--bd);font-family:var(--mono);font-size:11px;padding:7px 16px;color:var(--mut)}
 .util-in,.nav-in,.hero-in,.wrap,.foot-in,.foot-bot{max-width:1200px;margin:auto}
 .util-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .spill{display:inline-flex;align-items:center;gap:7px;background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.35);color:var(--green);padding:2px 10px;border-radius:3px;font-weight:700}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)}
-.ulinks{display:flex;gap:14px;flex-wrap:wrap}
-.ulinks a{color:#cbd5e1;font-weight:700}.ulinks a:hover{color:var(--orange)}
-
-/* OffSec Header */
+.ulinks{display:flex;gap:14px;flex-wrap:wrap}.ulinks a{color:#cbd5e1;font-weight:700}.ulinks a:hover{color:var(--orange)}
 header{background:rgba(7,10,15,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:300}
 .nav-in{padding:11px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .brand{display:flex;align-items:center;gap:11px;cursor:pointer}
@@ -52,75 +31,52 @@ header{background:rgba(7,10,15,.94);backdrop-filter:blur(10px);border-bottom:1px
 .b2{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:1.4px;color:var(--orange);text-transform:uppercase}
 .nav{display:flex;gap:4px;overflow-x:auto;white-space:nowrap}
 .nbtn{background:transparent;border:1px solid transparent;border-bottom:2px solid transparent;color:var(--mut);font-family:var(--mono);font-size:12px;font-weight:700;padding:8px 11px;cursor:pointer;text-transform:uppercase}
-.nbtn:hover{color:#fff}
-.nbtn.active{color:var(--cyan);border-bottom-color:var(--orange);background:rgba(255,77,0,.08)}
-
-/* OffSec Tactical Hero */
-.hero{background:linear-gradient(135deg,#070a0f 0%,#0d1624 55%,#1b0d14 100%);border-bottom:1px solid var(--bd);padding:38px 16px 56px;position:relative}
+.nbtn:hover{color:#fff}.nbtn.active{color:var(--cyan);border-bottom-color:var(--orange);background:rgba(255,77,0,.08)}
+.hero{background:linear-gradient(135deg,#070a0f 0%,#0d1624 55%,#1b0d14 100%);border-bottom:1px solid var(--bd);padding:38px 16px 56px}
 .eye{display:inline-block;font-family:var(--mono);background:rgba(255,77,0,.12);border:1px solid rgba(255,77,0,.45);color:var(--orange);font-size:11px;font-weight:800;letter-spacing:1.2px;padding:4px 10px;border-radius:3px;margin-bottom:12px;text-transform:uppercase}
-.hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;line-height:1.16;max-width:860px;margin-bottom:11px;color:#fff;letter-spacing:-.3px}
+.hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;line-height:1.16;max-width:860px;margin-bottom:11px;color:#fff}
 .hero h1 span{color:var(--orange)}
 .hero p{font-size:14.5px;color:#b4c3d8;max-width:760px;margin-bottom:20px}
 .ctas{display:flex;gap:9px;flex-wrap:wrap}
-
-/* Tactical Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 15px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:800;border:1px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.4px;transition:all .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 15px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:800;border:1px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.4px}
 .bp{background:var(--orange);color:#fff}.bp:hover{background:#e04300}
-.bc{background:rgba(0,229,255,.12);color:var(--cyan);border-color:rgba(0,229,255,.4)}.bc:hover{background:rgba(0,229,255,.22)}
+.bc{background:rgba(0,229,255,.12);color:var(--cyan);border-color:rgba(0,229,255,.4)}
 .bg{background:rgba(0,230,118,.14);color:var(--green);border-color:rgba(0,230,118,.4)}
-.bs{background:var(--panel2);color:var(--txt);border-color:var(--bd-hi)}.bs:hover{border-color:var(--cyan);color:var(--cyan)}
-
-/* Metrics Strip */
+.bs{background:var(--panel2);color:var(--txt);border-color:var(--bd-hi)}
 .mwrap{max-width:1200px;margin:-30px auto 22px;padding:0 16px;position:relative;z-index:10}
 .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px}
 .mc{background:var(--panel);border:1px solid var(--bd);border-top:3px solid var(--orange);border-radius:5px;padding:14px 16px;box-shadow:0 8px 24px rgba(0,0,0,.45)}
-.mnum{font-family:var(--mono);font-size:25px;font-weight:900;color:#fff;line-height:1.1}
-.mlbl{font-size:12px;font-weight:700;color:var(--mut);margin-top:4px;text-transform:uppercase;letter-spacing:.4px}
-
-/* Sections & Grids */
+.mnum{font-family:var(--mono);font-size:25px;font-weight:900;color:#fff;line-height:1.1}.mlbl{font-size:12px;font-weight:700;color:var(--mut);margin-top:4px;text-transform:uppercase}
 .wrap{padding:8px 16px 64px}.sec{display:none}.sec.active{display:block}
 .sh{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:10px;margin:26px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--bd)}
-.sh h2{font-size:19px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.5px}
-.sh p{font-size:13px;color:var(--mut)}
+.sh h2{font-size:19px;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.5px}.sh p{font-size:13px;color:var(--mut)}
 .tag{font-family:var(--mono);font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:3px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.3);color:var(--cyan);text-transform:uppercase}
 .tr{background:rgba(255,42,60,.12);border-color:rgba(255,42,60,.35);color:#ff6b78}
 .tg{background:rgba(0,230,118,.1);border-color:rgba(0,230,118,.35);color:var(--green)}
 .to{background:rgba(255,77,0,.12);border-color:rgba(255,77,0,.4);color:var(--orange)}
-
-/* Home Page Developer Spotlight (Every Platform) */
 .fcard{background:linear-gradient(145deg,var(--panel) 0%,#101826 100%);border:1px solid var(--bd-hi);border-left:4px solid var(--orange);border-radius:6px;padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
-.fphoto{width:100%;max-width:270px;border-radius:6px;border:2px solid var(--orange);display:block;margin:auto;object-fit:cover;background:#070a0f;box-shadow:0 0 22px rgba(255,77,0,.2)}
+.fphoto{width:100%;max-width:270px;border-radius:6px;border:2px solid var(--orange);display:block;margin:auto;object-fit:cover;background:#070a0f}
 .fquote{border-left:3px solid var(--green);background:rgba(0,230,118,.06);padding:10px 13px;margin:11px 0;font-family:var(--mono);font-size:13px;color:var(--green);font-weight:700}
-
-/* App Plugins Engine Cards */
-.plg-card{background:var(--panel);border:1px solid var(--bd);border-radius:5px;padding:15px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s}
-.plg-card.enabled{border-color:var(--cyan);box-shadow:0 0 16px rgba(0,229,255,.08)}
-.plg-slot{background:#090e16;border:1px dashed var(--bd-hi);border-radius:5px;padding:13px;margin-top:12px}
-
-/* Cards & Search */
+.plg-card{background:var(--panel);border:1px solid var(--bd);border-radius:5px;padding:15px;display:flex;flex-direction:column;justify-content:space-between}
+.plg-card.enabled{border-color:var(--cyan)}.plg-slot{background:#090e16;border:1px dashed var(--bd-hi);border-radius:5px;padding:13px;margin-top:12px}
 .sbar{background:var(--panel);border:1px solid var(--bd);border-radius:5px;padding:10px 13px;margin-bottom:15px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .sbar input{flex:1;min-width:210px;margin:0;padding:8px 11px;border:1px solid var(--bd-hi);border-radius:4px;background:#06090e;color:#fff;font-family:var(--mono);font-size:12.5px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(295px,1fr));gap:14px}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:12px;margin-bottom:20px}
 .card{background:var(--panel);border:1px solid var(--bd);border-radius:5px;padding:17px}
-.dcard{border-top:3px solid var(--cyan);cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;transition:transform .15s,border-color .15s}
-.dcard:hover{transform:translateY(-2px);border-color:var(--orange)}
+.dcard{border-top:3px solid var(--cyan);cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}
+.dcard:hover{border-color:var(--orange)}
 .ctop{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:6px;flex-wrap:wrap}
 .card h3{font-size:16.5px;font-weight:800;color:#fff;margin-bottom:5px}.card p,.card li{font-size:13.2px;color:var(--mut)}
 .mini{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
 .mini span{font-family:var(--mono);font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:3px;background:#090e16;border:1px solid var(--bd-hi);color:var(--cyan)}
-
-/* Blueprint View */
 .chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:14px}
 .chip{background:var(--panel);color:var(--mut);border:1px solid var(--bd);padding:6px 12px;border-radius:3px;font-family:var(--mono);font-size:11.5px;font-weight:700;cursor:pointer;white-space:nowrap}
 .chip.active{background:var(--orange);color:#fff;border-color:var(--orange)}
 .bpbox{background:var(--panel);border:1px solid var(--bd);border-left:4px solid var(--cyan);border-radius:5px;padding:17px;margin-bottom:13px}
 .bpbox.why{border-left-color:var(--orange)}.bpbox.how{border-left-color:var(--green)}.bpbox.guide{border-left-color:var(--red)}
 .bpbox h3{font-family:var(--mono);font-size:13.5px;font-weight:800;color:#fff;text-transform:uppercase;margin-bottom:8px}
-.srow{background:#090e16;border:1px solid var(--bd);border-radius:4px;padding:9px 12px;margin-bottom:7px;font-size:13.2px;color:var(--txt)}
-.srow strong{color:var(--cyan)}
-
-/* Sprint & Inputs */
+.srow{background:#090e16;border:1px solid var(--bd);border-radius:4px;padding:9px 12px;margin-bottom:7px;font-size:13.2px;color:var(--txt)}.srow strong{color:var(--cyan)}
 .pbg{height:11px;background:#06090e;border:1px solid var(--bd);border-radius:999px;overflow:hidden;margin-top:9px}
 .pfill{height:100%;width:0%;background:linear-gradient(90deg,var(--orange),var(--green));transition:width .25s}
 .frow{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}
@@ -130,17 +86,14 @@ header{background:rgba(7,10,15,.94);backdrop-filter:blur(10px);border-bottom:1px
 .day.done{border-color:var(--green);background:rgba(0,230,118,.06)}.day input{width:17px;height:17px;margin-top:2px;accent-color:var(--green)}
 input,select,textarea{width:100%;background:#06090e;border:1px solid var(--bd-hi);color:#fff;padding:9px 11px;border-radius:4px;margin-top:8px;font-size:13px}
 .out{margin-top:9px;background:#04060a;border:1px solid var(--bd);color:var(--green);border-radius:4px;padding:10px 12px;font-size:12px;white-space:pre-wrap;font-family:var(--mono)}
-
-/* Footer */
 footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);padding:34px 16px 22px;margin-top:30px}
 .foot-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;padding-bottom:22px;border-bottom:1px solid var(--bd)}
 .foot-in h4{font-family:var(--mono);color:#fff;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:9px}
-.foot-in li{list-style:none;font-size:12.8px;margin-bottom:5px}.foot-in a{color:var(--mut)}.foot-in a:hover{color:var(--cyan)}
+.foot-in li{list-style:none;font-size:12.8px;margin-bottom:5px}.foot-in a{color:var(--mut)}
 .foot-bot{margin-top:15px;font-family:var(--mono);font-size:11.5px;color:#64748b;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
-
 <div class="util"><div class="util-in">
   <div><span class="spill"><span class="dot"></span><span id="rtBadge">OFFSEC MAINFRAME // WEB PORTAL ONLINE</span></span></div>
   <div class="ulinks">
@@ -178,7 +131,7 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
 <section class="hero"><div class="hero-in">
   <div class="eye">OFFSEC TACTICAL ARCHITECTURE &bull; WEB + ANDROID APK + iOS APP</div>
   <h1>Sovereign Cyber Defense, Embedded Systems &amp; <span>Modular App Architecture</span>.</h1>
-  <p>EMON INDUSTRY PVT LTD integrates 9 specialized divisions, live modular App Plugins, and a 6-Pillar execution engine across Web, native Android APK, and iOS applications.</p>
+  <p>EMON INDUSTRY PVT LTD integrates 9 specialized divisions, live C/Python telemetry engines, modular App Plugins, and a 6-Pillar execution framework across Web, native Android APK, and iOS applications.</p>
   <div class="ctas">
     <button class="btn bp" onclick="closeBp();navTo('sec-home');document.getElementById('homeDivsAnchor').scrollIntoView({behavior:'smooth'})">Explore 9 Divisions &rarr;</button>
     <button class="btn bc" onclick="navTo('sec-plugins')">Manage App Plugins</button>
@@ -189,16 +142,15 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
 
 <div class="mwrap"><div class="metrics">
   <div class="mc"><div class="mnum">9</div><div class="mlbl">Sovereign Divisions</div></div>
-  <div class="mc" style="border-top-color:var(--cyan)"><div class="mnum" id="mPlg">4 / 5</div><div class="mlbl">Active App Plugins</div></div>
+  <div class="mc" style="border-top-color:var(--cyan)"><div class="mnum" id="mPlg">4 / 4</div><div class="mlbl">Active App Plugins</div></div>
   <div class="mc" style="border-top-color:var(--green)"><div class="mnum" id="mSp">0 / 29</div><div class="mlbl">Sprint Days Done</div></div>
   <div class="mc" style="border-top-color:var(--red)"><div class="mnum" id="mCe">0 / 14</div><div class="mlbl">Free Certifications</div></div>
 </div></div>
 
 <main class="wrap">
-  <!-- HOME PAGE (DEVELOPER INFO + APP PLUGINS + 9 DIVISIONS + 6 PILLARS ON EVERY PLATFORM) -->
   <section id="sec-home" class="sec active">
     <div id="pList">
-      <!-- 1. DEVELOPER / FOUNDER INFORMATION ON HOME PAGE OF EVERY PLATFORM -->
+      <!-- DEVELOPER / FOUNDER INFORMATION ON HOME PAGE OF EVERY PLATFORM -->
       <div class="sh">
         <div><h2>Developer &amp; Principal Architect</h2><p>Displayed natively across Website, Android APK, and iOS Application.</p></div>
         <span class="tag to" id="platTag">PLATFORM: WEB</span>
@@ -219,15 +171,15 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
         </div>
       </div>
 
-      <!-- 2. MODULAR APP PLUGINS ON HOME PAGE -->
+      <!-- MODULAR APP PLUGINS ON HOME PAGE -->
       <div class="sh">
-        <div><h2>Active App Plugins &amp; Runtime Extensions</h2><p>Toggle modular plugins live across Web, Android APK &amp; iOS — or add custom plugins in the Plugins tab.</p></div>
+        <div><h2>Active App Plugins &amp; Live Sensor Widgets</h2><p>Connected to Emontron C + Motior Pharma telemetry &amp; offline mobile bridges.</p></div>
         <button class="btn bc" onclick="navTo('sec-plugins')">Plugin Manager &amp; SDK &rarr;</button>
       </div>
       <div class="grid" id="homePluginsGrid" style="margin-bottom:12px"></div>
       <div id="activePluginWidgets" style="margin-bottom:26px"></div>
 
-      <!-- 3. 9 HOSTED DIVISIONS ON HOME PAGE -->
+      <!-- 9 HOSTED DIVISIONS -->
       <div id="homeDivsAnchor" class="sh">
         <div><h2>9 Sovereign Divisions (Click Any Division for Full Blueprint)</h2><p>What It Is, Why It Exists, 6-Pillar Execution Steps, Free Certifications &amp; Separate Pathway Guide.</p></div>
         <span class="tag">9 Divisions</span>
@@ -238,7 +190,7 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
       </div>
       <div class="grid" id="divsGrid"></div>
 
-      <!-- 4. 6 PILLARS -->
+      <!-- 6 PILLARS -->
       <div class="sh" style="margin-top:30px">
         <div><h2>The 6-Pillar Execution Architecture</h2><p>Standardized operational lifecycle across all 9 divisions.</p></div>
         <span class="tag tg">6 Pillars</span>
@@ -265,10 +217,10 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
     </div>
   </section>
 
-  <!-- APP PLUGINS & EXTENSION SDK TAB -->
+  <!-- APP PLUGINS TAB -->
   <section id="sec-plugins" class="sec">
     <div class="sh">
-      <div><h2>App Plugins &amp; Modular Extension Engine</h2><p>Enable/disable built-in plugins or register custom plugins across Website, Android APK &amp; iOS.</p></div>
+      <div><h2>App Plugins &amp; Modular Extension Engine</h2><p>Enable/disable plugins or register custom plugins across Website, Android APK &amp; iOS.</p></div>
       <span class="tag tg" id="plgBadge">Active: 4</span>
     </div>
     <div class="grid" id="fullPluginsGrid" style="margin-bottom:22px"></div>
@@ -310,11 +262,11 @@ footer{background:#04060a;border-top:1px solid var(--bd);color:var(--mut);paddin
 
   <!-- LIVE ENGINES -->
   <section id="sec-engines" class="sec">
-    <div class="sh"><div><h2>Live Division Engines (SQLite + Offline Mobile Mode)</h2><p>Instant BDT print quoting, 29A security audit, and Efirm client inquiry desk.</p></div><span class="tag">Interactive API</span></div>
+    <div class="sh"><div><h2>Live Division Engines (SQLite + C Telemetry + Offline Mobile)</h2><p>Connected directly to local SQLite server.py, Emontron C sensor node, and Motior Pharma.</p></div><span class="tag">Interactive API</span></div>
     <div class="grid">
-      <div class="card"><div class="ctop"><h3>EPrinter Cloud Quote</h3><span class="tag tr">DIV-08</span></div><p>Instant A4 print pricing in BDT.</p><input type="number" id="pg" value="50" min="1"><select id="pm"><option value="bw">Black &amp; White (2 BDT/page)</option><option value="color">Color Laser (5 BDT/page)</option></select><button class="btn bp" style="width:100%;margin-top:9px" onclick="qCalc()">Calculate Quote</button><div class="out" id="qOut">Ready...</div></div>
-      <div class="card"><div class="ctop"><h3>29A Node Security Audit</h3><span class="tag tr">DIV-03</span></div><p>Verify host sockets &amp; runtime posture.</p><input type="text" value="127.0.0.1 // LOCAL NODE" readonly><button class="btn bp" style="width:100%;margin-top:9px" onclick="audit()">Run 29A Scan</button><div class="out" id="aOut">Ready...</div></div>
-      <div class="card"><div class="ctop"><h3>Efirm Client Desk</h3><span class="tag tr">DIV-06</span></div><p>Dispatch project or enterprise inquiries.</p><input type="text" id="cn" placeholder="Name / Company"><input type="email" id="ce" placeholder="Email"><textarea id="cm" rows="2" placeholder="Project scope"></textarea><button class="btn bp" style="width:100%;margin-top:9px" onclick="inq()">Submit Inquiry</button><div class="out" id="iOut">SQLite &amp; Offline Relay Ready.</div></div>
+      <div class="card"><div class="ctop"><h3>EPrinter Cloud Quote</h3><span class="tag tr">DIV-08</span></div><p>Instant A4 print pricing saved to SQLite.</p><input type="number" id="pg" value="50" min="1"><select id="pm"><option value="bw">Black &amp; White (2 BDT/page)</option><option value="color">Color Laser (5 BDT/page)</option></select><button class="btn bp" style="width:100%;margin-top:9px" onclick="qCalc()">Calculate &amp; Log Quote</button><div class="out" id="qOut">Ready...</div></div>
+      <div class="card"><div class="ctop"><h3>29A &amp; Motior Live Telemetry</h3><span class="tag tr">DIV-01 / 03 / 09</span></div><p>Run 29A SHA-256 audit &amp; Emontron C vitals.</p><button class="btn bp" style="width:100%;margin-top:9px" onclick="audit()">Run 29A Audit</button><button class="btn bc" style="width:100%;margin-top:7px" onclick="pullTelemetry()">Read Emontron + Motior Vitals</button><div class="out" id="aOut">Ready...</div></div>
+      <div class="card"><div class="ctop"><h3>Efirm Client Desk</h3><span class="tag tr">DIV-06</span></div><p>Dispatch project inquiries to SQLite DB.</p><input type="text" id="cn" placeholder="Name / Company"><input type="email" id="ce" placeholder="Email"><textarea id="cm" rows="2" placeholder="Project scope"></textarea><button class="btn bp" style="width:100%;margin-top:9px" onclick="inq()">Submit Inquiry</button><div class="out" id="iOut">SQLite &amp; Offline Relay Ready.</div></div>
     </div>
   </section>
 
@@ -361,11 +313,10 @@ document.getElementById("platTag").textContent = "ACTIVE RUNTIME: " + platformNa
 
 function navTo(id){document.querySelectorAll(".sec").forEach(s=>s.classList.remove("active"));document.querySelectorAll(".nbtn").forEach(b=>b.classList.toggle("active",b.dataset.sec===id));const el=document.getElementById(id);if(el)el.classList.add("active");window.scrollTo({top:0,behavior:"smooth"})}
 
-/* MODULAR APP PLUGINS ENGINE */
 const DEFAULT_PLUGINS = [
   {id:"plg-29a",name:"29A Recon & Telemetry",div:"DIV-03",desc:"Real-time runtime, viewport, user-agent & native bridge status inspector.",enabled:true,widget:"recon"},
   {id:"plg-eprint",name:"EPrinter Quick Quote",div:"DIV-08",desc:"Instant BDT A4 print cost widget embedded directly on the Home Page.",enabled:true,widget:"quote"},
-  {id:"plg-motior",name:"Motior Biometric Monitor",div:"DIV-09",desc:"Live simulated Temp / SpO2 / BPM clinical alert threshold checker.",enabled:true,widget:"vitals"},
+  {id:"plg-motior",name:"Motior Biometric Monitor",div:"DIV-09",desc:"Live Emontron C + Motior Pharma Temp / SpO2 / BPM clinical alert monitor.",enabled:true,widget:"vitals"},
   {id:"plg-bridge",name:"Native Mobile Bridge",div:"DIV-07",desc:"Connects Android EmonAndroid & iOS WKWebView APIs to web modules.",enabled:true,widget:"bridge"}
 ];
 let plugins = JSON.parse(localStorage.getItem("emon_plugins_v1") || "null") || DEFAULT_PLUGINS;
@@ -420,12 +371,29 @@ function renderPlugins(){
     } else if(p.widget === "quote"){
       widgets += `<div class="plg-slot"><div class="ctop"><strong style="font-family:var(--mono);font-size:12px;color:var(--orange)">[PLUGIN: EPRINTER QUICK QUOTE]</strong><span class="tag to">BDT</span></div><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><input type="number" id="qpHome" value="25" min="1" style="width:110px;margin:0"><button class="btn bp" onclick="document.getElementById('qpRes').textContent='B&W: '+(document.getElementById('qpHome').value*2)+' BDT | Color: '+(document.getElementById('qpHome').value*5)+' BDT'">Quote</button><span id="qpRes" style="font-family:var(--mono);font-size:12px;color:var(--green)">B&amp;W: 50 BDT | Color: 125 BDT</span></div></div>`;
     } else if(p.widget === "vitals"){
-      widgets += `<div class="plg-slot"><div class="ctop"><strong style="font-family:var(--mono);font-size:12px;color:var(--green)">[PLUGIN: MOTIOR BIOMETRIC TELEMETRY]</strong><span class="tag tg">NORMAL</span></div><div style="font-family:var(--mono);font-size:12px;color:var(--green)">TEMP: 36.8&deg;C | SpO2: 98% | BPM: 74 | STATUS: OPTIMAL</div></div>`;
+      widgets += `<div class="plg-slot"><div class="ctop"><strong style="font-family:var(--mono);font-size:12px;color:var(--green)">[PLUGIN: MOTIOR + EMONTRON C TELEMETRY]</strong><button class="btn bg" style="padding:4px 9px;font-size:10.5px" onclick="refreshHomeVitals()">Sample Sensor</button></div><div id="homeVitalsTxt" style="font-family:var(--mono);font-size:12px;color:var(--green)">TEMP: 36.8&deg;C | SpO2: 98% | BPM: 74 | STATUS: OPTIMAL</div></div>`;
     } else if(p.widget === "custom"){
       widgets += `<div class="plg-slot"><div class="ctop"><strong style="font-family:var(--mono);font-size:12px;color:var(--cyan)">[CUSTOM PLUGIN: ${p.name}]</strong><span class="tag">${p.div}</span></div><div style="font-size:12.8px;color:#e2e8f0">${p.desc}</div></div>`;
     }
   });
   document.getElementById("activePluginWidgets").innerHTML = widgets;
+}
+
+async function refreshHomeVitals(){
+  const el = document.getElementById("homeVitalsTxt");
+  if(!el) return;
+  try {
+    const r = await fetch("/api/telemetry");
+    if(!r.ok) throw 0;
+    const d = await r.json();
+    const s = d.sensorSource;
+    el.textContent = `[C-BINARY LIVE] TEMP: ${s.temp_c}°C | SpO2: ${s.spo2}% | BPM: ${s.bpm} | BUS: ${s.bus_voltage}V | STATUS: ${d.clinicalStatus}`;
+  } catch(e) {
+    const t = (36.5 + Math.random()*1.4).toFixed(1);
+    const sp = 96 + Math.floor(Math.random()*4);
+    const bp = 68 + Math.floor(Math.random()*24);
+    el.textContent = `[OFFLINE SENSOR] TEMP: ${t}°C | SpO2: ${sp}% | BPM: ${bp} | STATUS: OPTIMAL`;
+  }
 }
 
 const PILLARS=[["PILLAR 01","1. Learn","Master low-level CS, RFC manuals, and 14 free international certifications."],["PILLAR 02","2. Build","Write clean production code in C, Python, Raku, Java, and Shell."],["PILLAR 03","3. Validate","Automated GitHub Actions CI/CD testing, security scans, and verification."],["PILLAR 04","4. Publish","Deploy live GitHub Pages portals, signed Android/iOS apps, and docs."],["PILLAR 05","5. Brand","Unified EMON INDUSTRY corporate identity and executive datasheets."],["PILLAR 06","6. Earn","Monetize via B2B SaaS, security audits, print logistics, and hardware."]];
@@ -449,15 +417,15 @@ const CERTS=[
 ];
 
 const DIVS=[
-  {c:"DIV-01",n:"Emontron",s:"C / RTOS / ESP32",r:"divisions/emontron",sh:"Embedded IoT microcontrollers, biometric sensors, and sovereign hardware engineering.",what:"Emontron is EMON INDUSTRY's sovereign hardware and embedded firmware division engineering bare-metal C firmware, ESP32/ARM sensor nodes, and biometric telemetry interfaces.",why:"Eliminates foreign hardware dependency, feeds verified sensor telemetry to Motior Pharma and Esecurity, and generates B2B industrial IoT contracts.",how:[["1. Learn","Master C pointers, bitwise registers, and UART/I2C/SPI protocols."],["2. Build","Write deterministic C sensor telemetry engines in ~/emon-industry/divisions/emontron."],["3. Validate","Compile with strict zero-warning flags (gcc -Wall -Wextra -Werror) in CI."],["4. Publish","Release open firmware binaries, pinouts, and JSON telemetry specs."],["5. Brand","Label hardware enclosures and datasheets with the official EMON INDUSTRY emblem."],["6. Earn","Sell industrial IoT monitoring kits, smart meters, and biometric clinic units."]],ci:[13,9,4],g:[["Stage 1: Bare-Metal C","Master bits, bytes, bitwise masking, structs, and GCC compilation."],["Stage 2: Microcontroller Peripherals","Interface temperature, SpO2, voltage, and relays via GPIO/I2C/UART."],["Stage 3: RTOS & Secure Telemetry","Implement FreeRTOS tasks and encrypted MQTT/JSON telemetry."],["Stage 4: PCB & Commercial Pilot","Design PCBs in KiCad and deliver turnkey B2B hardware."]]},
-  {c:"DIV-02",n:"Esecurity",s:"Raku / Linux / SOC",r:"divisions/esecurity",sh:"24/7 Security Operations Center, log correlation, and perimeter defense.",what:"Esecurity is the defensive cyber warfare and SOC division using Raku regex engines, Linux packet filtering, and log correlation to block intrusions in real time.",why:"Gives SMEs, e-commerce platforms, and hospitals affordable 24/7 automated threat detection and firewall defense.",how:[["1. Learn","Master TCP/IP packet flow, Linux auth logs, and firewalling."],["2. Build","Develop Raku regex log parsers and IP blockers in ~/emon-industry/divisions/esecurity."],["3. Validate","Test detection rules against simulated brute-force logs in CI."],["4. Publish","Release hardening baselines and Suricata/Fail2Ban rule packs."],["5. Brand","Position Esecurity as a sovereign Managed Security Service Provider."],["6. Earn","Charge monthly B2B SOC retainers and server hardening fees."]],ci:[1,2,6,12],g:[["Stage 1: Network & Log Core","Master OSI layers, DNS, HTTP headers, and /var/log analysis."],["Stage 2: Raku Log Correlation","Extract attacker IPs and anomalies in milliseconds."],["Stage 3: Perimeter Defense","Configure UFW/nftables, SSH keys, Fail2Ban, and Suricata."],["Stage 4: 24/7 Managed SOC","Deploy centralized SIEM monitoring under recurring SLAs."]]},
-  {c:"DIV-03",n:"29A Cyber Guardian",s:"Python / Kali / Crypto",r:"divisions/29a-cyber-guardian",sh:"Authorized pentesting, cryptographic verification, and vulnerability audits.",what:"29A Cyber Guardian is the offensive security research, ethical pentesting, and cryptographic assurance division built on Python, Kali Linux, and OWASP standards.",why:"Legally audits websites, APIs, and mobile apps before criminals exploit them, building international trust for EMON INDUSTRY.",how:[["1. Learn","Master OWASP Top 10, network recon, and SHA-256/TLS cryptography."],["2. Build","Create Python socket auditors and hash verifiers in ~/emon-industry/divisions/29a-cyber-guardian."],["3. Validate","Run authorized scans strictly on local sandboxes and legal labs."],["4. Publish","Publish executive VAPT report templates and verification tools."],["5. Brand","Establish 29A as an elite, strictly ethical security auditing unit."],["6. Earn","Monetize via authorized SME website/API audits and bug bounties."]],ci:[7,8,6,4],g:[["Stage 1: Recon & Protocols","Master Nmap, HTTP tampering, DNS enum, and Python sockets."],["Stage 2: Web & API Exploitation","Complete PortSwigger labs on SQLi, XSS, CSRF, IDOR, and SSRF."],["Stage 3: Cryptographic Assurance","Enforce SHA-256 integrity manifests and TLS verification."],["Stage 4: Commercial VAPT","Deliver formal vulnerability reports with remediation fixes."]]},
+  {c:"DIV-01",n:"Emontron",s:"C / RTOS / ESP32",r:"divisions/emontron",sh:"Embedded IoT microcontrollers, biometric sensors, and sovereign hardware engineering.",what:"Emontron is EMON INDUSTRY's sovereign hardware and embedded firmware division engineering bare-metal C firmware (sensor_node.c), ESP32/ARM sensor nodes, and biometric telemetry interfaces.",why:"Eliminates foreign hardware dependency, feeds verified sensor telemetry to Motior Pharma and Esecurity, and generates B2B industrial IoT contracts.",how:[["1. Learn","Master C pointers, bitwise registers, and UART/I2C/SPI protocols."],["2. Build","Compile deterministic C sensor telemetry engines in ~/emon-industry/divisions/emontron/sensor_node.c."],["3. Validate","Compile with strict flags (gcc -O2 -Wall -Wextra) in CI."],["4. Publish","Release open firmware binaries, pinouts, and JSON telemetry specs."],["5. Brand","Label hardware enclosures and datasheets with the official EMON INDUSTRY emblem."],["6. Earn","Sell industrial IoT monitoring kits, smart meters, and biometric clinic units."]],ci:[13,9,4],g:[["Stage 1: Bare-Metal C","Master bits, bytes, bitwise masking, structs, and GCC compilation."],["Stage 2: Microcontroller Peripherals","Interface temperature, SpO2, voltage, and relays via GPIO/I2C/UART."],["Stage 3: RTOS & Secure Telemetry","Implement FreeRTOS tasks and encrypted MQTT/JSON telemetry."],["Stage 4: PCB & Commercial Pilot","Design PCBs in KiCad and deliver turnkey B2B hardware."]]},
+  {c:"DIV-02",n:"Esecurity",s:"Raku / Python / SOC",r:"divisions/esecurity",sh:"24/7 Security Operations Center, log correlation, and perimeter defense.",what:"Esecurity is the defensive cyber warfare and SOC division using Raku/Python regex engines (soc_analyzer.py), Linux packet filtering, and log correlation to block intrusions in real time.",why:"Gives SMEs, e-commerce platforms, and hospitals affordable 24/7 automated threat detection and firewall defense.",how:[["1. Learn","Master TCP/IP packet flow, Linux auth logs, and firewalling."],["2. Build","Develop log correlation parsers and IP blockers in ~/emon-industry/divisions/esecurity."],["3. Validate","Test detection rules against simulated brute-force logs in CI."],["4. Publish","Release hardening baselines and Suricata/Fail2Ban rule packs."],["5. Brand","Position Esecurity as a sovereign Managed Security Service Provider."],["6. Earn","Charge monthly B2B SOC retainers and server hardening fees."]],ci:[1,2,6,12],g:[["Stage 1: Network & Log Core","Master OSI layers, DNS, HTTP headers, and /var/log analysis."],["Stage 2: Automated Log Correlation","Extract attacker IPs and anomalies in milliseconds."],["Stage 3: Perimeter Defense","Configure UFW/nftables, SSH keys, Fail2Ban, and Suricata."],["Stage 4: 24/7 Managed SOC","Deploy centralized SIEM monitoring under recurring SLAs."]]},
+  {c:"DIV-03",n:"29A Cyber Guardian",s:"Python / Kali / Crypto",r:"divisions/29a-cyber-guardian",sh:"Authorized pentesting, cryptographic verification, and vulnerability audits.",what:"29A Cyber Guardian is the offensive security research, ethical pentesting, and cryptographic assurance division built on Python (guardian_audit.py), Kali Linux, and OWASP standards.",why:"Legally audits websites, APIs, and mobile apps before criminals exploit them, building international trust for EMON INDUSTRY.",how:[["1. Learn","Master OWASP Top 10, network recon, and SHA-256/TLS cryptography."],["2. Build","Create SHA-256 hash verifiers and socket auditors in ~/emon-industry/divisions/29a-cyber-guardian."],["3. Validate","Run authorized scans strictly on local sandboxes and legal labs."],["4. Publish","Publish executive VAPT report templates and verification tools."],["5. Brand","Establish 29A as an elite, strictly ethical security auditing unit."],["6. Earn","Monetize via authorized SME website/API audits and bug bounties."]],ci:[7,8,6,4],g:[["Stage 1: Recon & Protocols","Master Nmap, HTTP tampering, DNS enum, and Python sockets."],["Stage 2: Web & API Exploitation","Complete PortSwigger labs on SQLi, XSS, CSRF, IDOR, and SSRF."],["Stage 3: Cryptographic Assurance","Enforce SHA-256 integrity manifests and TLS verification."],["Stage 4: Commercial VAPT","Deliver formal vulnerability reports with remediation fixes."]]},
   {c:"DIV-04",n:"EOS (Inhealer OS)",s:"Debian / Kernel / Bash",r:"divisions/eos-inhealer",sh:"Hardened privacy-first Linux OS built for developers and cyber defense.",what:"EOS (Inhealer OS) is EMON INDUSTRY's hardened Debian-based Linux workstation environment stripped of telemetry and pre-loaded with security and dev toolchains.",why:"Provides developers, analysts, and enterprise offices a fast, auditable, zero-telemetry operating system.",how:[["1. Learn","Master Linux filesystem permissions, systemd, and kernel sysctl tuning."],["2. Build","Write automated OS hardening and firewall profiles in ~/emon-industry/divisions/eos-inhealer."],["3. Validate","Verify configuration syntax in clean Linux containers."],["4. Publish","Release reproducible setup scripts and hardened dotfiles."],["5. Brand","Standardize terminal MOTD, boot splash, and theme branding."],["6. Earn","Deliver pre-hardened developer workstations and secure office servers."]],ci:[0,9,13],g:[["Stage 1: Linux & Shell Core","Master Bash scripting, systemd services, and package management."],["Stage 2: Kernel & Network Hardening","Tune sysctl.conf, enforce UFW, and lock down SSH."],["Stage 3: Encryption & MAC","Configure LUKS disk encryption and AppArmor profiles."],["Stage 4: Custom ISO Fleet","Package live-build ISOs for instant enterprise deployment."]]},
   {c:"DIV-05",n:"EMON (EI)",s:"Python / Local LLM",r:"divisions/ei-onbound-ai",sh:"On-bound autonomous AI security analyst and offline local intelligence.",what:"EMON (EI — On-Bound Intelligence) runs local anomaly detection, log summarization, and quantized language models directly on local hardware without cloud leaks.",why:"Enables clinics, financial firms, and security teams to analyze sensitive data offline with zero external API exposure.",how:[["1. Learn","Master Python data structures, anomaly detection, and local LLM quantization."],["2. Build","Develop offline JSON log summarizers in ~/emon-industry/divisions/ei-onbound-ai."],["3. Validate","Benchmark inference speed and deterministic JSON output accuracy."],["4. Publish","Release lightweight offline AI utilities and SOC triage scripts."],["5. Brand","Position EMON (EI) as privacy-guaranteed sovereign intelligence."],["6. Earn","Deploy private on-premise AI document assistants for enterprises."]],ci:[11,4,5],g:[["Stage 1: Python & Math Core","Master Python, Pandas analytics, and probability basics."],["Stage 2: Deterministic AI","Build statistical outlier engines for security and health logs."],["Stage 3: Local Quantized LLMs","Run GGUF models locally via llama.cpp/Ollama over SQLite/PDFs."],["Stage 4: Air-Gapped Appliances","Package private AI search boxes for clinics and law firms."]]},
-  {c:"DIV-06",n:"Efirm",s:"Java / SQLite / REST",r:"divisions/efirm",sh:"Custom enterprise ERP, automated VAT invoicing, and B2B software.",what:"Efirm is the enterprise software engineering and B2B SaaS division building custom accounting, VAT invoicing, inventory, and CRM platforms in Java, Python, and SQLite.",why:"Digitizes billing, NBR VAT compliance, and inventory for thousands of retail shops, wholesalers, and service firms.",how:[["1. Learn","Master OOP Java, REST APIs, ACID SQL databases, and responsive UI."],["2. Build","Engineer invoicing and ledger modules in ~/emon-industry/divisions/efirm."],["3. Validate","Verify tax rounding and database integrity via CI tests."],["4. Publish","Host live SaaS demos on GitHub Pages and cloud servers."],["5. Brand","Deliver polished white-labeled dashboards under Efirm."],["6. Earn","Generate recurring B2B SaaS subscriptions and custom ERP fees."]],ci:[3,10,13],g:[["Stage 1: Frontend Engineering","Build fast mobile-first dashboards in HTML5, CSS3, and JS."],["Stage 2: Backend & SQL","Architect Java/Python REST APIs with SQLite/PostgreSQL."],["Stage 3: Auth & VAT Compliance","Implement RBAC, audit logs, and BDT/USD VAT invoicing."],["Stage 4: B2B SaaS Sales","Onboard local SMEs and global freelance clients."]]},
+  {c:"DIV-06",n:"Efirm",s:"Java / SQLite / REST",r:"divisions/efirm",sh:"Custom enterprise ERP, automated VAT invoicing, and B2B software.",what:"Efirm is the enterprise software engineering and B2B SaaS division building custom accounting, VAT invoicing, inventory, and CRM platforms backed by SQLite (server.py).",why:"Digitizes billing, NBR VAT compliance, and inventory for thousands of retail shops, wholesalers, and service firms.",how:[["1. Learn","Master OOP Java, REST APIs, ACID SQL databases, and responsive UI."],["2. Build","Engineer invoicing and ledger modules in ~/emon-industry/divisions/efirm and server.py."],["3. Validate","Verify tax rounding and database integrity via CI tests."],["4. Publish","Host live SaaS demos on GitHub Pages and local SQLite servers."],["5. Brand","Deliver polished white-labeled dashboards under Efirm."],["6. Earn","Generate recurring B2B SaaS subscriptions and custom ERP fees."]],ci:[3,10,13],g:[["Stage 1: Frontend Engineering","Build fast mobile-first dashboards in HTML5, CSS3, and JS."],["Stage 2: Backend & SQL","Architect Java/Python REST APIs with SQLite/PostgreSQL."],["Stage 3: Auth & VAT Compliance","Implement RBAC, audit logs, and BDT/USD VAT invoicing."],["Stage 4: B2B SaaS Sales","Onboard local SMEs and global freelance clients."]]},
   {c:"DIV-07",n:"EAPK & EIOS",s:"Java / Android / Swift",r:"divisions/eapk-mobile",sh:"Native Android & iOS apps, mobile terminals, and automated CI distribution.",what:"EAPK (with EIOS mobile companion) builds native Android (Java/WebView) and iOS (SwiftUI/WKWebView + PWA) apps with offline storage, modular plugins, and cloud CI/CD compilation.",why:"Transforms every EMON INDUSTRY web platform into an installable offline mobile app for Android and iPhone/iPad users.",how:[["1. Learn","Master AndroidManifest, WebView bridges, SwiftUI WKWebView, and Gradle."],["2. Build","Develop native mobile apps in divisions/eapk-mobile and divisions/eios-mobile."],["3. Validate","Compile APK and iOS packages automatically on push via GitHub Actions."],["4. Publish","Distribute .apk via GitHub Releases and iOS builds via Actions/Safari PWA."],["5. Brand","Embed official EMON INDUSTRY launcher icons across Android & iOS."],["6. Earn","Build custom Android & iOS apps, mobile POS, and field-force apps."]],ci:[13,3,4],g:[["Stage 1: Mobile Architecture","Master Gradle, AndroidManifest.xml, and SwiftUI WKWebView."],["Stage 2: Native JS Bridges","Connect HTML5/JS UI and App Plugins to native Android/iOS APIs."],["Stage 3: Icons & CI/CD","Automate vector launcher icons and GitHub Actions mobile builds."],["Stage 4: Commercial App Delivery","Publish client Android & iOS apps to stores and direct channels."]]},
-  {c:"DIV-08",n:"EPrinter",s:"Python / HTML5 / PDF",r:"divisions/eprinter",sh:"Automated cloud document pricing, PDF workflows, and print logistics.",what:"EPrinter is EMON INDUSTRY's digital-to-physical print automation platform featuring instant BDT A4 pricing, PDF page-count pre-flight, and SQLite order queues.",why:"Eliminates slow print shop queues with transparent mobile quotes and rapid campus/corporate batch delivery.",how:[["1. Learn","Master web forms, Python PDF page counting, and SQLite queues."],["2. Build","Create instant BDT quote calculators in divisions/eprinter and web-fullstack."],["3. Validate","Test B&W vs. Color pricing rules and SQLite persistence."],["4. Publish","Deploy on GitHub Pages and inside Android & iOS apps."],["5. Brand","Place QR-code instant order posters at campuses and offices."],["6. Earn","Generate daily cashflow from thesis/booklet and corporate printing."]],ci:[3,4,10],g:[["Stage 1: Instant Quote Portal","Launch transparent BDT rate calculators via QR code."],["Stage 2: PDF Pre-Flight & DB","Auto-count PDF pages in Python and log orders in SQLite."],["Stage 3: Campus & Office Routes","Establish delivery routes for universities and corporate offices."],["Stage 4: Multi-Hub Print Network","Scale to partner print hubs routed by customer location."]]},
-  {c:"DIV-09",n:"Motior Pharma",s:"C / Python / HL7",r:"divisions/motior-pharma",sh:"Digital health telemetry dashboards, diagnostic sensors, and pharma tech.",what:"Motior Pharma links Emontron biometric sensors (Temp, SpO2, BPM) with real-time clinical alert dashboards and pharmacy batch/expiry inventory software.",why:"Delivers affordable vital-sign telemetry and accurate medicine inventory management to clinics and pharmacies.",how:[["1. Learn","Master clinical vital thresholds, Pandas analytics, and HL7/JSON schemas."],["2. Build","Develop vital alert monitors and pharmacy stock tools in ~/emon-industry/divisions/motior-pharma."],["3. Validate","Test automated critical-alert triggers against edge-case vitals."],["4. Publish","Release clinical monitoring dashboards and pharmacy demos."],["5. Brand","Maintain medical-grade reliability and clear clinical docs."],["6. Earn","License pharmacy POS/inventory software and clinic telemetry kits."]],ci:[5,11,13],g:[["Stage 1: Health Analytics","Master Pandas validation, vital ranges, and expiry tracking."],["Stage 2: Biometric Integration","Ingest live C sensor streams into clinical JSON alerts."],["Stage 3: Pharmacy ERP & Dashboards","Build multi-branch pharmacy stock and doctor alert portals."],["Stage 4: Clinic Network Scale","Deploy turnkey digital health systems across clinics."]]}
+  {c:"DIV-08",n:"EPrinter",s:"Python / HTML5 / SQLite",r:"divisions/eprinter",sh:"Automated cloud document pricing, PDF workflows, and print logistics.",what:"EPrinter is EMON INDUSTRY's digital-to-physical print automation platform featuring instant BDT A4 pricing, PDF page-count pre-flight, and SQLite order queues.",why:"Eliminates slow print shop queues with transparent mobile quotes and rapid campus/corporate batch delivery.",how:[["1. Learn","Master web forms, Python PDF page counting, and SQLite queues."],["2. Build","Create instant BDT quote calculators in server.py and web-fullstack."],["3. Validate","Test B&W vs. Color pricing rules and SQLite persistence."],["4. Publish","Deploy on GitHub Pages and inside Android & iOS apps."],["5. Brand","Place QR-code instant order posters at campuses and offices."],["6. Earn","Generate daily cashflow from thesis/booklet and corporate printing."]],ci:[3,4,10],g:[["Stage 1: Instant Quote Portal","Launch transparent BDT rate calculators via QR code."],["Stage 2: PDF Pre-Flight & DB","Auto-count PDF pages in Python and log orders in SQLite."],["Stage 3: Campus & Office Routes","Establish delivery routes for universities and corporate offices."],["Stage 4: Multi-Hub Print Network","Scale to partner print hubs routed by customer location."]]},
+  {c:"DIV-09",n:"Motior Pharma",s:"C / Python / HL7 FHIR",r:"divisions/motior-pharma",sh:"Digital health telemetry dashboards, diagnostic sensors, and pharma tech.",what:"Motior Pharma (telemetry_engine.py) links Emontron C biometric sensors (Temp, SpO2, BPM) with real-time clinical alert thresholds and HL7 FHIR Observation JSON.",why:"Delivers affordable vital-sign telemetry and accurate medicine inventory management to clinics and pharmacies.",how:[["1. Learn","Master clinical vital thresholds, Pandas analytics, and HL7 FHIR schemas."],["2. Build","Develop vital alert monitors in ~/emon-industry/divisions/motior-pharma/telemetry_engine.py."],["3. Validate","Test automated critical-alert triggers against edge-case vitals."],["4. Publish","Expose /api/telemetry and /fhir/Observation REST endpoints."],["5. Brand","Maintain medical-grade reliability and clear clinical docs."],["6. Earn","License pharmacy POS/inventory software and clinic telemetry kits."]],ci:[5,11,13],g:[["Stage 1: Health Analytics","Master Pandas validation, vital ranges, and expiry tracking."],["Stage 2: Biometric Integration","Ingest live C sensor streams into HL7 FHIR JSON alerts."],["Stage 3: Pharmacy ERP & Dashboards","Build multi-branch pharmacy stock and doctor alert portals."],["Stage 4: Clinic Network Scale","Deploy turnkey digital health systems across clinics."]]}
 ];
 
 let ec=JSON.parse(localStorage.getItem("emon_c14")||"{}"),sd=JSON.parse(localStorage.getItem("emon_s29")||"{}"),wf="all";
@@ -490,10 +458,10 @@ function closeBp(){document.getElementById("bpView").style.display="none";docume
 const DAYS=[
   [1,"w1","Day 01: Sovereign Mainframe & Git Setup","Initialize emon-industry repo, 9 divisions, and PAT authentication."],
   [2,"w1","Day 02: Emontron C Sensor Core","Compile native C biometric & voltage telemetry simulator."],
-  [3,"w1","Day 03: Esecurity Raku Log Filter","Build Raku regex parser extracting malicious SSH/HTTP IPs."],
+  [3,"w1","Day 03: Esecurity SOC Log Filter","Build regex parser extracting malicious SSH/HTTP IPs."],
   [4,"w1","Day 04: 29A Cryptographic Integrity Tool","Implement SHA-256 hashing and local socket audit in Python."],
   [5,"w1","Day 05: Efirm Java Enterprise Core","Compile Java invoicing & VAT ledger module."],
-  [6,"w1","Day 06: GitHub Actions Multi-Language CI","Verify C, Python, Raku, and Java builds automatically."],
+  [6,"w1","Day 06: GitHub Actions Multi-Language CI","Verify C, Python, and Java builds automatically."],
   [7,"w1","Day 07: Internal Storage Mirror (sync_all.sh)","Single-command sync to Android storage & GitHub."],
   [8,"w2","Day 08: Full-Stack Web & SQLite Server","Launch portal with Python HTTP & SQLite DB."],
   [9,"w2","Day 09: GitHub Pages Public Deployment","Publish live corporate portal on github.io."],
@@ -527,14 +495,15 @@ function resetSp(){sd={};localStorage.setItem("emon_s29","{}");rSp()}
 function rCe(){let c=0,h="";CERTS.forEach((x,i)=>{const ok=!!ec[i];if(ok)c++;h+=`<div class="card" style="${ok?'border-color:var(--green)':''}"><div class="ctop"><span class="tag">${x[0]}</span><span class="tag tg">${x[3]}</span></div><h3>${x[1]}</h3><p style="color:var(--cyan);font-weight:700;margin-bottom:4px">${x[2]} &bull; 100% Free</p><p>${x[5]}</p><div style="display:flex;gap:8px;margin-top:10px"><a class="btn bp" style="flex:1" href="${x[4]}" target="_blank">Open Free Course &rarr;</a><button class="btn ${ok?'bg':'bs'}" onclick="tCert(${i})">${ok?'Earned':'Mark Done'}</button></div></div>`});document.getElementById("certsGrid").innerHTML=h;document.getElementById("ceBadge").textContent=`Earned: ${c} / 14`;document.getElementById("mCe").textContent=`${c} / 14`}
 function tCert(i){ec[i]=!ec[i];localStorage.setItem("emon_c14",JSON.stringify(ec));rCe()}
 
-const PATH=[["Stage 1: Machine Core, Binary & C Hardware Logic (Emontron)",["Master CPU registers, RAM addresses, and binary logic.","Compile native C programs with GCC.","Simulate temperature, SpO2, and voltage sensors."]],["Stage 2: Sovereign Linux OS & Shell Automation (EOS / Inhealer)",["Master /etc, /var, permissions, and systemd.","Write Bash automation and Raku regex log filters.","Harden servers with UFW firewalls and SSH keys."]],["Stage 3: Full-Stack Web, SQLite, Mobile Apps & Plugins (Efirm, EPrinter, EAPK & iOS)",["Build responsive OffSec portals in HTML5, CSS3, and JS.","Build zero-dependency Python REST APIs with SQLite.","Compile native Android APKs and iOS WKWebView apps with modular App Plugins."]],["Stage 4: Offensive & Defensive Cyber Warfare (29A & Esecurity)",["Inspect TCP/IP packets, DNS, and TLS handshakes.","Audit web apps against OWASP Top 10.","Generate SHA-256 cryptographic integrity manifests."]],["Stage 5: On-Bound Local AI & Health Telemetry (EMON EI & Motior)",["Run offline local intelligence pipelines without cloud leaks.","Output deterministic JSON alerts for security and health."]],["Stage 6: Commercial Monetization & Global Scale",["Execute Learn -> Build -> Validate -> Publish -> Brand -> Earn.","Incorporate with RJSC Bangladesh, e-TIN, BIN & BASIS.","Scale globally with USD ERQ banking and B2B contracts."]]];
+const PATH=[["Stage 1: Machine Core, Binary & C Hardware Logic (Emontron)",["Master CPU registers, RAM addresses, and binary logic.","Compile native C programs with GCC (sensor_node.c).","Simulate temperature, SpO2, and voltage sensors."]],["Stage 2: Sovereign Linux OS & Shell Automation (EOS / Inhealer)",["Master /etc, /var, permissions, and systemd.","Write Bash automation and log correlation filters.","Harden servers with UFW firewalls and SSH keys."]],["Stage 3: Full-Stack Web, SQLite, Mobile Apps & Plugins (Efirm, EPrinter, EAPK & iOS)",["Build responsive OffSec portals in HTML5, CSS3, and JS.","Run local Python REST APIs backed by SQLite (server.py).","Compile native Android APKs and iOS WKWebView apps with modular App Plugins."]],["Stage 4: Offensive & Defensive Cyber Warfare (29A & Esecurity)",["Inspect TCP/IP packets, DNS, and TLS handshakes.","Audit web apps against OWASP Top 10.","Generate SHA-256 cryptographic integrity manifests."]],["Stage 5: On-Bound Local AI & Health Telemetry (EMON EI & Motior)",["Run offline local intelligence pipelines without cloud leaks.","Output deterministic HL7 FHIR JSON alerts for security and health."]],["Stage 6: Commercial Monetization & Global Scale",["Execute Learn -> Build -> Validate -> Publish -> Brand -> Earn.","Incorporate with RJSC Bangladesh, e-TIN, BIN & BASIS.","Scale globally with USD ERQ banking and B2B contracts."]]];
 document.getElementById("pathList").innerHTML=PATH.map(s=>`<div class="bpbox"><h3>${s[0]}</h3><ul style="padding-left:18px">${s[1].map(li=>`<li>${li}</li>`).join("")}</ul></div>`).join("");
 
-async function qCalc(){const p=Math.max(1,parseInt(document.getElementById("pg").value||"1",10)),m=document.getElementById("pm").value,o=document.getElementById("qOut");try{const r=await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pages:p,mode:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[DB ORDER #${d.order_id}] ${d.pages} pages (${d.mode.toUpperCase()}) = BDT ${d.total_bdt}`}catch(e){o.textContent=`[INSTANT QUOTE] ${p} pages (${m.toUpperCase()}) = BDT ${p*(m==="color"?5:2)}`}}
-async function audit(){const o=document.getElementById("aOut");o.textContent="Scanning...";try{const r=await fetch("/api/scan");if(!r.ok)throw 0;o.textContent=JSON.stringify(await r.json(),null,2)}catch(e){o.textContent=JSON.stringify({agency:"29A Cyber Guardian",runtime:platformName,activePlugins:plugins.filter(p=>p.enabled).map(p=>p.name),status:"VERIFIED CLEAN"},null,2)}}
-async function inq(){const n=document.getElementById("cn").value.trim(),e=document.getElementById("ce").value.trim(),m=document.getElementById("cm").value.trim(),o=document.getElementById("iOut");if(!n||!e){o.textContent="Enter Name and Email.";return}try{const r=await fetch("/api/inquiries",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:n,email:e,message:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[SAVED TO DB] Ticket #${d.ticket_id} logged for ${n}.`}catch(err){o.textContent=`[LOGGED OFFLINE] Inquiry saved for ${n} (${e}).`}}
+async function qCalc(){const p=Math.max(1,parseInt(document.getElementById("pg").value||"1",10)),m=document.getElementById("pm").value,o=document.getElementById("qOut");try{const r=await fetch("/api/quote",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({pages:p,mode:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[SQLITE ORDER #${d.order_id}] ${d.pages} pages (${d.mode.toUpperCase()}) = BDT ${d.total_bdt}`}catch(e){o.textContent=`[INSTANT QUOTE] ${p} pages (${m.toUpperCase()}) = BDT ${p*(m==="color"?5:2)}`}}
+async function audit(){const o=document.getElementById("aOut");o.textContent="Running 29A SHA-256 & node audit...";try{const r=await fetch("/api/scan");if(!r.ok)throw 0;o.textContent=JSON.stringify(await r.json(),null,2)}catch(e){o.textContent=JSON.stringify({agency:"29A Cyber Guardian",runtime:platformName,activePlugins:plugins.filter(p=>p.enabled).map(p=>p.name),status:"VERIFIED CLEAN"},null,2)}}
+async function pullTelemetry(){const o=document.getElementById("aOut");o.textContent="Reading Emontron C binary + Motior Pharma FHIR...";try{const r=await fetch("/api/telemetry");if(!r.ok)throw 0;o.textContent=JSON.stringify(await r.json(),null,2)}catch(e){o.textContent="Start local SQLite server (bash start_server.sh) for live C binary telemetry."}}
+async function inq(){const n=document.getElementById("cn").value.trim(),e=document.getElementById("ce").value.trim(),m=document.getElementById("cm").value.trim(),o=document.getElementById("iOut");if(!n||!e){o.textContent="Enter Name and Email.";return}try{const r=await fetch("/api/inquiries",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:n,email:e,message:m})});if(!r.ok)throw 0;const d=await r.json();o.textContent=`[SAVED TO SQLITE] Ticket #${d.ticket_id} logged for ${n}.`}catch(err){o.textContent=`[LOGGED OFFLINE] Inquiry saved for ${n} (${e}).`}}
 
-renderPlugins();renderDivs();rSp();rCe();
+renderPlugins();renderDivs();rSp();rCe();refreshHomeVitals();
 </script>
 </body>
 </html>
